@@ -1,0 +1,3471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>
+    </title>
+    <meta charset="UTF-8">
+
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.2/css/bootstrap.min.css"
+          integrity="sha512-/FM/eOMbt34nhpkaxKE7hrOty4r0hCwHB1zP350HyRUbG3nWGQdrplaNosKFakVyFLQWFdj4q+O17sw0EKaAxA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.2/css/bootstrap-theme.min.css"
+          integrity="sha512-zV3GNceXndB45y/As6SWOXpyGG5m4gsxLLBvIYo1KHZx2ym/WR/+RSHFEO/j6rLU8AdZJfY3pE2QYxTfR39sOA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+            integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<style>
+
+    .page-header {
+        border-bottom: none;
+    }
+</style>
+
+
+
+
+<style>
+
+    /*@font-face { font-family: 'Calibri';*/
+    /*         src: url('/static/global/calibri.163e0fe1bd9d.ttf') format('truetype'); }*/
+    /*@font-face { font-family: 'Calibri';*/
+    /*         src: url('/static/global/calibrii.627e44b7c147.ttf') format('truetype');*/
+    /*         font-style: italic; }*/
+    /*@font-face { font-family: 'Calibri";*/
+    /*         src: url('/static/global/calibrib.2b9ea546bad0.ttf') format('truetype');*/
+    /*         font-weight: bold; }*/
+    /*@font-face { font-family: 'Calibri';*/
+    /*         src: url('/static/global/calibriz.f9ec4ed309c3.ttf') format('truetype');*/
+    /*         font-weight: bold;*/
+    /*         font-style: italic; }*/
+
+
+    #content-container{
+        font-family: Calibri!important;
+    }
+
+
+    div {
+        padding: 0px;
+    }
+
+    .otree-timer {
+        display: none;
+    }
+
+    .otree-body {
+        max-width:100vw;
+        margin:0 auto;
+        }
+
+
+    #content-container {
+        position: relative;
+        width: 60vw;
+        height: 95vh;
+        max-height: 60vw;
+        margin: 0 auto;
+        overflow: hidden;
+        background-color: white;
+        transform-origin:top left;
+        margin-top: 1vw;
+    }
+
+    .well{
+        background-color: white;
+        background-image: none;
+    }
+
+
+    .btn {
+        width:10vw;
+        height:7.5vw;
+        font-family: "Calibri", Calibri, sans-serif ;
+        font-weight: bold;
+        font-size: 3vw;
+        padding: 0;
+        }
+
+    .btn:focus,.btn:active {
+       outline: none !important;
+       box-shadow: none;
+        }
+    .btn:active {
+        transform: scale(0.95);
+    }
+    .off{
+        pointer-events: none;
+    }
+
+    #option0{
+        position: absolute;
+        top: 6.25vw;
+        left: 17.5vw;
+    }
+
+    #option1{
+        position: absolute;
+        top: 6.25vw;
+        left: 32.5vw;
+    }
+
+    #history0{
+        position: absolute;
+        top: 22.5vw;
+        left: 25vw;
+    }
+
+    #history1{
+        position: absolute;
+        top: 33.75vw;
+        left: 25vw;
+    }
+
+    .text{
+        position: absolute;
+        left:5vw;
+        font-family: "calibri", Calibri, sans-serif;
+        font-size: 1.5vw;
+    }
+
+    #choose{top:8.75vw;}
+    #last_choice{top:25vw;}
+    #second_last_choice{top:36.25vw;}
+    #round{top:1.25vw; right:3.75vw; text-align: right}
+    #round_text{top:3.4375vw; right:2.8125vw;font-size:1vw;text-align: right}
+
+    #points{top:20.25vw; right: 2.815vw;  font-size:1vw; text-align: right}
+    #score{top:17.8125vw; right: 3.75vw;   font-size:2vw; text-align: right}
+
+    #timer_text{left:auto; width: 9vw; top:11.25vw; right: 2.8125vw;  font-size:1vw;text-align: right}
+
+
+    .timer_frame {
+        position: absolute;
+        top: 9.375vw;
+        right: 3.75vw;
+        width: 8.875vw;
+        height: 1vw;
+        border: #000000 solid .125vw;
+    }
+
+
+</style>
+
+
+
+
+
+    <style type="text/css">
+
+li {
+    padding-bottom: 0.3vw ;
+    padding-top: 0.3vw;
+}
+ul {
+    padding-left: 1vw;
+}
+
+#content-container .i_button{
+    width: 9vw;
+    height: 2.5vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:0;
+    font-size: 1.6vw;
+    font-weight: normal;
+}
+
+.i_text {
+    font-size: 1.2vw;
+    font-family: "Calibri",Calibri, sans-serif;
+    margin: 0 auto;
+    border: none;
+    padding: 1vw;
+    width: 50vw;
+    left: 5vw;
+    top: 5vw;
+}
+
+.instr{
+    position: absolute;
+    box-sizing: border-box;
+    border-radius: 1vw;
+}
+
+.HL {
+    border: black solid 0.125vw;
+}
+
+
+.separator{
+    padding-top: 3vw;
+}
+
+#content-container .next{
+    position: absolute;
+    bottom: 3vw;
+    right: 3vw;
+}
+#content-container .back {
+    position: absolute;
+    bottom: 3vw;
+    right: 13vw;
+}
+ul ul{
+margin-left:2vw}
+
+
+    </style>
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="/static/global/css_buttons.121f5a1808b4.css" >
+
+
+<style type="text/css">
+
+@keyframes movemid0 {
+    0% { transform: translate(0,0) }
+    100% { transform: translate(7.5vw,0px) }
+    }
+@keyframes movemid1 {
+    0% { transform: translate(0,0) }
+    100% { transform: translate(-7.5vw,0px) }
+    }
+
+@keyframes movedown {
+    0% { transform: translate(0,0) }
+    100% { transform: translate(0px,16.25vw) }
+}
+@keyframes fadeout2 {
+    0% {opacity: 1; transform: scale(1)}
+    100% { opacity: 0;transform: scale(0)}
+    }
+@keyframes movedown_hist {
+    0% { transform: translate(0,16.25vw) }
+    100% { transform: translate(0px,27.5vw) }
+}
+@keyframes movedown_hist2 {
+    0% { transform: translate(0,27.5vw); opacity: 1 }
+    100% { transform: translate(0px,38.75vw); opacity: 0 }
+}
+
+@keyframes fadein{
+    0% {opacity: 0}
+    100% {opacity: 1}
+}
+
+@keyframes pop {
+    0% { opacity: 0; transform: scale(0)}
+    50% {opacity: 1;}
+    75% {transform: scale(1.1)}
+    100% {transform: scale(1); opacity: 1}
+}
+
+@keyframes text_out {
+    0% {opacity: 1; transform: scale(1)}
+    100% {opacity: 0; transform: scale(0)}
+}
+
+@keyframes feedback_1 {
+    0% {content: "12"; opacity: 0; transform: scale(0)}
+    50% {opacity: 1;}
+    75% {transform: scale(1.2)}
+    100% {content: "12"; transform: scale(1)}
+}
+@keyframes feedback_2 {
+    0% {content: "13"; opacity: 0; transform: scale(0)}
+    50% {opacity: 1;}
+    75% {transform: scale(1.2)}
+    100% {content: "13"; transform: scale(1)}
+}
+
+@keyframes timer_animation {
+    0% {opacity:0; transform: translateX(0vw) scale(1,1);}
+    5% {opacity: 1; transform: translateX(0vw) scale(1,1);}
+    100% {transform: translateX(-4.1875vw) scale(0,1);}
+}
+@keyframes points_added_animation {
+    0% {opacity:0; transform: translateY(0)}
+    10% { opacity: 1}
+    80% {opacity: 1}
+    100% {opacity: 0; transform: translateY(-30px)}
+}
+
+
+#timer_bar {
+    position: absolute;
+    top:0.125vw;
+    left: 0.125vw;
+    height: 0.5vw;
+    width: 8.375vw;
+    background-color: black;
+    animation: timer_animation 10.5s linear forwards;
+}
+
+
+.bsp0{
+    background-color: white;
+    border: black solid 2px;
+}
+
+.bsp1{
+    background-color: lightgrey;
+}
+
+.bsp2{
+    background-color: grey;
+}
+
+.bsp3{
+    background-color: black;
+    color: white;
+}
+.bsp3:hover,
+.bsp3:active,
+.bsp3:focus{
+    color:white !important;
+}
+
+.bsp2:hover,
+.bsp2:active,
+.bsp2:focus{
+    color:black !important;
+}
+
+
+
+#content-container{
+    overflow: visible;
+}
+
+
+.popover_div{
+    position: absolute;
+    border-radius: 1vw;
+    opacity: 0.3;
+    transition: opacity 0.35s ease;
+}
+
+#set1 .popover_div{
+    background-color: lightblue;
+}
+#set2 .popover_div {
+    background-color: lightcoral;
+}
+
+.popover_div_hidden{
+    opacity: 0;
+}
+
+
+
+#div_options {
+    top: 5.25vw;
+    left: 16.5vw;
+    width: 27vw;
+    height: 9.5vw;
+}
+#div_options99 {
+    top: 5.25vw;
+    left: 16.5vw;
+    width: 27vw;
+    height: 9.5vw;
+    background-color: lightblue;
+    opacity: 0.5;
+}
+
+#div_hist1 {
+    top: 21.5vw;
+    left:24vw;
+    width: 12vw;
+    height: 9.5vw;
+}
+
+#div_hist2 {
+    top: 32.75vw;
+    left:24vw;
+    width: 12vw;
+    height: 9.5vw;
+}
+
+#div_feedback {
+    top: 21.5vw;
+    left:24vw;
+    width: 12vw;
+    height: 20.75vw;
+}
+
+#div_timer{
+    top: 8.5vw;
+    right:2vw;
+    height: 5vw;
+    width: 12vw;
+}
+#div_round{
+    top: 0.8vw;
+    right:2vw;
+    height: 5vw;
+    width: 12vw;
+}
+#div_points{
+    top: 17.3vw;
+    right:2vw;
+    height: 5vw;
+    width: 12vw;
+}
+
+#points_random {
+    top: 19vw;
+    left:24vw;
+    width: 12vw;
+    height: 25.75vw;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.popover{
+    max-width: 20vw;
+    opacity: 1;
+    z-index: 1010
+}
+.popover-content{
+    min-width: 20vw;
+}
+
+#set1 .popover-title{
+    background-color: lightblue;
+}
+#set2 .popover-title{
+    background-color: lightcoral;
+}
+
+#set2 .popover{
+    max-width: 36vw;
+}
+
+#set2 td {
+    width: 6vw;
+    text-align: center;
+    padding-top: 1vw;
+}
+
+#set2 .popover-content{
+    min-width: 35vw;
+}
+
+#set99{
+    z-index: 0;
+    transition: opacity 1s ease;
+}
+#set99 .popover{
+    max-width: 21vw;
+}
+
+#set99 .popover-content{
+    min-width: 20vw;
+}
+
+
+.btn {
+    width:10vw;
+    height:7.5vw;
+    font-family: "Calibri", Calibri, sans-serif ;
+    font-weight: bold;
+    font-size: 3vw;
+    }
+
+.tab_btn{
+    width:5vw;
+    height:3.75vw;
+    font-size: 2vw;
+
+
+}
+
+.btn:focus,.btn:active {
+   outline: none !important;
+   box-shadow: none;
+    }
+.btn:active {
+    transform: scale(0.95);
+}
+.off{
+    pointer-events: none;
+}
+
+.option_0{
+    position: absolute;
+    top: 6.25vw;
+    left: 17.5vw;
+}
+
+.option_1{
+    position: absolute;
+    top: 6.25vw;
+    left: 32.5vw;
+}
+
+.div_hidden{
+    opacity: 0;
+    visibility: hidden;
+}
+
+.payoff_span{
+    display: none;
+    transform: scale(0);
+}
+
+.info_button{
+height: 3vw;
+display: flex;
+align-items: left;
+justify-content: center;
+border-radius: 0.5vw;
+color: white;
+font-family: "Calibri", Calibri, sans-serif ;
+font-weight: bold;
+font-size: 1vw;
+}
+#info_button1 {
+    position: absolute;
+    bottom: 3.5vw;
+    left: 2vw;
+    display: flex;
+    align-items: left;
+    justify-content: center;
+
+}
+#info_button1 div{
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    font-family: "Calibri", Calibri, sans-serif ;
+    font-size: 1.3vw;
+
+}
+#info_button2 {
+    position: absolute;
+    bottom: 0.5vw;
+    left: 2vw;
+    display: flex;
+    align-items: left;
+    justify-content: center;
+
+}
+#info_button2 div{
+    display: flex;
+    align-items: left;
+    justify-content: center;
+    font-family: "Calibri", Calibri, sans-serif ;
+    font-size: 1.3vw;
+}
+#div_random_toggle{
+    position: absolute;
+    top: 50vw;
+    left: 42vw;
+    z-index: 1050;
+    display: flex;
+    width: 30vw;
+    align-items: left;
+    justify-content: center;
+    font-family: "Calibri", Calibri, sans-serif ;
+    font-size: 1.3vw;
+
+}
+
+
+.points_added{
+    position: absolute;
+    top:17.1875vw;
+    right: 3.75vw;
+    font-size: 1vw;
+    text-align: right;
+    width: 3.75vw;
+    opacity: 0;
+    animation: points_added_animation 0.8s linear forwards;
+    }
+
+
+
+#control-container{
+    position: absolute;
+    top:0vw;
+    left:-18vw;
+    height:auto;
+    width: 17vw;
+    background: white;
+    border-radius: 0.25vw;
+    font-size: 0.8vw;
+    border: #bce8f1 2px solid;
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
+.help-button{
+    border: black 2px solid;
+    width: 15vw;
+    height: 3vw;
+    font-family: "Calibri", Calibri, sans-serif;
+    font-size: 1.2vw;
+    margin: 0.25vw;
+    border-radius: 0.5vw;
+    text-align: left;
+    padding-left: 1vw;
+    font-weight: normal;
+    background-color: white;
+}
+
+    #help1{
+        border-color: #3a87ad;
+        color: #3a87ad;
+        pointer-events: none;
+    }
+    #help1.inv{
+        border-color: #3a87ad;
+        background-color: #3a87ad;
+        color:white;
+    }
+
+
+    #help2{
+        border-color: lightcoral;
+        color: lightcoral;
+        opacity:0.2;
+        pointer-events: none;
+        transition: opacity 1s ease;
+    }
+    #help2.inv{
+        border-color: lightcoral;
+        background-color: lightcoral;
+        color:white;
+    }
+
+    #help3{
+        opacity: 0.2;
+        pointer-events: none;
+        transition: opacity 1s ease;
+    }
+    #zufall.is_on:after{
+        content: ": AN";
+    }
+
+    #zufall.is_off:after{
+        content: ": AUS";
+    }
+    #zufall:after{
+        font-weight: bold;
+    }
+
+    #next{
+        opacity: 0.2;
+        pointer-events: none;
+        transition: opacity 1s;
+    }
+
+
+</style>
+
+
+
+</head>
+<body>
+
+    <div class="otree-body">
+        <div>
+
+
+
+
+            <div id="_otree-server-error" class="alert alert-danger"
+                 style="display:none">
+                An error occurred. Please check the logs or ask the administrator for help.
+            </div>
+
+            <form action="" method="post" role="form" id="form"><input type='hidden' name='csrfmiddlewaretoken' value='piFuAOg0osH6WOSQzpaqSYP9KJ1ftJke' />
+                <input type="hidden" value="/p/neopk4dl/instructions_2/instr_3/3/"
+                       name="origin_url"/>
+
+
+                    <div class="_otree-content">
+
+
+<input type="hidden" name="single_log" id="input_log">
+
+<div id = "content-container" class = "well">
+
+            <button id="next" name="back" value = "0" class="btn i_button  next">weiter</button>
+            <div id="not_yet" class=" i_button  next" style="opacity:0" data-toggle="popover" data-placement="top" data-content="Bitte lesen und befolgen Sie sämtliche Hinweise, bevor Sie fortfahren." data-trigger="hover"></div>
+            <button id="go_back" name="back" value = "1" class="btn i_button  back" >zurück</button>
+
+
+
+
+
+    <div id="set99">
+            <div id="div_options99"  data-toggle="popover" data-placement="left" class="popover_div popover_div_hidden" title="Ihre Auswahlmöglichkeiten" data-html="true" data-content="Willkommen!<br>
+            Was Sie auf dieser Seite sehen, gleicht der Anzeige der späteren Aufgabe.
+            <br><br>
+            Jede Runde erscheinen hier zwei Buttons, zwischen denen Sie wählen können.
+            Später werden sie farbig sein; in diesem Beispiel sind es verschiedene Grautöne. <br><br> <b>Wählen Sie bitte fünf Mal einen der beiden Buttons und beobachten Sie, was passiert. <br>Es folgen dann weitere Erklärungen.</b>"
+   data-trigger="manual"></div>
+
+    </div>
+
+    <div id="set1">
+
+    <div id="div_options"  data-toggle="popover" data-placement="left" class="popover_div popover_div_hidden" title="<b>1</b> &ndash; Ihre momentanen Optionen" data-html="true" data-content="Hier erscheinen jede Runde zwei Buttons, von denen Sie einen durch Anklicken wählen können. <br><br> Sie können dies ausprobieren, sooft Sie möchten, auch während diese Hinweise eingeblendet sind." data-trigger="manual"></div>
+    <div id="div_hist1" data-toggle="popover" data-placement="left" class="popover_div popover_div_hidden" title="<b>2</b> &ndash; Zuletzt gewählt" data-html="true" data-content="Hierher bewegt sich jeder Button, direkt nachdem Sie ihn gewählt haben. <br> Es erscheint eine <b> erste </b> Punktzahl, die Sie durch die Wahl verdient haben." data-trigger="manual"></div>
+    <div id="div_hist2"  data-toggle="popover" data-placement="left" class="popover_div popover_div_hidden" title="<b>3</b> &ndash; Davor gewählt" data-html="true" data-content="Hier sehen Sie, was Sie eine Runde zuvor gewählt haben.  <br> Diese Wahl bringt jetzt ein <b>zweites</b> Mal Punkte, die hier angezeigt werden. <br><br> <b>Wichtig:</b> Die beiden Zahlen, die Sie durch eine Farbe erhalten, müssen nicht gleich sein." data-trigger="manual"></div>
+
+    <div id="div_round" data-toggle="popover" data-placement="left" class="popover_div popover_div_hidden" title="<b>6</b> &ndash; Rundenzähler" data-html="true" data-content="Die aktuelle Runde; insgesamt sind es 105." data-trigger="manual"></div>
+    <div id="div_timer"  data-toggle="popover" data-placement="right" class="popover_div popover_div_hidden" title="<b>5</b> &ndash; Zeitlimit für Ihre Entscheidung" data-html="true" data-content="Für jede Entscheidung haben Sie <b>10 Sekunden</b>; der schwarze Balken zeigt die verbleibende Zeit. <br><br> In diesem Beispiel hat das Ablaufen der Zeit keine Auswirkung, damit Sie sich in Ruhe umschauen können. <br>
+        <br><b>Wichtig: Im späteren Experiment gilt:</b><br> Wenn in einer Runde die Zeit abläuft, wird eine zufällige Auswahl getroffen, und Ihnen werden <b>5 Punkte abgezogen.</b>" data-trigger="manual"></div>
+    <div id="div_points"  data-toggle="popover" data-placement="bottom" class="popover_div popover_div_hidden" title="<b>4</b> &ndash; Bislang erzielte Punkte" data-html="true" data-content="Immer, wenn links Punkte erscheinen, erhöhen sich Ihre Gesamtpunkte entsprechend.
+    <br><br>
+    Je mehr Gesamtpunkte Sie später erzielen, um so höher wird Ihre Auszahlung ausfallen." data-trigger="manual"></div>
+    </div>
+
+    <div id="set2">
+    <div id="div_feedback" data-container="#set2" data-toggle="popover" data-placement="left" class="popover_div popover_div_hidden" title="<b>1</b> &ndash; Punktevergabe" data-html="true" data-content="
+    Jede Wahl einer Farbe gibt zweimal Punkte:<br> Einmal direkt nach der Wahl (oben), einmal eine Runde später (unten). <br>
+    <br>
+    Die Punktzahlen hängen von der jeweiligen Farbe ab: <br> Zu jeder Farbe gehört fest eine erste und eine zweite Punktzahl.
+    <br>
+    <br>
+    Für diese Demonstration sind die Zuordnungen wie folgt:
+    <br>
+    <table>
+        <tr>
+            <td></div> Farbe </td>
+            <td><button class = 'btn bsp0 tab_btn off'> </td>
+            <td><button class = 'btn bsp1 tab_btn off'> </td>
+            <td><button class = 'btn bsp2 tab_btn off'> </td>
+            <td><button class = 'btn bsp3 tab_btn off'> </td>
+         </tr>
+         <tr>
+             <td></div>Erste  Zahl</td>
+
+            <td><button class = 'btn bsp0 tab_btn off'> 1</td>
+            <td><button class = 'btn bsp1 tab_btn off'> 4</td>
+            <td><button class = 'btn bsp2 tab_btn off'> 2</td>
+            <td><button class = 'btn bsp3 tab_btn off'> 3</td>
+         </tr>
+         <tr>
+            <td></div> Zweite Zahl</td>
+            <td><button class = 'btn bsp0 tab_btn off'> 2 </td>
+            <td><button class = 'btn bsp1 tab_btn off'> 4 </td>
+            <td><button class = 'btn bsp2 tab_btn off'> 1 </td>
+            <td><button class = 'btn bsp3 tab_btn off'> 6</td>
+         </tr>
+    </table>
+    <br>
+    Wie Sie sehen, bringt Weiß etwa direkt nach der Wahl 1 Punkt, und eine Runde später weitere 2 Punkte &ndash; und damit insgesamt 3 Punkte. <br>
+    Für Schwarz sind es zum Beispiel 3 direkt und dann 6 &ndash; insgesamt also 9 Punkte.
+    <br>
+    <br>
+    <b>Beachten Sie:</b><br>
+    Im Beispiel sind die Zahlen hier offengelegt, damit Sie das Prinzip nachvollziehen können.
+    <br>
+    Im eigentlichen Experiment sind es selbstverständlich andere Farben und neue Zahlen. Es werden Ihnen die Zahlen dann auch nicht mitgeteilt,
+    sondern Sie können im Verlauf selbst lernen, welche Farben viele Punkte geben.
+    " data-trigger="manual"></div>
+
+    <div id="points_random"  data-toggle="popover" data-placement="right" class="popover_div popover_div_hidden" title="<b>2</b> &ndash; Mehr zu den Auszahlungen" data-html="true"
+         data-content='
+         <b>Wichtig:</b> <br>
+         Bislang haben die Buttons immer <b>genau</b> die zugeordneten Punkte gegeben.
+         <br>
+         Im Experiment gleich gilt dagegen folgende Änderung:<br>
+         <br>
+         Zu beiden erhaltenen Punktzahlen &dash; sowohl der gerade als auch der zuvor gewählten Farbe &dash; wird jeweils zufällig 1, 2, 3 oder 4 hinzugezählt.
+         Das Ergebnis dieser Addition wird dann angezeigt und die Gesamtpunkte entsprechend erhöht.
+         <br>
+         <br>
+         Im gegenwärtigen Beispiel hieße dies etwa, dass Schwarz folgende Punktzahlen ergeben könnte:
+         <br>
+         Erste Punktzahl: &nbsp; 4, 5, 6 oder 7 &nbsp; &nbsp;&nbsp; &dash; &nbsp;&nbsp; das entspricht &nbsp;&nbsp; 3+1, 3+2, 3+3, 3+4.
+         <br>
+         Zweite Punktzahl: 7, 8, 9 oder 10 &nbsp;&nbsp; &dash; &nbsp;&nbsp; das entspricht &nbsp;&nbsp; 6+1, 6+2, 6+3, 6+4.
+         <br> <br>
+         Da alle Farben gleichermaßen betroffen sind, ändert sich hierduch natürlich nicht, welche Farbe mehr Punkte gibt als eine andere.
+         Durch die zufälligen Schwankungen wird es allerdings etwas schwieriger, festzustellen, welche Farben viele und welche nicht so viele Punkte bringen.
+         <br> <br>
+         Sie können das Beispiel nun mit der zufälligen Komponente ausprobieren. Aktivieren Sie hierzu den Schalter "C: Zufall" oben links.
+         <b>Solange dieser angeschaltet ist, werden alle Punktzahlen in diesem Beispiel zufällig erhöht, so wie gleich im Experiment.<b>
+         <br>
+         <br>
+
+
+
+        ' data-trigger="manual"></div>
+    </div>
+
+         <div id='div_random_toggle' style="opacity:0; visibility: hidden">
+             <label class='switch'>
+             <input id='random_toggle' type='checkbox'>
+             <span class='slider round'></span>
+             </label>
+             <div style="float: left; padding-left: 1vw"> Zufallskomponente einschalten </div>
+         </div>
+
+
+
+
+        <div id="round_0" class="round_div div_hidden">
+
+            <div id="div_0_0" class = "option_div option_0">
+                <button id="button_0_0" type="button" class = "btn option_button  bsp0"
+                    onclick="button(0,0)">
+                    <span id="span_0_0_0" class = "payoff_span"> 1 </span>
+                    <span id="span_0_0_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+            <div id="div_0_1" class = "option_div option_1">
+                <button id="button_0_1" type="button" class = "btn option_button  bsp1"
+                    onclick="button(0,1)">
+                    <span id="span_0_1_0" class = "payoff_span"> 4 </span>
+                    <span id="span_0_1_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_1" class="round_div div_hidden">
+
+            <div id="div_1_0" class = "option_div option_0">
+                <button id="button_1_0" type="button" class = "btn option_button  bsp2"
+                    onclick="button(1,0)">
+                    <span id="span_1_0_0" class = "payoff_span"> 2 </span>
+                    <span id="span_1_0_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+            <div id="div_1_1" class = "option_div option_1">
+                <button id="button_1_1" type="button" class = "btn option_button  bsp0"
+                    onclick="button(1,1)">
+                    <span id="span_1_1_0" class = "payoff_span"> 1 </span>
+                    <span id="span_1_1_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_2" class="round_div div_hidden">
+
+            <div id="div_2_0" class = "option_div option_0">
+                <button id="button_2_0" type="button" class = "btn option_button  bsp0"
+                    onclick="button(2,0)">
+                    <span id="span_2_0_0" class = "payoff_span"> 1 </span>
+                    <span id="span_2_0_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+            <div id="div_2_1" class = "option_div option_1">
+                <button id="button_2_1" type="button" class = "btn option_button  bsp3"
+                    onclick="button(2,1)">
+                    <span id="span_2_1_0" class = "payoff_span"> 3 </span>
+                    <span id="span_2_1_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_3" class="round_div div_hidden">
+
+            <div id="div_3_0" class = "option_div option_0">
+                <button id="button_3_0" type="button" class = "btn option_button  bsp0"
+                    onclick="button(3,0)">
+                    <span id="span_3_0_0" class = "payoff_span"> 1 </span>
+                    <span id="span_3_0_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+            <div id="div_3_1" class = "option_div option_1">
+                <button id="button_3_1" type="button" class = "btn option_button  bsp2"
+                    onclick="button(3,1)">
+                    <span id="span_3_1_0" class = "payoff_span"> 2 </span>
+                    <span id="span_3_1_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_4" class="round_div div_hidden">
+
+            <div id="div_4_0" class = "option_div option_0">
+                <button id="button_4_0" type="button" class = "btn option_button  bsp0"
+                    onclick="button(4,0)">
+                    <span id="span_4_0_0" class = "payoff_span"> 1 </span>
+                    <span id="span_4_0_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+            <div id="div_4_1" class = "option_div option_1">
+                <button id="button_4_1" type="button" class = "btn option_button  bsp3"
+                    onclick="button(4,1)">
+                    <span id="span_4_1_0" class = "payoff_span"> 3 </span>
+                    <span id="span_4_1_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_5" class="round_div div_hidden">
+
+            <div id="div_5_0" class = "option_div option_0">
+                <button id="button_5_0" type="button" class = "btn option_button  bsp1"
+                    onclick="button(5,0)">
+                    <span id="span_5_0_0" class = "payoff_span"> 4 </span>
+                    <span id="span_5_0_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+            <div id="div_5_1" class = "option_div option_1">
+                <button id="button_5_1" type="button" class = "btn option_button  bsp0"
+                    onclick="button(5,1)">
+                    <span id="span_5_1_0" class = "payoff_span"> 1 </span>
+                    <span id="span_5_1_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_6" class="round_div div_hidden">
+
+            <div id="div_6_0" class = "option_div option_0">
+                <button id="button_6_0" type="button" class = "btn option_button  bsp1"
+                    onclick="button(6,0)">
+                    <span id="span_6_0_0" class = "payoff_span"> 4 </span>
+                    <span id="span_6_0_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+            <div id="div_6_1" class = "option_div option_1">
+                <button id="button_6_1" type="button" class = "btn option_button  bsp3"
+                    onclick="button(6,1)">
+                    <span id="span_6_1_0" class = "payoff_span"> 3 </span>
+                    <span id="span_6_1_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_7" class="round_div div_hidden">
+
+            <div id="div_7_0" class = "option_div option_0">
+                <button id="button_7_0" type="button" class = "btn option_button  bsp1"
+                    onclick="button(7,0)">
+                    <span id="span_7_0_0" class = "payoff_span"> 4 </span>
+                    <span id="span_7_0_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+            <div id="div_7_1" class = "option_div option_1">
+                <button id="button_7_1" type="button" class = "btn option_button  bsp0"
+                    onclick="button(7,1)">
+                    <span id="span_7_1_0" class = "payoff_span"> 1 </span>
+                    <span id="span_7_1_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_8" class="round_div div_hidden">
+
+            <div id="div_8_0" class = "option_div option_0">
+                <button id="button_8_0" type="button" class = "btn option_button  bsp1"
+                    onclick="button(8,0)">
+                    <span id="span_8_0_0" class = "payoff_span"> 4 </span>
+                    <span id="span_8_0_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+            <div id="div_8_1" class = "option_div option_1">
+                <button id="button_8_1" type="button" class = "btn option_button  bsp3"
+                    onclick="button(8,1)">
+                    <span id="span_8_1_0" class = "payoff_span"> 3 </span>
+                    <span id="span_8_1_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_9" class="round_div div_hidden">
+
+            <div id="div_9_0" class = "option_div option_0">
+                <button id="button_9_0" type="button" class = "btn option_button  bsp0"
+                    onclick="button(9,0)">
+                    <span id="span_9_0_0" class = "payoff_span"> 1 </span>
+                    <span id="span_9_0_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+            <div id="div_9_1" class = "option_div option_1">
+                <button id="button_9_1" type="button" class = "btn option_button  bsp1"
+                    onclick="button(9,1)">
+                    <span id="span_9_1_0" class = "payoff_span"> 4 </span>
+                    <span id="span_9_1_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_10" class="round_div div_hidden">
+
+            <div id="div_10_0" class = "option_div option_0">
+                <button id="button_10_0" type="button" class = "btn option_button  bsp3"
+                    onclick="button(10,0)">
+                    <span id="span_10_0_0" class = "payoff_span"> 3 </span>
+                    <span id="span_10_0_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+            <div id="div_10_1" class = "option_div option_1">
+                <button id="button_10_1" type="button" class = "btn option_button  bsp2"
+                    onclick="button(10,1)">
+                    <span id="span_10_1_0" class = "payoff_span"> 2 </span>
+                    <span id="span_10_1_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_11" class="round_div div_hidden">
+
+            <div id="div_11_0" class = "option_div option_0">
+                <button id="button_11_0" type="button" class = "btn option_button  bsp1"
+                    onclick="button(11,0)">
+                    <span id="span_11_0_0" class = "payoff_span"> 4 </span>
+                    <span id="span_11_0_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+            <div id="div_11_1" class = "option_div option_1">
+                <button id="button_11_1" type="button" class = "btn option_button  bsp3"
+                    onclick="button(11,1)">
+                    <span id="span_11_1_0" class = "payoff_span"> 3 </span>
+                    <span id="span_11_1_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_12" class="round_div div_hidden">
+
+            <div id="div_12_0" class = "option_div option_0">
+                <button id="button_12_0" type="button" class = "btn option_button  bsp3"
+                    onclick="button(12,0)">
+                    <span id="span_12_0_0" class = "payoff_span"> 3 </span>
+                    <span id="span_12_0_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+            <div id="div_12_1" class = "option_div option_1">
+                <button id="button_12_1" type="button" class = "btn option_button  bsp2"
+                    onclick="button(12,1)">
+                    <span id="span_12_1_0" class = "payoff_span"> 2 </span>
+                    <span id="span_12_1_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_13" class="round_div div_hidden">
+
+            <div id="div_13_0" class = "option_div option_0">
+                <button id="button_13_0" type="button" class = "btn option_button  bsp2"
+                    onclick="button(13,0)">
+                    <span id="span_13_0_0" class = "payoff_span"> 2 </span>
+                    <span id="span_13_0_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+            <div id="div_13_1" class = "option_div option_1">
+                <button id="button_13_1" type="button" class = "btn option_button  bsp3"
+                    onclick="button(13,1)">
+                    <span id="span_13_1_0" class = "payoff_span"> 3 </span>
+                    <span id="span_13_1_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_14" class="round_div div_hidden">
+
+            <div id="div_14_0" class = "option_div option_0">
+                <button id="button_14_0" type="button" class = "btn option_button  bsp1"
+                    onclick="button(14,0)">
+                    <span id="span_14_0_0" class = "payoff_span"> 4 </span>
+                    <span id="span_14_0_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+            <div id="div_14_1" class = "option_div option_1">
+                <button id="button_14_1" type="button" class = "btn option_button  bsp0"
+                    onclick="button(14,1)">
+                    <span id="span_14_1_0" class = "payoff_span"> 1 </span>
+                    <span id="span_14_1_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_15" class="round_div div_hidden">
+
+            <div id="div_15_0" class = "option_div option_0">
+                <button id="button_15_0" type="button" class = "btn option_button  bsp3"
+                    onclick="button(15,0)">
+                    <span id="span_15_0_0" class = "payoff_span"> 3 </span>
+                    <span id="span_15_0_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+            <div id="div_15_1" class = "option_div option_1">
+                <button id="button_15_1" type="button" class = "btn option_button  bsp0"
+                    onclick="button(15,1)">
+                    <span id="span_15_1_0" class = "payoff_span"> 1 </span>
+                    <span id="span_15_1_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_16" class="round_div div_hidden">
+
+            <div id="div_16_0" class = "option_div option_0">
+                <button id="button_16_0" type="button" class = "btn option_button  bsp1"
+                    onclick="button(16,0)">
+                    <span id="span_16_0_0" class = "payoff_span"> 4 </span>
+                    <span id="span_16_0_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+            <div id="div_16_1" class = "option_div option_1">
+                <button id="button_16_1" type="button" class = "btn option_button  bsp0"
+                    onclick="button(16,1)">
+                    <span id="span_16_1_0" class = "payoff_span"> 1 </span>
+                    <span id="span_16_1_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_17" class="round_div div_hidden">
+
+            <div id="div_17_0" class = "option_div option_0">
+                <button id="button_17_0" type="button" class = "btn option_button  bsp2"
+                    onclick="button(17,0)">
+                    <span id="span_17_0_0" class = "payoff_span"> 2 </span>
+                    <span id="span_17_0_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+            <div id="div_17_1" class = "option_div option_1">
+                <button id="button_17_1" type="button" class = "btn option_button  bsp1"
+                    onclick="button(17,1)">
+                    <span id="span_17_1_0" class = "payoff_span"> 4 </span>
+                    <span id="span_17_1_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_18" class="round_div div_hidden">
+
+            <div id="div_18_0" class = "option_div option_0">
+                <button id="button_18_0" type="button" class = "btn option_button  bsp2"
+                    onclick="button(18,0)">
+                    <span id="span_18_0_0" class = "payoff_span"> 2 </span>
+                    <span id="span_18_0_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+            <div id="div_18_1" class = "option_div option_1">
+                <button id="button_18_1" type="button" class = "btn option_button  bsp0"
+                    onclick="button(18,1)">
+                    <span id="span_18_1_0" class = "payoff_span"> 1 </span>
+                    <span id="span_18_1_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_19" class="round_div div_hidden">
+
+            <div id="div_19_0" class = "option_div option_0">
+                <button id="button_19_0" type="button" class = "btn option_button  bsp0"
+                    onclick="button(19,0)">
+                    <span id="span_19_0_0" class = "payoff_span"> 1 </span>
+                    <span id="span_19_0_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+            <div id="div_19_1" class = "option_div option_1">
+                <button id="button_19_1" type="button" class = "btn option_button  bsp2"
+                    onclick="button(19,1)">
+                    <span id="span_19_1_0" class = "payoff_span"> 2 </span>
+                    <span id="span_19_1_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_20" class="round_div div_hidden">
+
+            <div id="div_20_0" class = "option_div option_0">
+                <button id="button_20_0" type="button" class = "btn option_button  bsp2"
+                    onclick="button(20,0)">
+                    <span id="span_20_0_0" class = "payoff_span"> 2 </span>
+                    <span id="span_20_0_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+            <div id="div_20_1" class = "option_div option_1">
+                <button id="button_20_1" type="button" class = "btn option_button  bsp0"
+                    onclick="button(20,1)">
+                    <span id="span_20_1_0" class = "payoff_span"> 1 </span>
+                    <span id="span_20_1_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_21" class="round_div div_hidden">
+
+            <div id="div_21_0" class = "option_div option_0">
+                <button id="button_21_0" type="button" class = "btn option_button  bsp0"
+                    onclick="button(21,0)">
+                    <span id="span_21_0_0" class = "payoff_span"> 1 </span>
+                    <span id="span_21_0_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+            <div id="div_21_1" class = "option_div option_1">
+                <button id="button_21_1" type="button" class = "btn option_button  bsp2"
+                    onclick="button(21,1)">
+                    <span id="span_21_1_0" class = "payoff_span"> 2 </span>
+                    <span id="span_21_1_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_22" class="round_div div_hidden">
+
+            <div id="div_22_0" class = "option_div option_0">
+                <button id="button_22_0" type="button" class = "btn option_button  bsp2"
+                    onclick="button(22,0)">
+                    <span id="span_22_0_0" class = "payoff_span"> 2 </span>
+                    <span id="span_22_0_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+            <div id="div_22_1" class = "option_div option_1">
+                <button id="button_22_1" type="button" class = "btn option_button  bsp3"
+                    onclick="button(22,1)">
+                    <span id="span_22_1_0" class = "payoff_span"> 3 </span>
+                    <span id="span_22_1_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_23" class="round_div div_hidden">
+
+            <div id="div_23_0" class = "option_div option_0">
+                <button id="button_23_0" type="button" class = "btn option_button  bsp1"
+                    onclick="button(23,0)">
+                    <span id="span_23_0_0" class = "payoff_span"> 4 </span>
+                    <span id="span_23_0_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+            <div id="div_23_1" class = "option_div option_1">
+                <button id="button_23_1" type="button" class = "btn option_button  bsp3"
+                    onclick="button(23,1)">
+                    <span id="span_23_1_0" class = "payoff_span"> 3 </span>
+                    <span id="span_23_1_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_24" class="round_div div_hidden">
+
+            <div id="div_24_0" class = "option_div option_0">
+                <button id="button_24_0" type="button" class = "btn option_button  bsp3"
+                    onclick="button(24,0)">
+                    <span id="span_24_0_0" class = "payoff_span"> 3 </span>
+                    <span id="span_24_0_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+            <div id="div_24_1" class = "option_div option_1">
+                <button id="button_24_1" type="button" class = "btn option_button  bsp2"
+                    onclick="button(24,1)">
+                    <span id="span_24_1_0" class = "payoff_span"> 2 </span>
+                    <span id="span_24_1_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_25" class="round_div div_hidden">
+
+            <div id="div_25_0" class = "option_div option_0">
+                <button id="button_25_0" type="button" class = "btn option_button  bsp3"
+                    onclick="button(25,0)">
+                    <span id="span_25_0_0" class = "payoff_span"> 3 </span>
+                    <span id="span_25_0_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+            <div id="div_25_1" class = "option_div option_1">
+                <button id="button_25_1" type="button" class = "btn option_button  bsp0"
+                    onclick="button(25,1)">
+                    <span id="span_25_1_0" class = "payoff_span"> 1 </span>
+                    <span id="span_25_1_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_26" class="round_div div_hidden">
+
+            <div id="div_26_0" class = "option_div option_0">
+                <button id="button_26_0" type="button" class = "btn option_button  bsp2"
+                    onclick="button(26,0)">
+                    <span id="span_26_0_0" class = "payoff_span"> 2 </span>
+                    <span id="span_26_0_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+            <div id="div_26_1" class = "option_div option_1">
+                <button id="button_26_1" type="button" class = "btn option_button  bsp3"
+                    onclick="button(26,1)">
+                    <span id="span_26_1_0" class = "payoff_span"> 3 </span>
+                    <span id="span_26_1_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_27" class="round_div div_hidden">
+
+            <div id="div_27_0" class = "option_div option_0">
+                <button id="button_27_0" type="button" class = "btn option_button  bsp1"
+                    onclick="button(27,0)">
+                    <span id="span_27_0_0" class = "payoff_span"> 4 </span>
+                    <span id="span_27_0_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+            <div id="div_27_1" class = "option_div option_1">
+                <button id="button_27_1" type="button" class = "btn option_button  bsp0"
+                    onclick="button(27,1)">
+                    <span id="span_27_1_0" class = "payoff_span"> 1 </span>
+                    <span id="span_27_1_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_28" class="round_div div_hidden">
+
+            <div id="div_28_0" class = "option_div option_0">
+                <button id="button_28_0" type="button" class = "btn option_button  bsp2"
+                    onclick="button(28,0)">
+                    <span id="span_28_0_0" class = "payoff_span"> 2 </span>
+                    <span id="span_28_0_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+            <div id="div_28_1" class = "option_div option_1">
+                <button id="button_28_1" type="button" class = "btn option_button  bsp1"
+                    onclick="button(28,1)">
+                    <span id="span_28_1_0" class = "payoff_span"> 4 </span>
+                    <span id="span_28_1_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_29" class="round_div div_hidden">
+
+            <div id="div_29_0" class = "option_div option_0">
+                <button id="button_29_0" type="button" class = "btn option_button  bsp3"
+                    onclick="button(29,0)">
+                    <span id="span_29_0_0" class = "payoff_span"> 3 </span>
+                    <span id="span_29_0_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+            <div id="div_29_1" class = "option_div option_1">
+                <button id="button_29_1" type="button" class = "btn option_button  bsp2"
+                    onclick="button(29,1)">
+                    <span id="span_29_1_0" class = "payoff_span"> 2 </span>
+                    <span id="span_29_1_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_30" class="round_div div_hidden">
+
+            <div id="div_30_0" class = "option_div option_0">
+                <button id="button_30_0" type="button" class = "btn option_button  bsp3"
+                    onclick="button(30,0)">
+                    <span id="span_30_0_0" class = "payoff_span"> 3 </span>
+                    <span id="span_30_0_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+            <div id="div_30_1" class = "option_div option_1">
+                <button id="button_30_1" type="button" class = "btn option_button  bsp1"
+                    onclick="button(30,1)">
+                    <span id="span_30_1_0" class = "payoff_span"> 4 </span>
+                    <span id="span_30_1_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_31" class="round_div div_hidden">
+
+            <div id="div_31_0" class = "option_div option_0">
+                <button id="button_31_0" type="button" class = "btn option_button  bsp3"
+                    onclick="button(31,0)">
+                    <span id="span_31_0_0" class = "payoff_span"> 3 </span>
+                    <span id="span_31_0_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+            <div id="div_31_1" class = "option_div option_1">
+                <button id="button_31_1" type="button" class = "btn option_button  bsp0"
+                    onclick="button(31,1)">
+                    <span id="span_31_1_0" class = "payoff_span"> 1 </span>
+                    <span id="span_31_1_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_32" class="round_div div_hidden">
+
+            <div id="div_32_0" class = "option_div option_0">
+                <button id="button_32_0" type="button" class = "btn option_button  bsp1"
+                    onclick="button(32,0)">
+                    <span id="span_32_0_0" class = "payoff_span"> 4 </span>
+                    <span id="span_32_0_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+            <div id="div_32_1" class = "option_div option_1">
+                <button id="button_32_1" type="button" class = "btn option_button  bsp2"
+                    onclick="button(32,1)">
+                    <span id="span_32_1_0" class = "payoff_span"> 2 </span>
+                    <span id="span_32_1_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_33" class="round_div div_hidden">
+
+            <div id="div_33_0" class = "option_div option_0">
+                <button id="button_33_0" type="button" class = "btn option_button  bsp2"
+                    onclick="button(33,0)">
+                    <span id="span_33_0_0" class = "payoff_span"> 2 </span>
+                    <span id="span_33_0_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+            <div id="div_33_1" class = "option_div option_1">
+                <button id="button_33_1" type="button" class = "btn option_button  bsp1"
+                    onclick="button(33,1)">
+                    <span id="span_33_1_0" class = "payoff_span"> 4 </span>
+                    <span id="span_33_1_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_34" class="round_div div_hidden">
+
+            <div id="div_34_0" class = "option_div option_0">
+                <button id="button_34_0" type="button" class = "btn option_button  bsp2"
+                    onclick="button(34,0)">
+                    <span id="span_34_0_0" class = "payoff_span"> 2 </span>
+                    <span id="span_34_0_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+            <div id="div_34_1" class = "option_div option_1">
+                <button id="button_34_1" type="button" class = "btn option_button  bsp0"
+                    onclick="button(34,1)">
+                    <span id="span_34_1_0" class = "payoff_span"> 1 </span>
+                    <span id="span_34_1_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_35" class="round_div div_hidden">
+
+            <div id="div_35_0" class = "option_div option_0">
+                <button id="button_35_0" type="button" class = "btn option_button  bsp3"
+                    onclick="button(35,0)">
+                    <span id="span_35_0_0" class = "payoff_span"> 3 </span>
+                    <span id="span_35_0_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+            <div id="div_35_1" class = "option_div option_1">
+                <button id="button_35_1" type="button" class = "btn option_button  bsp1"
+                    onclick="button(35,1)">
+                    <span id="span_35_1_0" class = "payoff_span"> 4 </span>
+                    <span id="span_35_1_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_36" class="round_div div_hidden">
+
+            <div id="div_36_0" class = "option_div option_0">
+                <button id="button_36_0" type="button" class = "btn option_button  bsp3"
+                    onclick="button(36,0)">
+                    <span id="span_36_0_0" class = "payoff_span"> 3 </span>
+                    <span id="span_36_0_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+            <div id="div_36_1" class = "option_div option_1">
+                <button id="button_36_1" type="button" class = "btn option_button  bsp2"
+                    onclick="button(36,1)">
+                    <span id="span_36_1_0" class = "payoff_span"> 2 </span>
+                    <span id="span_36_1_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_37" class="round_div div_hidden">
+
+            <div id="div_37_0" class = "option_div option_0">
+                <button id="button_37_0" type="button" class = "btn option_button  bsp0"
+                    onclick="button(37,0)">
+                    <span id="span_37_0_0" class = "payoff_span"> 1 </span>
+                    <span id="span_37_0_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+            <div id="div_37_1" class = "option_div option_1">
+                <button id="button_37_1" type="button" class = "btn option_button  bsp3"
+                    onclick="button(37,1)">
+                    <span id="span_37_1_0" class = "payoff_span"> 3 </span>
+                    <span id="span_37_1_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_38" class="round_div div_hidden">
+
+            <div id="div_38_0" class = "option_div option_0">
+                <button id="button_38_0" type="button" class = "btn option_button  bsp0"
+                    onclick="button(38,0)">
+                    <span id="span_38_0_0" class = "payoff_span"> 1 </span>
+                    <span id="span_38_0_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+            <div id="div_38_1" class = "option_div option_1">
+                <button id="button_38_1" type="button" class = "btn option_button  bsp3"
+                    onclick="button(38,1)">
+                    <span id="span_38_1_0" class = "payoff_span"> 3 </span>
+                    <span id="span_38_1_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_39" class="round_div div_hidden">
+
+            <div id="div_39_0" class = "option_div option_0">
+                <button id="button_39_0" type="button" class = "btn option_button  bsp0"
+                    onclick="button(39,0)">
+                    <span id="span_39_0_0" class = "payoff_span"> 1 </span>
+                    <span id="span_39_0_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+            <div id="div_39_1" class = "option_div option_1">
+                <button id="button_39_1" type="button" class = "btn option_button  bsp1"
+                    onclick="button(39,1)">
+                    <span id="span_39_1_0" class = "payoff_span"> 4 </span>
+                    <span id="span_39_1_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_40" class="round_div div_hidden">
+
+            <div id="div_40_0" class = "option_div option_0">
+                <button id="button_40_0" type="button" class = "btn option_button  bsp3"
+                    onclick="button(40,0)">
+                    <span id="span_40_0_0" class = "payoff_span"> 3 </span>
+                    <span id="span_40_0_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+            <div id="div_40_1" class = "option_div option_1">
+                <button id="button_40_1" type="button" class = "btn option_button  bsp0"
+                    onclick="button(40,1)">
+                    <span id="span_40_1_0" class = "payoff_span"> 1 </span>
+                    <span id="span_40_1_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_41" class="round_div div_hidden">
+
+            <div id="div_41_0" class = "option_div option_0">
+                <button id="button_41_0" type="button" class = "btn option_button  bsp3"
+                    onclick="button(41,0)">
+                    <span id="span_41_0_0" class = "payoff_span"> 3 </span>
+                    <span id="span_41_0_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+            <div id="div_41_1" class = "option_div option_1">
+                <button id="button_41_1" type="button" class = "btn option_button  bsp0"
+                    onclick="button(41,1)">
+                    <span id="span_41_1_0" class = "payoff_span"> 1 </span>
+                    <span id="span_41_1_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_42" class="round_div div_hidden">
+
+            <div id="div_42_0" class = "option_div option_0">
+                <button id="button_42_0" type="button" class = "btn option_button  bsp3"
+                    onclick="button(42,0)">
+                    <span id="span_42_0_0" class = "payoff_span"> 3 </span>
+                    <span id="span_42_0_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+            <div id="div_42_1" class = "option_div option_1">
+                <button id="button_42_1" type="button" class = "btn option_button  bsp2"
+                    onclick="button(42,1)">
+                    <span id="span_42_1_0" class = "payoff_span"> 2 </span>
+                    <span id="span_42_1_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_43" class="round_div div_hidden">
+
+            <div id="div_43_0" class = "option_div option_0">
+                <button id="button_43_0" type="button" class = "btn option_button  bsp3"
+                    onclick="button(43,0)">
+                    <span id="span_43_0_0" class = "payoff_span"> 3 </span>
+                    <span id="span_43_0_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+            <div id="div_43_1" class = "option_div option_1">
+                <button id="button_43_1" type="button" class = "btn option_button  bsp2"
+                    onclick="button(43,1)">
+                    <span id="span_43_1_0" class = "payoff_span"> 2 </span>
+                    <span id="span_43_1_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_44" class="round_div div_hidden">
+
+            <div id="div_44_0" class = "option_div option_0">
+                <button id="button_44_0" type="button" class = "btn option_button  bsp3"
+                    onclick="button(44,0)">
+                    <span id="span_44_0_0" class = "payoff_span"> 3 </span>
+                    <span id="span_44_0_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+            <div id="div_44_1" class = "option_div option_1">
+                <button id="button_44_1" type="button" class = "btn option_button  bsp1"
+                    onclick="button(44,1)">
+                    <span id="span_44_1_0" class = "payoff_span"> 4 </span>
+                    <span id="span_44_1_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_45" class="round_div div_hidden">
+
+            <div id="div_45_0" class = "option_div option_0">
+                <button id="button_45_0" type="button" class = "btn option_button  bsp2"
+                    onclick="button(45,0)">
+                    <span id="span_45_0_0" class = "payoff_span"> 2 </span>
+                    <span id="span_45_0_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+            <div id="div_45_1" class = "option_div option_1">
+                <button id="button_45_1" type="button" class = "btn option_button  bsp3"
+                    onclick="button(45,1)">
+                    <span id="span_45_1_0" class = "payoff_span"> 3 </span>
+                    <span id="span_45_1_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_46" class="round_div div_hidden">
+
+            <div id="div_46_0" class = "option_div option_0">
+                <button id="button_46_0" type="button" class = "btn option_button  bsp2"
+                    onclick="button(46,0)">
+                    <span id="span_46_0_0" class = "payoff_span"> 2 </span>
+                    <span id="span_46_0_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+            <div id="div_46_1" class = "option_div option_1">
+                <button id="button_46_1" type="button" class = "btn option_button  bsp3"
+                    onclick="button(46,1)">
+                    <span id="span_46_1_0" class = "payoff_span"> 3 </span>
+                    <span id="span_46_1_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_47" class="round_div div_hidden">
+
+            <div id="div_47_0" class = "option_div option_0">
+                <button id="button_47_0" type="button" class = "btn option_button  bsp3"
+                    onclick="button(47,0)">
+                    <span id="span_47_0_0" class = "payoff_span"> 3 </span>
+                    <span id="span_47_0_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+            <div id="div_47_1" class = "option_div option_1">
+                <button id="button_47_1" type="button" class = "btn option_button  bsp1"
+                    onclick="button(47,1)">
+                    <span id="span_47_1_0" class = "payoff_span"> 4 </span>
+                    <span id="span_47_1_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_48" class="round_div div_hidden">
+
+            <div id="div_48_0" class = "option_div option_0">
+                <button id="button_48_0" type="button" class = "btn option_button  bsp1"
+                    onclick="button(48,0)">
+                    <span id="span_48_0_0" class = "payoff_span"> 4 </span>
+                    <span id="span_48_0_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+            <div id="div_48_1" class = "option_div option_1">
+                <button id="button_48_1" type="button" class = "btn option_button  bsp3"
+                    onclick="button(48,1)">
+                    <span id="span_48_1_0" class = "payoff_span"> 3 </span>
+                    <span id="span_48_1_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_49" class="round_div div_hidden">
+
+            <div id="div_49_0" class = "option_div option_0">
+                <button id="button_49_0" type="button" class = "btn option_button  bsp2"
+                    onclick="button(49,0)">
+                    <span id="span_49_0_0" class = "payoff_span"> 2 </span>
+                    <span id="span_49_0_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+            <div id="div_49_1" class = "option_div option_1">
+                <button id="button_49_1" type="button" class = "btn option_button  bsp0"
+                    onclick="button(49,1)">
+                    <span id="span_49_1_0" class = "payoff_span"> 1 </span>
+                    <span id="span_49_1_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_50" class="round_div div_hidden">
+
+            <div id="div_50_0" class = "option_div option_0">
+                <button id="button_50_0" type="button" class = "btn option_button  bsp3"
+                    onclick="button(50,0)">
+                    <span id="span_50_0_0" class = "payoff_span"> 3 </span>
+                    <span id="span_50_0_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+            <div id="div_50_1" class = "option_div option_1">
+                <button id="button_50_1" type="button" class = "btn option_button  bsp1"
+                    onclick="button(50,1)">
+                    <span id="span_50_1_0" class = "payoff_span"> 4 </span>
+                    <span id="span_50_1_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_51" class="round_div div_hidden">
+
+            <div id="div_51_0" class = "option_div option_0">
+                <button id="button_51_0" type="button" class = "btn option_button  bsp1"
+                    onclick="button(51,0)">
+                    <span id="span_51_0_0" class = "payoff_span"> 4 </span>
+                    <span id="span_51_0_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+            <div id="div_51_1" class = "option_div option_1">
+                <button id="button_51_1" type="button" class = "btn option_button  bsp0"
+                    onclick="button(51,1)">
+                    <span id="span_51_1_0" class = "payoff_span"> 1 </span>
+                    <span id="span_51_1_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_52" class="round_div div_hidden">
+
+            <div id="div_52_0" class = "option_div option_0">
+                <button id="button_52_0" type="button" class = "btn option_button  bsp2"
+                    onclick="button(52,0)">
+                    <span id="span_52_0_0" class = "payoff_span"> 2 </span>
+                    <span id="span_52_0_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+            <div id="div_52_1" class = "option_div option_1">
+                <button id="button_52_1" type="button" class = "btn option_button  bsp0"
+                    onclick="button(52,1)">
+                    <span id="span_52_1_0" class = "payoff_span"> 1 </span>
+                    <span id="span_52_1_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_53" class="round_div div_hidden">
+
+            <div id="div_53_0" class = "option_div option_0">
+                <button id="button_53_0" type="button" class = "btn option_button  bsp0"
+                    onclick="button(53,0)">
+                    <span id="span_53_0_0" class = "payoff_span"> 1 </span>
+                    <span id="span_53_0_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+            <div id="div_53_1" class = "option_div option_1">
+                <button id="button_53_1" type="button" class = "btn option_button  bsp3"
+                    onclick="button(53,1)">
+                    <span id="span_53_1_0" class = "payoff_span"> 3 </span>
+                    <span id="span_53_1_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_54" class="round_div div_hidden">
+
+            <div id="div_54_0" class = "option_div option_0">
+                <button id="button_54_0" type="button" class = "btn option_button  bsp2"
+                    onclick="button(54,0)">
+                    <span id="span_54_0_0" class = "payoff_span"> 2 </span>
+                    <span id="span_54_0_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+            <div id="div_54_1" class = "option_div option_1">
+                <button id="button_54_1" type="button" class = "btn option_button  bsp1"
+                    onclick="button(54,1)">
+                    <span id="span_54_1_0" class = "payoff_span"> 4 </span>
+                    <span id="span_54_1_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_55" class="round_div div_hidden">
+
+            <div id="div_55_0" class = "option_div option_0">
+                <button id="button_55_0" type="button" class = "btn option_button  bsp3"
+                    onclick="button(55,0)">
+                    <span id="span_55_0_0" class = "payoff_span"> 3 </span>
+                    <span id="span_55_0_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+            <div id="div_55_1" class = "option_div option_1">
+                <button id="button_55_1" type="button" class = "btn option_button  bsp0"
+                    onclick="button(55,1)">
+                    <span id="span_55_1_0" class = "payoff_span"> 1 </span>
+                    <span id="span_55_1_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_56" class="round_div div_hidden">
+
+            <div id="div_56_0" class = "option_div option_0">
+                <button id="button_56_0" type="button" class = "btn option_button  bsp2"
+                    onclick="button(56,0)">
+                    <span id="span_56_0_0" class = "payoff_span"> 2 </span>
+                    <span id="span_56_0_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+            <div id="div_56_1" class = "option_div option_1">
+                <button id="button_56_1" type="button" class = "btn option_button  bsp1"
+                    onclick="button(56,1)">
+                    <span id="span_56_1_0" class = "payoff_span"> 4 </span>
+                    <span id="span_56_1_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_57" class="round_div div_hidden">
+
+            <div id="div_57_0" class = "option_div option_0">
+                <button id="button_57_0" type="button" class = "btn option_button  bsp1"
+                    onclick="button(57,0)">
+                    <span id="span_57_0_0" class = "payoff_span"> 4 </span>
+                    <span id="span_57_0_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+            <div id="div_57_1" class = "option_div option_1">
+                <button id="button_57_1" type="button" class = "btn option_button  bsp2"
+                    onclick="button(57,1)">
+                    <span id="span_57_1_0" class = "payoff_span"> 2 </span>
+                    <span id="span_57_1_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_58" class="round_div div_hidden">
+
+            <div id="div_58_0" class = "option_div option_0">
+                <button id="button_58_0" type="button" class = "btn option_button  bsp2"
+                    onclick="button(58,0)">
+                    <span id="span_58_0_0" class = "payoff_span"> 2 </span>
+                    <span id="span_58_0_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+            <div id="div_58_1" class = "option_div option_1">
+                <button id="button_58_1" type="button" class = "btn option_button  bsp1"
+                    onclick="button(58,1)">
+                    <span id="span_58_1_0" class = "payoff_span"> 4 </span>
+                    <span id="span_58_1_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_59" class="round_div div_hidden">
+
+            <div id="div_59_0" class = "option_div option_0">
+                <button id="button_59_0" type="button" class = "btn option_button  bsp0"
+                    onclick="button(59,0)">
+                    <span id="span_59_0_0" class = "payoff_span"> 1 </span>
+                    <span id="span_59_0_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+            <div id="div_59_1" class = "option_div option_1">
+                <button id="button_59_1" type="button" class = "btn option_button  bsp2"
+                    onclick="button(59,1)">
+                    <span id="span_59_1_0" class = "payoff_span"> 2 </span>
+                    <span id="span_59_1_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_60" class="round_div div_hidden">
+
+            <div id="div_60_0" class = "option_div option_0">
+                <button id="button_60_0" type="button" class = "btn option_button  bsp3"
+                    onclick="button(60,0)">
+                    <span id="span_60_0_0" class = "payoff_span"> 3 </span>
+                    <span id="span_60_0_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+            <div id="div_60_1" class = "option_div option_1">
+                <button id="button_60_1" type="button" class = "btn option_button  bsp1"
+                    onclick="button(60,1)">
+                    <span id="span_60_1_0" class = "payoff_span"> 4 </span>
+                    <span id="span_60_1_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_61" class="round_div div_hidden">
+
+            <div id="div_61_0" class = "option_div option_0">
+                <button id="button_61_0" type="button" class = "btn option_button  bsp2"
+                    onclick="button(61,0)">
+                    <span id="span_61_0_0" class = "payoff_span"> 2 </span>
+                    <span id="span_61_0_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+            <div id="div_61_1" class = "option_div option_1">
+                <button id="button_61_1" type="button" class = "btn option_button  bsp0"
+                    onclick="button(61,1)">
+                    <span id="span_61_1_0" class = "payoff_span"> 1 </span>
+                    <span id="span_61_1_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_62" class="round_div div_hidden">
+
+            <div id="div_62_0" class = "option_div option_0">
+                <button id="button_62_0" type="button" class = "btn option_button  bsp1"
+                    onclick="button(62,0)">
+                    <span id="span_62_0_0" class = "payoff_span"> 4 </span>
+                    <span id="span_62_0_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+            <div id="div_62_1" class = "option_div option_1">
+                <button id="button_62_1" type="button" class = "btn option_button  bsp2"
+                    onclick="button(62,1)">
+                    <span id="span_62_1_0" class = "payoff_span"> 2 </span>
+                    <span id="span_62_1_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_63" class="round_div div_hidden">
+
+            <div id="div_63_0" class = "option_div option_0">
+                <button id="button_63_0" type="button" class = "btn option_button  bsp3"
+                    onclick="button(63,0)">
+                    <span id="span_63_0_0" class = "payoff_span"> 3 </span>
+                    <span id="span_63_0_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+            <div id="div_63_1" class = "option_div option_1">
+                <button id="button_63_1" type="button" class = "btn option_button  bsp0"
+                    onclick="button(63,1)">
+                    <span id="span_63_1_0" class = "payoff_span"> 1 </span>
+                    <span id="span_63_1_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_64" class="round_div div_hidden">
+
+            <div id="div_64_0" class = "option_div option_0">
+                <button id="button_64_0" type="button" class = "btn option_button  bsp0"
+                    onclick="button(64,0)">
+                    <span id="span_64_0_0" class = "payoff_span"> 1 </span>
+                    <span id="span_64_0_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+            <div id="div_64_1" class = "option_div option_1">
+                <button id="button_64_1" type="button" class = "btn option_button  bsp2"
+                    onclick="button(64,1)">
+                    <span id="span_64_1_0" class = "payoff_span"> 2 </span>
+                    <span id="span_64_1_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_65" class="round_div div_hidden">
+
+            <div id="div_65_0" class = "option_div option_0">
+                <button id="button_65_0" type="button" class = "btn option_button  bsp3"
+                    onclick="button(65,0)">
+                    <span id="span_65_0_0" class = "payoff_span"> 3 </span>
+                    <span id="span_65_0_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+            <div id="div_65_1" class = "option_div option_1">
+                <button id="button_65_1" type="button" class = "btn option_button  bsp0"
+                    onclick="button(65,1)">
+                    <span id="span_65_1_0" class = "payoff_span"> 1 </span>
+                    <span id="span_65_1_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_66" class="round_div div_hidden">
+
+            <div id="div_66_0" class = "option_div option_0">
+                <button id="button_66_0" type="button" class = "btn option_button  bsp2"
+                    onclick="button(66,0)">
+                    <span id="span_66_0_0" class = "payoff_span"> 2 </span>
+                    <span id="span_66_0_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+            <div id="div_66_1" class = "option_div option_1">
+                <button id="button_66_1" type="button" class = "btn option_button  bsp1"
+                    onclick="button(66,1)">
+                    <span id="span_66_1_0" class = "payoff_span"> 4 </span>
+                    <span id="span_66_1_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_67" class="round_div div_hidden">
+
+            <div id="div_67_0" class = "option_div option_0">
+                <button id="button_67_0" type="button" class = "btn option_button  bsp2"
+                    onclick="button(67,0)">
+                    <span id="span_67_0_0" class = "payoff_span"> 2 </span>
+                    <span id="span_67_0_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+            <div id="div_67_1" class = "option_div option_1">
+                <button id="button_67_1" type="button" class = "btn option_button  bsp3"
+                    onclick="button(67,1)">
+                    <span id="span_67_1_0" class = "payoff_span"> 3 </span>
+                    <span id="span_67_1_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_68" class="round_div div_hidden">
+
+            <div id="div_68_0" class = "option_div option_0">
+                <button id="button_68_0" type="button" class = "btn option_button  bsp3"
+                    onclick="button(68,0)">
+                    <span id="span_68_0_0" class = "payoff_span"> 3 </span>
+                    <span id="span_68_0_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+            <div id="div_68_1" class = "option_div option_1">
+                <button id="button_68_1" type="button" class = "btn option_button  bsp2"
+                    onclick="button(68,1)">
+                    <span id="span_68_1_0" class = "payoff_span"> 2 </span>
+                    <span id="span_68_1_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_69" class="round_div div_hidden">
+
+            <div id="div_69_0" class = "option_div option_0">
+                <button id="button_69_0" type="button" class = "btn option_button  bsp2"
+                    onclick="button(69,0)">
+                    <span id="span_69_0_0" class = "payoff_span"> 2 </span>
+                    <span id="span_69_0_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+            <div id="div_69_1" class = "option_div option_1">
+                <button id="button_69_1" type="button" class = "btn option_button  bsp0"
+                    onclick="button(69,1)">
+                    <span id="span_69_1_0" class = "payoff_span"> 1 </span>
+                    <span id="span_69_1_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_70" class="round_div div_hidden">
+
+            <div id="div_70_0" class = "option_div option_0">
+                <button id="button_70_0" type="button" class = "btn option_button  bsp1"
+                    onclick="button(70,0)">
+                    <span id="span_70_0_0" class = "payoff_span"> 4 </span>
+                    <span id="span_70_0_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+            <div id="div_70_1" class = "option_div option_1">
+                <button id="button_70_1" type="button" class = "btn option_button  bsp3"
+                    onclick="button(70,1)">
+                    <span id="span_70_1_0" class = "payoff_span"> 3 </span>
+                    <span id="span_70_1_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_71" class="round_div div_hidden">
+
+            <div id="div_71_0" class = "option_div option_0">
+                <button id="button_71_0" type="button" class = "btn option_button  bsp3"
+                    onclick="button(71,0)">
+                    <span id="span_71_0_0" class = "payoff_span"> 3 </span>
+                    <span id="span_71_0_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+            <div id="div_71_1" class = "option_div option_1">
+                <button id="button_71_1" type="button" class = "btn option_button  bsp0"
+                    onclick="button(71,1)">
+                    <span id="span_71_1_0" class = "payoff_span"> 1 </span>
+                    <span id="span_71_1_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_72" class="round_div div_hidden">
+
+            <div id="div_72_0" class = "option_div option_0">
+                <button id="button_72_0" type="button" class = "btn option_button  bsp2"
+                    onclick="button(72,0)">
+                    <span id="span_72_0_0" class = "payoff_span"> 2 </span>
+                    <span id="span_72_0_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+            <div id="div_72_1" class = "option_div option_1">
+                <button id="button_72_1" type="button" class = "btn option_button  bsp1"
+                    onclick="button(72,1)">
+                    <span id="span_72_1_0" class = "payoff_span"> 4 </span>
+                    <span id="span_72_1_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_73" class="round_div div_hidden">
+
+            <div id="div_73_0" class = "option_div option_0">
+                <button id="button_73_0" type="button" class = "btn option_button  bsp2"
+                    onclick="button(73,0)">
+                    <span id="span_73_0_0" class = "payoff_span"> 2 </span>
+                    <span id="span_73_0_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+            <div id="div_73_1" class = "option_div option_1">
+                <button id="button_73_1" type="button" class = "btn option_button  bsp3"
+                    onclick="button(73,1)">
+                    <span id="span_73_1_0" class = "payoff_span"> 3 </span>
+                    <span id="span_73_1_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_74" class="round_div div_hidden">
+
+            <div id="div_74_0" class = "option_div option_0">
+                <button id="button_74_0" type="button" class = "btn option_button  bsp2"
+                    onclick="button(74,0)">
+                    <span id="span_74_0_0" class = "payoff_span"> 2 </span>
+                    <span id="span_74_0_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+            <div id="div_74_1" class = "option_div option_1">
+                <button id="button_74_1" type="button" class = "btn option_button  bsp0"
+                    onclick="button(74,1)">
+                    <span id="span_74_1_0" class = "payoff_span"> 1 </span>
+                    <span id="span_74_1_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_75" class="round_div div_hidden">
+
+            <div id="div_75_0" class = "option_div option_0">
+                <button id="button_75_0" type="button" class = "btn option_button  bsp1"
+                    onclick="button(75,0)">
+                    <span id="span_75_0_0" class = "payoff_span"> 4 </span>
+                    <span id="span_75_0_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+            <div id="div_75_1" class = "option_div option_1">
+                <button id="button_75_1" type="button" class = "btn option_button  bsp3"
+                    onclick="button(75,1)">
+                    <span id="span_75_1_0" class = "payoff_span"> 3 </span>
+                    <span id="span_75_1_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_76" class="round_div div_hidden">
+
+            <div id="div_76_0" class = "option_div option_0">
+                <button id="button_76_0" type="button" class = "btn option_button  bsp0"
+                    onclick="button(76,0)">
+                    <span id="span_76_0_0" class = "payoff_span"> 1 </span>
+                    <span id="span_76_0_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+            <div id="div_76_1" class = "option_div option_1">
+                <button id="button_76_1" type="button" class = "btn option_button  bsp3"
+                    onclick="button(76,1)">
+                    <span id="span_76_1_0" class = "payoff_span"> 3 </span>
+                    <span id="span_76_1_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_77" class="round_div div_hidden">
+
+            <div id="div_77_0" class = "option_div option_0">
+                <button id="button_77_0" type="button" class = "btn option_button  bsp3"
+                    onclick="button(77,0)">
+                    <span id="span_77_0_0" class = "payoff_span"> 3 </span>
+                    <span id="span_77_0_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+            <div id="div_77_1" class = "option_div option_1">
+                <button id="button_77_1" type="button" class = "btn option_button  bsp0"
+                    onclick="button(77,1)">
+                    <span id="span_77_1_0" class = "payoff_span"> 1 </span>
+                    <span id="span_77_1_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_78" class="round_div div_hidden">
+
+            <div id="div_78_0" class = "option_div option_0">
+                <button id="button_78_0" type="button" class = "btn option_button  bsp0"
+                    onclick="button(78,0)">
+                    <span id="span_78_0_0" class = "payoff_span"> 1 </span>
+                    <span id="span_78_0_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+            <div id="div_78_1" class = "option_div option_1">
+                <button id="button_78_1" type="button" class = "btn option_button  bsp1"
+                    onclick="button(78,1)">
+                    <span id="span_78_1_0" class = "payoff_span"> 4 </span>
+                    <span id="span_78_1_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_79" class="round_div div_hidden">
+
+            <div id="div_79_0" class = "option_div option_0">
+                <button id="button_79_0" type="button" class = "btn option_button  bsp1"
+                    onclick="button(79,0)">
+                    <span id="span_79_0_0" class = "payoff_span"> 4 </span>
+                    <span id="span_79_0_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+            <div id="div_79_1" class = "option_div option_1">
+                <button id="button_79_1" type="button" class = "btn option_button  bsp3"
+                    onclick="button(79,1)">
+                    <span id="span_79_1_0" class = "payoff_span"> 3 </span>
+                    <span id="span_79_1_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_80" class="round_div div_hidden">
+
+            <div id="div_80_0" class = "option_div option_0">
+                <button id="button_80_0" type="button" class = "btn option_button  bsp1"
+                    onclick="button(80,0)">
+                    <span id="span_80_0_0" class = "payoff_span"> 4 </span>
+                    <span id="span_80_0_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+            <div id="div_80_1" class = "option_div option_1">
+                <button id="button_80_1" type="button" class = "btn option_button  bsp2"
+                    onclick="button(80,1)">
+                    <span id="span_80_1_0" class = "payoff_span"> 2 </span>
+                    <span id="span_80_1_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_81" class="round_div div_hidden">
+
+            <div id="div_81_0" class = "option_div option_0">
+                <button id="button_81_0" type="button" class = "btn option_button  bsp0"
+                    onclick="button(81,0)">
+                    <span id="span_81_0_0" class = "payoff_span"> 1 </span>
+                    <span id="span_81_0_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+            <div id="div_81_1" class = "option_div option_1">
+                <button id="button_81_1" type="button" class = "btn option_button  bsp2"
+                    onclick="button(81,1)">
+                    <span id="span_81_1_0" class = "payoff_span"> 2 </span>
+                    <span id="span_81_1_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_82" class="round_div div_hidden">
+
+            <div id="div_82_0" class = "option_div option_0">
+                <button id="button_82_0" type="button" class = "btn option_button  bsp2"
+                    onclick="button(82,0)">
+                    <span id="span_82_0_0" class = "payoff_span"> 2 </span>
+                    <span id="span_82_0_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+            <div id="div_82_1" class = "option_div option_1">
+                <button id="button_82_1" type="button" class = "btn option_button  bsp0"
+                    onclick="button(82,1)">
+                    <span id="span_82_1_0" class = "payoff_span"> 1 </span>
+                    <span id="span_82_1_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_83" class="round_div div_hidden">
+
+            <div id="div_83_0" class = "option_div option_0">
+                <button id="button_83_0" type="button" class = "btn option_button  bsp1"
+                    onclick="button(83,0)">
+                    <span id="span_83_0_0" class = "payoff_span"> 4 </span>
+                    <span id="span_83_0_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+            <div id="div_83_1" class = "option_div option_1">
+                <button id="button_83_1" type="button" class = "btn option_button  bsp0"
+                    onclick="button(83,1)">
+                    <span id="span_83_1_0" class = "payoff_span"> 1 </span>
+                    <span id="span_83_1_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_84" class="round_div div_hidden">
+
+            <div id="div_84_0" class = "option_div option_0">
+                <button id="button_84_0" type="button" class = "btn option_button  bsp3"
+                    onclick="button(84,0)">
+                    <span id="span_84_0_0" class = "payoff_span"> 3 </span>
+                    <span id="span_84_0_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+            <div id="div_84_1" class = "option_div option_1">
+                <button id="button_84_1" type="button" class = "btn option_button  bsp0"
+                    onclick="button(84,1)">
+                    <span id="span_84_1_0" class = "payoff_span"> 1 </span>
+                    <span id="span_84_1_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_85" class="round_div div_hidden">
+
+            <div id="div_85_0" class = "option_div option_0">
+                <button id="button_85_0" type="button" class = "btn option_button  bsp0"
+                    onclick="button(85,0)">
+                    <span id="span_85_0_0" class = "payoff_span"> 1 </span>
+                    <span id="span_85_0_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+            <div id="div_85_1" class = "option_div option_1">
+                <button id="button_85_1" type="button" class = "btn option_button  bsp1"
+                    onclick="button(85,1)">
+                    <span id="span_85_1_0" class = "payoff_span"> 4 </span>
+                    <span id="span_85_1_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_86" class="round_div div_hidden">
+
+            <div id="div_86_0" class = "option_div option_0">
+                <button id="button_86_0" type="button" class = "btn option_button  bsp2"
+                    onclick="button(86,0)">
+                    <span id="span_86_0_0" class = "payoff_span"> 2 </span>
+                    <span id="span_86_0_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+            <div id="div_86_1" class = "option_div option_1">
+                <button id="button_86_1" type="button" class = "btn option_button  bsp1"
+                    onclick="button(86,1)">
+                    <span id="span_86_1_0" class = "payoff_span"> 4 </span>
+                    <span id="span_86_1_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_87" class="round_div div_hidden">
+
+            <div id="div_87_0" class = "option_div option_0">
+                <button id="button_87_0" type="button" class = "btn option_button  bsp1"
+                    onclick="button(87,0)">
+                    <span id="span_87_0_0" class = "payoff_span"> 4 </span>
+                    <span id="span_87_0_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+            <div id="div_87_1" class = "option_div option_1">
+                <button id="button_87_1" type="button" class = "btn option_button  bsp0"
+                    onclick="button(87,1)">
+                    <span id="span_87_1_0" class = "payoff_span"> 1 </span>
+                    <span id="span_87_1_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_88" class="round_div div_hidden">
+
+            <div id="div_88_0" class = "option_div option_0">
+                <button id="button_88_0" type="button" class = "btn option_button  bsp2"
+                    onclick="button(88,0)">
+                    <span id="span_88_0_0" class = "payoff_span"> 2 </span>
+                    <span id="span_88_0_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+            <div id="div_88_1" class = "option_div option_1">
+                <button id="button_88_1" type="button" class = "btn option_button  bsp1"
+                    onclick="button(88,1)">
+                    <span id="span_88_1_0" class = "payoff_span"> 4 </span>
+                    <span id="span_88_1_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_89" class="round_div div_hidden">
+
+            <div id="div_89_0" class = "option_div option_0">
+                <button id="button_89_0" type="button" class = "btn option_button  bsp1"
+                    onclick="button(89,0)">
+                    <span id="span_89_0_0" class = "payoff_span"> 4 </span>
+                    <span id="span_89_0_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+            <div id="div_89_1" class = "option_div option_1">
+                <button id="button_89_1" type="button" class = "btn option_button  bsp3"
+                    onclick="button(89,1)">
+                    <span id="span_89_1_0" class = "payoff_span"> 3 </span>
+                    <span id="span_89_1_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_90" class="round_div div_hidden">
+
+            <div id="div_90_0" class = "option_div option_0">
+                <button id="button_90_0" type="button" class = "btn option_button  bsp1"
+                    onclick="button(90,0)">
+                    <span id="span_90_0_0" class = "payoff_span"> 4 </span>
+                    <span id="span_90_0_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+            <div id="div_90_1" class = "option_div option_1">
+                <button id="button_90_1" type="button" class = "btn option_button  bsp3"
+                    onclick="button(90,1)">
+                    <span id="span_90_1_0" class = "payoff_span"> 3 </span>
+                    <span id="span_90_1_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_91" class="round_div div_hidden">
+
+            <div id="div_91_0" class = "option_div option_0">
+                <button id="button_91_0" type="button" class = "btn option_button  bsp1"
+                    onclick="button(91,0)">
+                    <span id="span_91_0_0" class = "payoff_span"> 4 </span>
+                    <span id="span_91_0_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+            <div id="div_91_1" class = "option_div option_1">
+                <button id="button_91_1" type="button" class = "btn option_button  bsp0"
+                    onclick="button(91,1)">
+                    <span id="span_91_1_0" class = "payoff_span"> 1 </span>
+                    <span id="span_91_1_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_92" class="round_div div_hidden">
+
+            <div id="div_92_0" class = "option_div option_0">
+                <button id="button_92_0" type="button" class = "btn option_button  bsp1"
+                    onclick="button(92,0)">
+                    <span id="span_92_0_0" class = "payoff_span"> 4 </span>
+                    <span id="span_92_0_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+            <div id="div_92_1" class = "option_div option_1">
+                <button id="button_92_1" type="button" class = "btn option_button  bsp3"
+                    onclick="button(92,1)">
+                    <span id="span_92_1_0" class = "payoff_span"> 3 </span>
+                    <span id="span_92_1_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_93" class="round_div div_hidden">
+
+            <div id="div_93_0" class = "option_div option_0">
+                <button id="button_93_0" type="button" class = "btn option_button  bsp0"
+                    onclick="button(93,0)">
+                    <span id="span_93_0_0" class = "payoff_span"> 1 </span>
+                    <span id="span_93_0_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+            <div id="div_93_1" class = "option_div option_1">
+                <button id="button_93_1" type="button" class = "btn option_button  bsp3"
+                    onclick="button(93,1)">
+                    <span id="span_93_1_0" class = "payoff_span"> 3 </span>
+                    <span id="span_93_1_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_94" class="round_div div_hidden">
+
+            <div id="div_94_0" class = "option_div option_0">
+                <button id="button_94_0" type="button" class = "btn option_button  bsp1"
+                    onclick="button(94,0)">
+                    <span id="span_94_0_0" class = "payoff_span"> 4 </span>
+                    <span id="span_94_0_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+            <div id="div_94_1" class = "option_div option_1">
+                <button id="button_94_1" type="button" class = "btn option_button  bsp0"
+                    onclick="button(94,1)">
+                    <span id="span_94_1_0" class = "payoff_span"> 1 </span>
+                    <span id="span_94_1_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_95" class="round_div div_hidden">
+
+            <div id="div_95_0" class = "option_div option_0">
+                <button id="button_95_0" type="button" class = "btn option_button  bsp3"
+                    onclick="button(95,0)">
+                    <span id="span_95_0_0" class = "payoff_span"> 3 </span>
+                    <span id="span_95_0_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+            <div id="div_95_1" class = "option_div option_1">
+                <button id="button_95_1" type="button" class = "btn option_button  bsp1"
+                    onclick="button(95,1)">
+                    <span id="span_95_1_0" class = "payoff_span"> 4 </span>
+                    <span id="span_95_1_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_96" class="round_div div_hidden">
+
+            <div id="div_96_0" class = "option_div option_0">
+                <button id="button_96_0" type="button" class = "btn option_button  bsp2"
+                    onclick="button(96,0)">
+                    <span id="span_96_0_0" class = "payoff_span"> 2 </span>
+                    <span id="span_96_0_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+            <div id="div_96_1" class = "option_div option_1">
+                <button id="button_96_1" type="button" class = "btn option_button  bsp1"
+                    onclick="button(96,1)">
+                    <span id="span_96_1_0" class = "payoff_span"> 4 </span>
+                    <span id="span_96_1_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_97" class="round_div div_hidden">
+
+            <div id="div_97_0" class = "option_div option_0">
+                <button id="button_97_0" type="button" class = "btn option_button  bsp3"
+                    onclick="button(97,0)">
+                    <span id="span_97_0_0" class = "payoff_span"> 3 </span>
+                    <span id="span_97_0_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+            <div id="div_97_1" class = "option_div option_1">
+                <button id="button_97_1" type="button" class = "btn option_button  bsp1"
+                    onclick="button(97,1)">
+                    <span id="span_97_1_0" class = "payoff_span"> 4 </span>
+                    <span id="span_97_1_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_98" class="round_div div_hidden">
+
+            <div id="div_98_0" class = "option_div option_0">
+                <button id="button_98_0" type="button" class = "btn option_button  bsp2"
+                    onclick="button(98,0)">
+                    <span id="span_98_0_0" class = "payoff_span"> 2 </span>
+                    <span id="span_98_0_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+            <div id="div_98_1" class = "option_div option_1">
+                <button id="button_98_1" type="button" class = "btn option_button  bsp0"
+                    onclick="button(98,1)">
+                    <span id="span_98_1_0" class = "payoff_span"> 1 </span>
+                    <span id="span_98_1_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_99" class="round_div div_hidden">
+
+            <div id="div_99_0" class = "option_div option_0">
+                <button id="button_99_0" type="button" class = "btn option_button  bsp1"
+                    onclick="button(99,0)">
+                    <span id="span_99_0_0" class = "payoff_span"> 4 </span>
+                    <span id="span_99_0_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+            <div id="div_99_1" class = "option_div option_1">
+                <button id="button_99_1" type="button" class = "btn option_button  bsp3"
+                    onclick="button(99,1)">
+                    <span id="span_99_1_0" class = "payoff_span"> 3 </span>
+                    <span id="span_99_1_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_100" class="round_div div_hidden">
+
+            <div id="div_100_0" class = "option_div option_0">
+                <button id="button_100_0" type="button" class = "btn option_button  bsp0"
+                    onclick="button(100,0)">
+                    <span id="span_100_0_0" class = "payoff_span"> 1 </span>
+                    <span id="span_100_0_1" class = "payoff_span"> 2 </span>
+                </button>
+            </div>
+
+
+            <div id="div_100_1" class = "option_div option_1">
+                <button id="button_100_1" type="button" class = "btn option_button  bsp3"
+                    onclick="button(100,1)">
+                    <span id="span_100_1_0" class = "payoff_span"> 3 </span>
+                    <span id="span_100_1_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_101" class="round_div div_hidden">
+
+            <div id="div_101_0" class = "option_div option_0">
+                <button id="button_101_0" type="button" class = "btn option_button  bsp1"
+                    onclick="button(101,0)">
+                    <span id="span_101_0_0" class = "payoff_span"> 4 </span>
+                    <span id="span_101_0_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+            <div id="div_101_1" class = "option_div option_1">
+                <button id="button_101_1" type="button" class = "btn option_button  bsp2"
+                    onclick="button(101,1)">
+                    <span id="span_101_1_0" class = "payoff_span"> 2 </span>
+                    <span id="span_101_1_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_102" class="round_div div_hidden">
+
+            <div id="div_102_0" class = "option_div option_0">
+                <button id="button_102_0" type="button" class = "btn option_button  bsp3"
+                    onclick="button(102,0)">
+                    <span id="span_102_0_0" class = "payoff_span"> 3 </span>
+                    <span id="span_102_0_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+            <div id="div_102_1" class = "option_div option_1">
+                <button id="button_102_1" type="button" class = "btn option_button  bsp2"
+                    onclick="button(102,1)">
+                    <span id="span_102_1_0" class = "payoff_span"> 2 </span>
+                    <span id="span_102_1_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_103" class="round_div div_hidden">
+
+            <div id="div_103_0" class = "option_div option_0">
+                <button id="button_103_0" type="button" class = "btn option_button  bsp2"
+                    onclick="button(103,0)">
+                    <span id="span_103_0_0" class = "payoff_span"> 2 </span>
+                    <span id="span_103_0_1" class = "payoff_span"> 1 </span>
+                </button>
+            </div>
+
+
+            <div id="div_103_1" class = "option_div option_1">
+                <button id="button_103_1" type="button" class = "btn option_button  bsp1"
+                    onclick="button(103,1)">
+                    <span id="span_103_1_0" class = "payoff_span"> 4 </span>
+                    <span id="span_103_1_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+        <div id="round_104" class="round_div div_hidden">
+
+            <div id="div_104_0" class = "option_div option_0">
+                <button id="button_104_0" type="button" class = "btn option_button  bsp3"
+                    onclick="button(104,0)">
+                    <span id="span_104_0_0" class = "payoff_span"> 3 </span>
+                    <span id="span_104_0_1" class = "payoff_span"> 6 </span>
+                </button>
+            </div>
+
+
+            <div id="div_104_1" class = "option_div option_1">
+                <button id="button_104_1" type="button" class = "btn option_button  bsp1"
+                    onclick="button(104,1)">
+                    <span id="span_104_1_0" class = "payoff_span"> 4 </span>
+                    <span id="span_104_1_1" class = "payoff_span"> 4 </span>
+                </button>
+            </div>
+
+
+        </div>
+
+
+    <div class= "text" id="choose">Auswahl:</div>
+    <div class= "text" id="last_choice"> Gerade gewählt:</div>
+    <div class= "text" id="second_last_choice">Davor gewählt:</div>
+
+    <div class = "timer_frame"> <div id="timer_bar"> </div> </div>
+    <div class = "text" id = "timer_text"> Verbleibende Zeit</div>
+
+    <div class= "text" id="round"> <span id="round_counter">1</span> / 105 </div>
+    <div class= "text" id="round_text"> Runde </div>
+
+    <div class= "text" id="points">Gesamtpunkte </div>
+    <div class = "text" id="score">0</div>
+
+
+
+<div id="control-container" class="panel panel-info">
+
+  <div class="panel-heading">Hinweise und Erklärungen</div>
+      <div class="panel-body">
+
+            <button id="help1" type="button" class="btn help-button" onclick="popovers(1)">A: Bildschirm</button>
+            <button id="help2" type="button" class="btn help-button" onclick="popovers(2)">B: Punkte</button>
+            <button id="help3" type="button" class="btn help-button" onclick = "toggle_random()"
+            data-toggle="popover" title="Punktzahlen zufällig erhöht" data-html="true" data-content='Solange dieser Button auf "an" steht, werden alle erhaltenen Punkte zufällig erhöht, wie unter <b>B: Punkte</b> beschrieben. Probieren Sie dies ein wenig aus.
+            <br><br> Wenn Sie alles verstanden haben, können Sie unten rechts auf "weiter" drücken, um mit der nächsten Seite fortzufahren.' data-placement="bottom" data-trigger="manual"><span id="zufall">C: Zufall </span></button>
+            <br><br>
+            <div>Hier können Sie weitere Hinweise ein- und ausblenden. Die Hinweise sind nur in dieser Einweisung verfügbar! <br><br>
+    Aktivieren Sie die Hinweise A, B und C oben bitte nacheinander durch Anklicken, und lesen Sie alles sorgfältig.<br><br> Sie können bei eingeblendeten Erklärungen weiter Buttons wählen, um alles gut nachvollziehen zu können.
+            <br><br> Sobald Sie alle Hinweise betrachtet haben, können Sie mit "weiter" unten rechts auf die nächste Seite fortfahren.  </div>
+
+
+  </div>
+</div>
+</div>
+
+</div>
+
+
+                    </div>
+
+            </form>
+        </div>
+        <br/>
+
+    </div>
+
+
+
+
+
+<script src="/static/otree/js/reconnecting-websocket.7e23ddc97099.js" type="text/javascript"></script>
+
+<!-- compiled and minified JavaScript -->
+<script src="/static/bootstrap/js/bootstrap.min.a4d202d2888c.js"></script>
+
+<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!--[if lt IE 9]>
+  <script src="../../assets/js/html5shiv.js"></script>
+  <script src="../../assets/js/respond.min.js"></script>
+<![endif]-->
+
+<script src="/static/otree/js/init_widgets.c655334239da.js"></script>
+
+
+    <!-- this is an HTML file rather than JavaScript static file because context variables need to be passed to it -->
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+
+            var socket;
+
+            function initWebSocket() {
+                var ws_scheme = window.location.protocol == "https:" ? "wss" : "ws";
+                var ws_path = ws_scheme + '://' + window.location.host + "/auto_advance/neopk4dl,3/";
+                socket = new ReconnectingWebSocket(ws_path);
+                socket.onmessage = function (e) {
+                    var data = JSON.parse(e.data);
+                    if (data.error) {
+                        $("#_otree-server-error").show();
+                        return;
+                    }
+
+                    if (data.auto_advanced) {
+                        console.log('Received redirect message', e.data);
+                        window.location.href = '/p/neopk4dl/instructions_2/instr_3/3/';
+                    }
+                };
+            }
+
+            initWebSocket();
+
+
+
+
+        });
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+
+function random_4(){
+    let x = Math.random();
+    if (x<=0.25 ){
+        return 1 }
+    else if (x<=0.5) {
+        return 2 }
+    else if (x<=0.75) {
+        return 3 }
+    else if (x<=1) {
+        return 4 }
+}
+
+    check_random = 0
+    popover_random = -1
+
+function toggle_random(){
+    if (check_random == 0 ){
+        check_random = 1;
+        $('#zufall').removeClass("is_off");
+        $('#zufall').addClass("is_on");
+    }
+    else {
+        check_random = 0;
+        $('#zufall').removeClass("is_on");
+        $('#zufall').addClass("is_off");
+    }
+    $("#help3").popover("toggle");
+    if (intro_state==3) {
+        setTimeout(function () {
+            intro_state = 4;
+            advance_intro(4)
+        }, 500)
+    }
+}
+
+
+current = 0;
+intro_state = 0;
+
+
+$(document).ready(function(){
+    $('[data-toggle="popover"]').popover();
+    popovers(99);
+
+    if (0 == 1){
+        intro_state=5;
+        advance_intro(intro_state)
+
+    }
+});
+
+
+function advance_intro(step){
+    if (step >= 1){
+        $("#help1").css("pointer-events", "auto");
+        $('#control-container').css("opacity",1);
+        $("#set99").css("opacity",0);
+        setTimeout(function() {
+            $("#set99").remove();
+        },1000);
+    }
+    if (step >=2) {
+        $("#help2").css("opacity", 1);
+        $("#help2").css("pointer-events", "auto");
+    }
+    if (step >=3) {
+        $("#help3").css("opacity", 1);
+        $("#help3").css("pointer-events", "auto");
+    }
+    if (step>=4) {
+        $("#next").css("opacity",1);
+        $("#not_yet").css("pointer-events","none");
+        $("#next").css("pointer-events","auto");
+        $("#not_yet").popover("disable")
+
+
+    }
+}
+
+
+
+
+function popovers(n) {
+
+    if (n==1 & intro_state == 1){
+        intro_state=2;
+        advance_intro(2)
+    }
+    if (n==2 & intro_state == 2){
+        intro_state=3;
+        advance_intro(3)
+    }
+
+   if (current == n) {
+       $("#set" + n + " .popover_div").popover("toggle");
+       $("#set" + n + " .popover_div").toggleClass("popover_div_hidden");
+       $("#help"+n).removeClass("inv")
+       current = 0
+   }
+   else {
+       $("#set" + n + " .popover_div").popover("toggle");
+       $("#set" + n + " .popover_div").toggleClass("popover_div_hidden");
+       $("#help"+n).addClass("inv")
+
+       if (current != 0 ) {
+           $("#set" + current + " .popover_div").popover("toggle");
+           $("#set" + current + " .popover_div").toggleClass("popover_div_hidden");
+           }
+       if (current != 99 & current != 0) {
+           $("#help"+current).removeClass("inv")
+       }
+       current = n;
+   }
+   }
+
+document.getElementById("round_0").classList.remove("div_hidden");
+
+function button(round,option) {
+    if (round == 4){
+        setTimeout(function(){
+            intro_state = Math.max(intro_state,1);
+            advance_intro(1)
+        },0)
+    }
+
+    var chosen = document.getElementById("button_"+round+"_"+option);
+    not_option = 1-option;
+    var foregone = document.getElementById("button_"+round+"_"+not_option);
+    chosen.classList += " off chosen_"+round;
+    foregone.classList += " off";
+    foregone.style.animation = "fadeout2 0.5s ease forwards";
+    chosen.style.animation = "movedown 1.3s  ease forwards";
+    chosen.parentElement.style.animation = "movemid"+option+" 1.3s  cubic-bezier(.11,.91,.31,.95) forwards";
+
+    document.getElementById("span_"+round+"_"+option+"_0").id = "span_"+round+"_0";
+    document.getElementById("span_"+round+"_"+option+"_1").id = "span_"+round+"_1";
+
+    document.getElementById("span_"+round+"_0").style.display = "inline-block";
+    document.getElementById("span_"+round+"_0").style.animation = "pop 0.5s 1.5s ease forwards";
+    points0 = parseInt(document.getElementById("span_"+round+"_0").innerHTML) + check_random*random_4();
+    document.getElementById("span_"+round+"_0").innerHTML = points0;
+    document.getElementById("timer_bar").style.webkitAnimationPlayState = "paused";
+
+    next= round+1;
+    setTimeout( function() {
+        document.getElementById("round_"+next).classList.remove("div_hidden");
+        document.getElementById("round_"+next).style.opacity = 0;
+        document.getElementById("round_" + next).style.animation = "fadein 1s ease forwards";
+        document.getElementById("round_counter").innerHTML++;
+        $("#timer_bar").remove();
+        $(".timer_frame").append("<div id='timer_bar'> </div>");
+
+       }, 2500);
+
+    last = round-1;
+    points1 = 0;
+    if (last>=0) {
+        chosen_last = document.getElementsByClassName("chosen_"+last)[0];
+        chosen_last.style.transform = "translate(0,16.25vw)";
+        chosen_last.style.animation = "movedown_hist 0.85s 0.23s ease forwards";
+        document.getElementById("span_"+last+"_0").style.animation = "text_out 1s ease forwards";
+        points1 = parseInt(document.getElementById("span_"+last+"_1").innerHTML)+ check_random*random_4();
+        document.getElementById("span_"+last+"_1").innerHTML = points1;
+        document.getElementById("span_"+last+"_1").style.animation = "pop 0.5s 0.33s ease forwards";
+
+        setTimeout(function() {
+            document.getElementById("span_"+last+"_0").style.display ="none";
+            document.getElementById("span_"+last+"_1").style.display ="inline-block";
+        },1200);
+        }
+    setTimeout( function(){
+        document.getElementById("score").innerHTML = parseInt(document.getElementById("score").innerHTML) + points0;
+        float = document.createElement("div");
+        document.getElementById("content-container").appendChild(float);
+        float.className = " points_added";
+        float.innerHTML = "+ " + points0;
+
+        },2300
+        );
+    setTimeout( function(){
+        document.getElementById("score").innerHTML = parseInt(document.getElementById("score").innerHTML) + points1;
+        float = document.createElement("div");
+        document.getElementById("content-container").appendChild(float);
+        float.className = " points_added";
+        if (points1 != 0){
+        float.innerHTML = "+ " + points1;}
+        },2750
+        );
+    lastlast = round-2;
+    if (lastlast >= 0) {
+        document.getElementById("span_"+lastlast+"_1").style.animation = "text_out 1s ease forwards";
+
+        chosen_lastlast = document.getElementsByClassName("chosen_"+lastlast)[0];
+        chosen_lastlast.style.transform = "translate(0,27.5vw)";
+
+        chosen_lastlast.style.animation = "movedown_hist2 0.85s 0.23s ease forwards";
+        }
+
+    }
+
+
+
+    $(document).ready(function(){
+        loaded = new Date();
+        loaded = loaded.getTime()
+        log = []
+        $("button").on("click", function(){
+            var my_id = this.id;
+            var current = new Date();
+
+            log.push([my_id, current.getTime()-loaded])
+            $('#input_log').attr("value", String(log) )
+        })
+
+
+
+    })
+
+</script>
+
+
+</body>
+</html>

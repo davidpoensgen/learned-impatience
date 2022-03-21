@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.2/js/bootstrap.min.js"-->
+    <!--        integrity="sha512-W8ycLBPqocJZbinDno6mq7cF+m88ALasCumLMkni7q/qVsFnyR6YGJKH/4vUKfnQyfe92rFY1ffgA4GXPJqrMg=="-->
+    <!--        crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.2/css/bootstrap.min.css"
+          integrity="sha512-/FM/eOMbt34nhpkaxKE7hrOty4r0hCwHB1zP350HyRUbG3nWGQdrplaNosKFakVyFLQWFdj4q+O17sw0EKaAxA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.2/css/bootstrap-theme.min.css"
+          integrity="sha512-zV3GNceXndB45y/As6SWOXpyGG5m4gsxLLBvIYo1KHZx2ym/WR/+RSHFEO/j6rLU8AdZJfY3pE2QYxTfR39sOA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+            integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <style>
+        .well{
+            background-image: none;
+        }
+        .content-container {
+            position: relative;
+            width: 60vw;
+            height: 95vh;
+            max-height: 60vw;
+            overflow: hidden;
+            background-color: white;
+            transform-origin:top left;
+            margin: 1vw auto 0;
+        }
+
+        .btn {
+            width:10vw;
+            height:7.5vw;
+            font-family: "Calibri", Calibri, sans-serif ;
+            font-weight: bold;
+            font-size: 3vw;
+            padding: 0;
+        }
+
+        .btn:focus,.btn:active {
+            outline: none !important;
+            box-shadow: none;
+        }
+        .btn:active {
+            transform: scale(0.95);
+        }
+
+        .off{
+            pointer-events: none;
+        }
+
+        .option0{
+            position: absolute;
+            top: 6.25vw;
+            left: 17.5vw;
+        }
+
+        .option1{
+            position: absolute;
+            top: 6.25vw;
+            left: 32.5vw;
+        }
+
+        #history0{
+            position: absolute;
+            top: 22.5vw;
+            left: 25vw;
+        }
+
+        #history1{
+            position: absolute;
+            top: 33.75vw;
+            left: 25vw;
+        }
+
+        .choose{top:8.75vw;}
+        .last_choice{top:25vw;}
+        .second_last_choice{top:36.25vw;}
+        .round{top:1.25vw; right:3.75vw; text-align: right}
+        .round_text{top:3.4375vw; right:2.8125vw;font-size:1vw;text-align: right}
+
+        .points{top:20.25vw; right: 2.815vw;  font-size:1vw; text-align: right}
+        .score{top:17.8125vw; right: 3.75vw;   font-size:2vw; text-align: right}
+
+        .timer_text{left:auto; width: 9vw; top:11.25vw; right: 2.8125vw;  font-size:1vw; text-align: right}
+
+
+        .timer_frame {
+            position: absolute;
+            top: 9.375vw;
+            right: 3.75vw;
+            width: 8.875vw;
+            height: 1vw;
+            border: #000000 solid .125vw;
+        }
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+<div class="content-container well">
+
+
+</div>
+
+<script src="impatience.js"></script>
+
+<script>
+
+    <!--  randomize: group (-1 or 1)  -->
+    const group = [-1, 1][Math.floor(Math.random()*2)]
+    const colors = shuffle(["red", "green"])
+
+
+    let round = 0
+    let num_rounds = 105
+
+    function start(round){
+
+    }
+
+
+
+
+
+
+    function getRandomInt(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min)) + min;
+    }
+
+
+    function get_sequence(a,b,c,d,e,f){
+        return [
+            [f, f],
+            [a, b],
+            [c, d],
+            [e, f],
+            [a, a],
+            [b, c],
+            [d, e],
+            [a, f],
+            [c, c],
+            [b, d],
+            [a, e],
+            [c, f],
+            [d, d],
+            [b, e],
+            [a, c],
+            [d, f],
+            [b, b],
+            [c, e],
+            [a, d],
+            [b, f],
+            [e, e],
+            [a, a],
+            [d, c],
+            [e, f],
+            [b, a],
+            [d, d],
+            [c, e],
+            [f, b],
+            [d, a],
+            [e, e],
+            [c, f],
+            [d, b],
+            [e, a],
+            [f, f],
+            [c, b],
+            [d, e],
+            [f, a],
+            [c, c],
+            [e, b],
+            [d, f],
+            [c, a],
+            [b, b],
+            [d, d],
+            [e, f],
+            [b, c],
+            [a, d],
+            [e, e],
+            [f, b],
+            [c, a],
+            [e, d],
+            [b, b],
+            [f, c],
+            [e, a],
+            [b, d],
+            [c, c],
+            [f, a],
+            [e, b],
+            [c, d],
+            [f, f],
+            [b, a],
+            [e, c],
+            [f, d],
+            [a, a],
+            [b, b],
+            [c, e],
+            [a, f],
+            [d, b],
+            [c, c],
+            [e, a],
+            [f, d],
+            [c, b],
+            [a, a],
+            [e, f],
+            [c, d],
+            [a, b],
+            [f, f],
+            [e, d],
+            [c, a],
+            [f, b],
+            [e, e],
+            [a, d],
+            [c, f],
+            [e, b],
+            [d, d],
+            [c, c],
+            [e, b],
+            [f, d],
+            [a, c],
+            [e, e],
+            [b, f],
+            [d, a],
+            [e, c],
+            [f, f],
+            [b, d],
+            [e, a],
+            [f, c],
+            [d, d],
+            [b, a],
+            [e, f],
+            [d, c],
+            [b, b],
+            [f, a],
+            [e, d],
+            [b, c],
+            [a, a]
+
+        ]
+    }
+
+    function shuffle(array){
+        let m = array.length, t, i;
+        while (m){
+            i = Math.floor(Math.random() * m--)
+            t = array[m]
+            array[m] = array[i]
+            array[i] = t
+        }
+        return array
+    }
+
+</script>
+
+</body>
+</html>
