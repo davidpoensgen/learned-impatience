@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Learned Impatience: Demo</title>
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.2/js/bootstrap.min.js"-->
     <!--        integrity="sha512-W8ycLBPqocJZbinDno6mq7cF+m88ALasCumLMkni7q/qVsFnyR6YGJKH/4vUKfnQyfe92rFY1ffgA4GXPJqrMg=="-->
     <!--        crossorigin="anonymous" referrerpolicy="no-referrer"></script>-->
@@ -168,7 +168,7 @@
             left: 25vw;
         }
 
-        .text-left{
+        .text_left{
             position: absolute;
             left: 5vw;
             font-size: 1.2vw;
@@ -178,7 +178,7 @@
             -webkit-user-select: none;
         }
 
-        .text-right{
+        .text_right{
             position: absolute;
             text-align: right;
             user-select: none;
@@ -308,10 +308,7 @@
             background-color: #844f98;
             border-color: #754687;
         }
-        /*</editor-fold>*/
 
-
-        /*<editor-fold desc="btn-info teal">*/
         .btn-info {
             background-color: #46e8e8;
             border-color: #46e8e8;
@@ -360,35 +357,97 @@
             border-color: #46e8e8;
         }
 
-
-
+        .start_task{
+            border-radius: .25vw;
+            position: absolute;
+            background:   #f5e2f5;
+            top: 6.25vw;
+            left: 15vw;
+            right: 15vw;
+            /*height: 6vw;*/
+            font-size: 1vw;
+            transition: opacity 1s;
+        }
+        .start_task .glyphicon{
+            font-size: 4vw;
+            cursor: pointer;
+        }
+        .start_task ul{
+            padding-right: 1vw;
+            padding-left: 3vw;
+            padding-bottom: 1vw;
+            font-size: .9vw;
+        }
 
     </style>
 </head>
 <body>
 
 <div class="impatience-container well">
-    <div class="options_label text-left">Current options:</div>
-    <div class="history0_label text-left">Just chosen:</div>
-    <div class="history1_label text-left">Chosen before:</div>
+    <div class="start_task text-center">
+        <br>
+        <span>
+            Welcome to the demo for my <br>
+            "Learned impatience" experiment. <br>
+            Just click to begin:
+        </span>
+        <br>
+        <br>
+        <span class="glyphicon glyphicon-play" onclick="start()"></span>
+        <br>
+        <br>
+        Thank you for your interest!<br>
+        Comments and questions are always welcome:<br>
+        davidpoensgenecon@gmail.com
+        <br>
+        <br>
+        <br>
+        <p>
+            Rules
+        </p>
+        <ul class="text-left pr-2">
+            <li>Each round, choose one of two colored buttons.</li>
+            <li>Each choice is rewarded twice:<br>
+                Once immediately, once with a round delay.</li>
+            <li>Each color has two specific values (immediate and delayed)
+                that do not change throughout.</li>
+            <li>A small random term is added to each payment <br>
+                (drawn uniformly from 1, 2, 3, 4).</li>
+            <li>The goal is to collect as many points as possible.</li>
+        </ul>
+    </div>
+
+    <div class="options_label text_left">Current options:</div>
+    <div class="history0_label text_left">Just chosen:</div>
+    <div class="history1_label text_left">Chosen before:</div>
 
 
-    <div class="round text-right"><span>1</span> / 105 </div>
-    <div class="round_label text-right">Round</div>
+    <div class="round text_right"><span>1</span> / 105 </div>
+    <div class="round_label text_right">Round</div>
 
-    <div class="timer_frame text-right"></div>
-    <div class="timer_label text-right">Time remaining</div>
+    <div class="timer_frame text_right"></div>
+    <div class="timer_label text_right">Time remaining</div>
 
-    <div class="score_label text-right">Total points </div>
-    <div class="score text-right">0</div>
+    <div class="score_label text_right">Total points </div>
+    <div class="score text_right">0</div>
 </div>
 
 <script src="impatience.js"></script>
 
 <script>
 
-    let imp = new impatience()
-    imp.start_round()
+
+    $('.impatience-container > :not(.start_task)').css({'opacity': .3, 'transition': 'opacity 1s'});
+
+    let task = new LearnedImpatience();
+
+    function start(){
+        $('.start_task').css('opacity', 0);
+        $('.impatience-container > :not(.start_task)').css('opacity', 1);
+        setTimeout(()=>{
+            task.start_round();
+        },2000);
+    }
 
 </script>
 

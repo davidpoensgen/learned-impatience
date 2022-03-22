@@ -1,4 +1,4 @@
-class impatience {
+class LearnedImpatience {
     constructor() {
         this.num_rounds = 105;
         this.round = 0;
@@ -25,13 +25,12 @@ class impatience {
 
     choose(side) {
         this.pause_timer();
-        let chosen_button = $('nothing');
-        let foregone_button = $('nothing');
-        if (side == 'left') {
+        let chosen_button, foregone_button;
+        if (side === 'left') {
             chosen_button = this.left_button;
             foregone_button = this.right_button;
             this.choice.push(this.sequence[this.round][0]);
-        } else if (side == 'right') {
+        } else if (side === 'right') {
             chosen_button = this.right_button;
             foregone_button = this.left_button;
             this.choice.push(this.sequence[this.round][1]);
