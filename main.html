@@ -16,11 +16,91 @@
             integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+
     <style>
+
+        @keyframes fadeout {
+            0% {opacity: 1; transform: scale(1)}
+            100% { opacity: 0;transform: scale(0)}
+        }
+        .fadeout{
+            animation: fadeout 0.5s ease forwards;
+        }
+        @keyframes movemid-left {
+            0% { transform: translate(0,0) }
+            100% { transform: translate(7.5vw,0px) }
+        }
+        @keyframes movemid-right {
+            0% { transform: translate(0,0) }
+            100% { transform: translate(-7.5vw,0px) }
+        }
+        .chosen.option-left{
+            animation: movemid-left 1.3s  cubic-bezier(.11,.91,.31,.95) forwards
+        }
+        .chosen.option-right{
+            animation: movemid-right 1.3s  cubic-bezier(.11,.91,.31,.95) forwards
+        }
+        @keyframes movedown {
+            0% { transform: translate(0,0) }
+            100% { transform: translate(0px,16.25vw) }
+        }
+        .chosen .movedown {
+            animation: movedown 1.3s ease forwards;
+        }
+
+        @keyframes movedown_hist {
+            0% { transform: translate(0,0) }
+            100% { transform: translate(0px,11.25vw) }
+        }
+        .movedown_hist{
+            animation: movedown_hist 0.85s 0.23s ease forwards
+        }
+        @keyframes movedown_hist2 {
+            0% { transform: translate(0,0); opacity: 1 }
+            100% { transform: translate(0px,11.25vw); opacity: 0 }
+        }
+        .movedown_hist2{
+            animation: movedown_hist2 0.85s 0.23s ease forwards;
+        }
+
+        @keyframes fadein {
+            0% { opacity: 0 }
+            100% { opacity: 1 }
+        }
+
+        .option-left, .option-right {
+            animation: fadein .8s forwards;
+        }
+
+        @keyframes pop {
+            0% { opacity: 0; transform: scale(0)}
+            50% {opacity: 1;}
+            75% {transform: scale(1.1)}
+            100% {transform: scale(1); opacity: 1}
+        }
+
+        .pop {
+            animation: pop .5s ease forwards;
+        }
+
+        .unpop {
+            animation: fadeout .35s ease forwards;
+        }
+
+        @keyframes timer_animation {
+            0% {opacity:0; transform: scaleX(1);}
+            5% {opacity: 1; transform: scaleX(1);}
+            100% {transform:  scaleX(0);}
+        }
+
         .well{
             background-image: none;
         }
-        .content-container {
+
+        .impatience-container {
             position: relative;
             width: 60vw;
             height: 95vh;
@@ -29,74 +109,256 @@
             background-color: white;
             transform-origin:top left;
             margin: 1vw auto 0;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 400;
+            transition: background-color 0.3s;
+        }
+
+        .timeout_strike{
+            background-color: rgba(255, 0, 0, 0.5);
         }
 
         .btn {
             width:10vw;
             height:7.5vw;
-            font-family: "Calibri", Calibri, sans-serif ;
             font-weight: bold;
             font-size: 3vw;
             padding: 0;
         }
+        .btn div{
+            color: white;
+        }
 
-        .btn:focus,.btn:active {
+        .btn:focus,.btn:active, .btn:hover {
             outline: none !important;
+            border: none !important;
             box-shadow: none;
         }
+
         .btn:active {
             transform: scale(0.95);
         }
 
         .off{
             pointer-events: none;
+            cursor: default;
         }
 
-        .option0{
+        .option-left{
             position: absolute;
             top: 6.25vw;
             left: 17.5vw;
         }
 
-        .option1{
+        .option-right{
             position: absolute;
             top: 6.25vw;
             left: 32.5vw;
         }
 
-        #history0{
+        .history0{
             position: absolute;
             top: 22.5vw;
             left: 25vw;
         }
 
-        #history1{
+        .history1{
             position: absolute;
             top: 33.75vw;
             left: 25vw;
         }
 
-        .choose{top:8.75vw;}
-        .last_choice{top:25vw;}
-        .second_last_choice{top:36.25vw;}
-        .round{top:1.25vw; right:3.75vw; text-align: right}
-        .round_text{top:3.4375vw; right:2.8125vw;font-size:1vw;text-align: right}
+        .text-left{
+            position: absolute;
+            left: 5vw;
+            font-size: 1.2vw;
+            font-weight: 500;
+            user-select: none;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+        }
 
-        .points{top:20.25vw; right: 2.815vw;  font-size:1vw; text-align: right}
-        .score{top:17.8125vw; right: 3.75vw;   font-size:2vw; text-align: right}
+        .text-right{
+            position: absolute;
+            text-align: right;
+            user-select: none;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+        }
 
-        .timer_text{left:auto; width: 9vw; top:11.25vw; right: 2.8125vw;  font-size:1vw; text-align: right}
+        .options_label{
+            top:8.75vw;
+        }
 
+        .history0_label{
+            top:25vw;
+        }
+
+        .history1_label{
+            top:36.25vw;
+        }
+
+        .round{
+            top:1.25vw;
+            right:3.75vw;
+            font-size: 1.5vw;
+        }
+
+        .round_label{
+            top:3.4375vw;
+            right:2.8125vw;
+            font-size:1vw;
+        }
+
+        .score_label{
+            top:20.25vw;
+            right: 2.815vw;
+            font-size:1vw;
+        }
+        .score{
+            top:17.8125vw;
+            right: 3.75vw;
+            font-size:2vw;
+        }
+
+        .timer_label{
+            left:auto;
+            width: 9vw;
+            top:11.25vw;
+            right: 2.8125vw;
+            font-size:1vw;
+            text-align: right;
+            position: absolute;
+        }
 
         .timer_frame {
             position: absolute;
             top: 9.375vw;
             right: 3.75vw;
-            width: 8.875vw;
-            height: 1vw;
-            border: #000000 solid .125vw;
+            width: calc(9vw + 8px);
+            height: calc(1vw + 8px);
+            border: black solid 2px;
+            padding: 2px;
         }
 
+        .timer_bar {
+            position: absolute;
+            background-color: black;
+            width: 9vw;
+            height: 1vw;
+            transform-origin: left;
+            animation: timer_animation 10s linear forwards;
+        }
+
+        .points_added{
+            position: absolute;
+            top:17.1875vw;
+            right: 3.75vw;
+            font-size: 1vw;
+            text-align: right;
+            width: 3.75vw;
+            opacity: 0;
+            animation: points_added_animation 0.8s ease-out forwards;
+        }
+        .points_added ~ .points_added {
+            right: 4.75vw;
+        }
+        .points_added.penalty{
+            color: red;
+        }
+        @keyframes points_added_animation {
+            0% {opacity:0; transform: translateY(0)}
+            10% { opacity: 1}
+            80% {opacity: 1}
+            100% {opacity: 0; transform: translateY(-30px)}
+        }
+
+        .btn-default {
+            background-color: #9258a8;
+            border-color: #9258a8;
+            color: #fff;
+            text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+            background-color: #86519b;
+            background-image: -moz-linear-gradient(top,#9258a8,#754687);
+            background-image: -webkit-gradient(linear,0 0,0 100%,from(#9258a8),to(#754687));
+            background-image: -webkit-linear-gradient(top,#9258a8,#754687);
+            background-image: -o-linear-gradient(top,#9258a8,#754687);
+            background-image: linear-gradient(to bottom,#9258a8,#754687);
+            background-repeat: repeat-x;
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff9258a8', endColorstr='#ff754686', GradientType=0);
+            border-color: #754687 #754687 #492c54;
+            border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+        }
+        .btn-default:hover,
+        .btn-default:focus {
+            text-decoration: none;
+            background-position: 0 -15px;
+            -webkit-transition: background-position .1s linear;
+            -moz-transition: background-position .1s linear;
+            -o-transition: background-position .1s linear;
+            transition: background-position .1s linear;
+        }
+        .btn-default:hover,
+        .btn-default:focus {
+            background-color: #754687;
+        }
+        .btn-default:active,
+        .btn-default.active,
+        .btn-default.active:hover {
+            background-color: #844f98;
+            border-color: #754687;
+        }
+        /*</editor-fold>*/
+
+
+        /*<editor-fold desc="btn-info teal">*/
+        .btn-info {
+            background-color: #46e8e8;
+            border-color: #46e8e8;
+            color: #fff;
+            text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+            background-color: #35e4e4;
+            background-image: -moz-linear-gradient(top,#46e8e8,#1cdfdf);
+            background-image: -webkit-gradient(linear,0 0,0 100%,from(#46e8e8),to(#1cdfdf));
+            background-image: -webkit-linear-gradient(top,#46e8e8,#1cdfdf);
+            background-image: -o-linear-gradient(top,#46e8e8,#1cdfdf);
+            background-image: linear-gradient(to bottom,#46e8e8,#1cdfdf);
+            background-repeat: repeat-x;
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff46e8e8', endColorstr='#ff1bdfdf', GradientType=0);
+            border-color: #1cdfdf #1cdfdf #139b9b;
+            border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+        }
+        .btn-info:hover,
+        .btn-info:focus {
+            text-decoration: none;
+            background-position: 0 -15px;
+            -webkit-transition: background-position .1s linear;
+            -moz-transition: background-position .1s linear;
+            -o-transition: background-position .1s linear;
+            transition: background-position .1s linear;
+        }
+        .btn-info:hover,
+        .btn-info:focus {
+            background-color: #1cdfdf;
+            border-bottom-color: #1cdfdf;
+        }
+        .btn-info:active,
+        .btn-info.active,
+        .btn-info.active:hover {
+            background-color: #2fe5e5;
+            border-color: #1cdfdf;
+        }
+        .btn-info.disabled:hover,
+        .btn-info.disabled:focus,
+        .btn-info.disabled:active,
+        .btn-info.disabled.active,
+        .btn-info[disabled] .btn-info:hover,
+        .btn-info[disabled] .btn-info:focus,
+        .btn-info[disabled] .btn-info:active,
+        .btn-info[disabled] .btn-info.active {
+            background-color: #46e8e8;
+            border-color: #46e8e8;
+        }
 
 
 
@@ -105,160 +367,28 @@
 </head>
 <body>
 
-<div class="content-container well">
+<div class="impatience-container well">
+    <div class="options_label text-left">Current options:</div>
+    <div class="history0_label text-left">Just chosen:</div>
+    <div class="history1_label text-left">Chosen before:</div>
 
 
+    <div class="round text-right"><span>1</span> / 105 </div>
+    <div class="round_label text-right">Round</div>
+
+    <div class="timer_frame text-right"></div>
+    <div class="timer_label text-right">Time remaining</div>
+
+    <div class="score_label text-right">Total points </div>
+    <div class="score text-right">0</div>
 </div>
 
 <script src="impatience.js"></script>
 
 <script>
 
-    <!--  randomize: group (-1 or 1)  -->
-    const group = [-1, 1][Math.floor(Math.random()*2)]
-    const colors = shuffle(["red", "green"])
-
-
-    let round = 0
-    let num_rounds = 105
-
-    function start(round){
-
-    }
-
-
-
-
-
-
-    function getRandomInt(min, max) {
-        min = Math.ceil(min);
-        max = Math.floor(max);
-        return Math.floor(Math.random() * (max - min)) + min;
-    }
-
-
-    function get_sequence(a,b,c,d,e,f){
-        return [
-            [f, f],
-            [a, b],
-            [c, d],
-            [e, f],
-            [a, a],
-            [b, c],
-            [d, e],
-            [a, f],
-            [c, c],
-            [b, d],
-            [a, e],
-            [c, f],
-            [d, d],
-            [b, e],
-            [a, c],
-            [d, f],
-            [b, b],
-            [c, e],
-            [a, d],
-            [b, f],
-            [e, e],
-            [a, a],
-            [d, c],
-            [e, f],
-            [b, a],
-            [d, d],
-            [c, e],
-            [f, b],
-            [d, a],
-            [e, e],
-            [c, f],
-            [d, b],
-            [e, a],
-            [f, f],
-            [c, b],
-            [d, e],
-            [f, a],
-            [c, c],
-            [e, b],
-            [d, f],
-            [c, a],
-            [b, b],
-            [d, d],
-            [e, f],
-            [b, c],
-            [a, d],
-            [e, e],
-            [f, b],
-            [c, a],
-            [e, d],
-            [b, b],
-            [f, c],
-            [e, a],
-            [b, d],
-            [c, c],
-            [f, a],
-            [e, b],
-            [c, d],
-            [f, f],
-            [b, a],
-            [e, c],
-            [f, d],
-            [a, a],
-            [b, b],
-            [c, e],
-            [a, f],
-            [d, b],
-            [c, c],
-            [e, a],
-            [f, d],
-            [c, b],
-            [a, a],
-            [e, f],
-            [c, d],
-            [a, b],
-            [f, f],
-            [e, d],
-            [c, a],
-            [f, b],
-            [e, e],
-            [a, d],
-            [c, f],
-            [e, b],
-            [d, d],
-            [c, c],
-            [e, b],
-            [f, d],
-            [a, c],
-            [e, e],
-            [b, f],
-            [d, a],
-            [e, c],
-            [f, f],
-            [b, d],
-            [e, a],
-            [f, c],
-            [d, d],
-            [b, a],
-            [e, f],
-            [d, c],
-            [b, b],
-            [f, a],
-            [e, d],
-            [b, c],
-            [a, a]
-
-        ]
-    }
-
-    function shuffle(array){
-        let m = array.length, t, i;
-        while (m){
-            i = Math.floor(Math.random() * m--)
-            t = array[m]
-            array[m] = array[i]
-            array[i] = t
-        }
-        return array
-    }
+    let imp = new impatience()
+    imp.start_round()
 
 </script>
 
