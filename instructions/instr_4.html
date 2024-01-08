@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="de"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- compiled and minified CSS -->
+    <link rel="stylesheet" href="./resources/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="./resources/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="./resources/theme.css">
+
+    <script src="./resources/jquery.min.js"></script>
+
+    <style>
+
+        .page-header {
+            border-bottom: none;
+        }
+    </style>
+
+
+
+
+    <style>
+
+        @font-face { font-family: 'OpenSans';
+            src: url('./resources/OpenSans-Regular.ttf') format('truetype'); }
+        @font-face { font-family: 'OpenSans';
+            src: url('./resources/OpenSans-Italic.ttf') format('truetype');
+            font-style: italic; }
+        @font-face { font-family: 'OpenSans';
+            src: url('./resources/OpenSans-Bold.ttf') format('truetype');
+            font-weight: bold; }
+        @font-face { font-family: 'OpenSans';
+            src: url('./resources/OpenSans-BoldItalic.ttf') format('truetype');
+            font-weight: bold;
+            font-style: italic; }
+
+        #content-container{
+            font-family: OpenSans!important;
+        }
+
+
+        div {
+            padding: 0px;
+        }
+
+        .otree-timer {
+            display: none;
+        }
+
+        .otree-body {
+            max-width:100vw;
+            margin:0 auto;
+        }
+
+
+        #content-container {
+            position: relative;
+            width: 60vw;
+            height: 95vh;
+            max-height: 60vw;
+            margin: 0 auto;
+            overflow: hidden;
+            background-color: white;
+            transform-origin:top left;
+            margin-top: 1vw;
+        }
+
+        .well{
+            background-color: white;
+            background-image: none;
+        }
+
+
+        .btn {
+            width:10vw;
+            height:7.5vw;
+            font-weight: bold;
+            font-size: 3vw;
+            padding: 0;
+        }
+
+        .btn:focus,.btn:active {
+            outline: none !important;
+            box-shadow: none;
+        }
+        .btn:active {
+            transform: scale(0.95);
+        }
+        .off{
+            pointer-events: none;
+        }
+
+        #option0{
+            position: absolute;
+            top: 6.25vw;
+            left: 17.5vw;
+        }
+
+        #option1{
+            position: absolute;
+            top: 6.25vw;
+            left: 32.5vw;
+        }
+
+        #history0{
+            position: absolute;
+            top: 22.5vw;
+            left: 25vw;
+        }
+
+        #history1{
+            position: absolute;
+            top: 33.75vw;
+            left: 25vw;
+        }
+
+        .text{
+            position: absolute;
+            left:5vw;
+            font-size: 1.5vw;
+        }
+
+        #choose{top:8.75vw;}
+        #last_choice{top:25vw;}
+        #second_last_choice{top:36.25vw;}
+        #round{top:1.25vw; right:3.75vw; text-align: right}
+        #round_text{top:3.4375vw; right:2.8125vw;font-size:1vw;text-align: right}
+
+        #points{top:20.25vw; right: 2.815vw;  font-size:1vw; text-align: right}
+        #score{top:17.8125vw; right: 3.75vw;   font-size:2vw; text-align: right}
+
+        #timer_text{left:auto; width: 9vw; top:11.25vw; right: 2.8125vw;  font-size:1vw;text-align: right}
+
+
+        .timer_frame {
+            position: absolute;
+            top: 9.375vw;
+            right: 3.75vw;
+            width: 8.875vw;
+            height: 1vw;
+            border: #000000 solid .125vw;
+        }
+
+
+    </style>
+
+
+
+
+
+    <style type="text/css">
+
+        li {
+            padding-bottom: 0.3vw ;
+            padding-top: 0.3vw;
+        }
+        ul {
+            padding-left: 1vw;
+        }
+
+        #content-container .i_button{
+            width: 9vw;
+            height: 2.5vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding:0;
+            font-size: 1.5vw;
+            font-weight: normal;
+        }
+
+        .i_text {
+            font-size: 1.1vw;
+            margin: 0 auto;
+            border: none;
+            padding: 1vw;
+            width: 50vw;
+            left: 5vw;
+            top: 5vw;
+        }
+
+        .instr{
+            position: absolute;
+            box-sizing: border-box;
+            border-radius: 1vw;
+        }
+
+        .HL {
+            border: black solid 0.125vw;
+        }
+
+
+        .separator{
+            padding-top: 3vw;
+        }
+
+        #content-container .next{
+            position: absolute;
+            bottom: 1.5vw;
+            right: 1.5vw;
+        }
+        #content-container .back {
+            position: absolute;
+            bottom: 1.5vw;
+            right: 11.5vw;
+        }
+        ul ul{
+            margin-left:2vw}
+
+
+    </style>
+
+
+
+
+
+    <link rel="stylesheet" type="text/css" href="./instr_4_files/css_buttons.a58eb448c4ed.css">
+    <style>
+        .choice{
+            width: 6vw;
+            height: 4.5vw;
+            margin: 0 0.4vw;
+            pointer-events: none;
+        }
+
+        #all_buttons_6{
+            position: static;12
+        width: 53vw;
+            margin: 0 auto;
+            padding: 1.25vw
+        }
+    </style>
+
+</head>
+<body style="">
+
+<div class="otree-body">
+    <div>
+
+            <div class="_otree-content">
+
+                <div id="content-container" class="well">
+
+
+                    <div id="instr_text_3" class="instr i_text">
+                        <b> Zusammengefasst:</b>
+                        <br>
+                        <ul>
+                            <li> Sie wählen jede Runde einen von zwei Buttons.</li>
+                            <li> Jede Wahl ergibt <em>zweimal</em> Punkte.</li>
+                            <li> Die Höhe dieser Zahlungen hängt von der gewählten Farbe ab. <br>Erste und zweite Zahl einer Farbe können unterschiedlich sein.</li>
+
+                            <br>
+
+                            <li> Dazu kommen jeweils zufällig 1, 2, 3 oder 4 Punkte – unabhängig von der Farbe.</li>
+                            <br>
+                            <li>
+                                Ihr Ziel ist es, in 105 Runden möglichst viele Punkte zu erhalten.
+                            </li>
+                            <li>
+                                Hierzu können Sie nach und nach lernen, welche Farben mehr Punkte geben als andere.
+                            </li>
+                            <br>
+                            <li>
+                                Sie haben in jeder Runde nur 10 Sekunden Zeit, um die letzten Zahlen anzusehen und eine neue Farbe zu wählen.</li>
+                            <li> Ein Balken zeigt stets die Restzeit an.</li>
+                            <li>  Falls Sie nicht rechtzeitig eine Wahl treffen, wird die Auswahl zufällig getroffen. <br>
+                                <b>Zudem werden Ihnen 5 Punkte abgezogen. </b> </li>
+
+
+                        </ul>
+
+
+                    </div>
+                <button onclick="goto(5)" class="btn i_button next" id="next" role="button">weiter</button>
+                <button onclick="goto(3)" class="btn i_button back" id="back" role="button">zurück</button>
+
+                </div>
+            </div>
+    </div>
+    <br>
+
+</div>
+
+<script>
+    let queryString = window.location.search || ''
+    function goto(page){
+        window.location.href =`./instr_${page}.html${queryString}`
+    }
+</script>
+
+
+<!-- compiled and minified JavaScript -->
+<script src="./resources/bootstrap.min.js"></script>
+
+<script src="./resources/init_widgets.js"></script>
+
+</body></html>

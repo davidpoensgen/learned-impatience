@@ -1,0 +1,694 @@
+/*test--*/
+
+.btn-bsp0{
+    background-color: white;
+    border: black solid 2px;
+}
+
+.btn-bsp1{
+    background-color: lightgrey;
+}
+
+.btn-bsp2{
+    background-color: grey;
+}
+
+.btn-bsp3{
+    background-color: black;
+    color: white;
+}
+.bsp3:hover,
+.bsp3:active,
+.bsp3:focus{
+    color:white !important;
+}
+
+/*<editor-fold desc="itten1">*/
+.btn-itten1 {
+  color: #FFFFFF;
+  background-color: #FFDE17;
+  border-color: #FFDE17;
+}
+
+.btn-itten1:hover,
+.btn-itten1:focus,
+.btn-itten1:active,
+.btn-itten1.active,
+.open .dropdown-toggle.btn-itten1 {
+  color: #FFFFFF;
+  background-color: #FAD70F;
+  border-color: #FFDE17;
+}
+
+.btn-itten1:active,
+.btn-itten1.active,
+.open .dropdown-toggle.btn-itten1 {
+  background-image: none;
+}
+
+.btn-itten1.disabled,
+.btn-itten1[disabled],
+fieldset[disabled] .btn-itten1,
+.btn-itten1.disabled:hover,
+.btn-itten1[disabled]:hover,
+fieldset[disabled] .btn-itten1:hover,
+.btn-itten1.disabled:focus,
+.btn-itten1[disabled]:focus,
+fieldset[disabled] .btn-itten1:focus,
+.btn-itten1.disabled:active,
+.btn-itten1[disabled]:active,
+fieldset[disabled] .btn-itten1:active,
+.btn-itten1.disabled.active,
+.btn-itten1[disabled].active,
+fieldset[disabled] .btn-itten1.active {
+  background-color: #FFDE17;
+  border-color: #FFDE17;
+}
+
+.btn-itten1 .badge {
+  color: #FFDE17;
+  background-color: #FFFFFF;
+}
+/*</editor-fold>*/
+
+/*<editor-fold desc="itten2">*/
+.btn-itten2 {
+  color: #FFFFFF;
+  background-color: #A0BC38;
+  border-color: #A0BC38;
+}
+
+.btn-itten2:hover,
+.btn-itten2:focus,
+.btn-itten2:active,
+.btn-itten2.active,
+.open .dropdown-toggle.btn-itten2 {
+  color: #FFFFFF;
+  background-color: #93B029;
+  border-color: #A0BC38;
+}
+
+.btn-itten2:active,
+.btn-itten2.active,
+.open .dropdown-toggle.btn-itten2 {
+  background-image: none;
+}
+
+.btn-itten2.disabled,
+.btn-itten2[disabled],
+fieldset[disabled] .btn-itten2,
+.btn-itten2.disabled:hover,
+.btn-itten2[disabled]:hover,
+fieldset[disabled] .btn-itten2:hover,
+.btn-itten2.disabled:focus,
+.btn-itten2[disabled]:focus,
+fieldset[disabled] .btn-itten2:focus,
+.btn-itten2.disabled:active,
+.btn-itten2[disabled]:active,
+fieldset[disabled] .btn-itten2:active,
+.btn-itten2.disabled.active,
+.btn-itten2[disabled].active,
+fieldset[disabled] .btn-itten2.active {
+  background-color: #A0BC38;
+  border-color: #A0BC38;
+}
+
+.btn-itten2 .badge {
+  color: #A0BC38;
+  background-color: #FFFFFF;
+}
+/*</editor-fold>*/
+
+/*<editor-fold desc="itten3">*/
+.btn-itten3 {
+  color: #FFFFFF;
+  background-color: #00A14B;
+  border-color: #00A14B;
+}
+
+.btn-itten3:hover,
+.btn-itten3:focus,
+.btn-itten3:active,
+.btn-itten3.active,
+.open .dropdown-toggle.btn-itten3 {
+  color: #FFFFFF;
+  background-color: #059448;
+  border-color: #00A14B;
+}
+
+.btn-itten3:active,
+.btn-itten3.active,
+.open .dropdown-toggle.btn-itten3 {
+  background-image: none;
+}
+
+.btn-itten3.disabled,
+.btn-itten3[disabled],
+fieldset[disabled] .btn-itten3,
+.btn-itten3.disabled:hover,
+.btn-itten3[disabled]:hover,
+fieldset[disabled] .btn-itten3:hover,
+.btn-itten3.disabled:focus,
+.btn-itten3[disabled]:focus,
+fieldset[disabled] .btn-itten3:focus,
+.btn-itten3.disabled:active,
+.btn-itten3[disabled]:active,
+fieldset[disabled] .btn-itten3:active,
+.btn-itten3.disabled.active,
+.btn-itten3[disabled].active,
+fieldset[disabled] .btn-itten3.active {
+  background-color: #00A14B;
+  border-color: #00A14B;
+}
+
+.btn-itten3 .badge {
+  color: #00A14B;
+  background-color: #FFFFFF;
+}
+/*</editor-fold>*/
+
+/*<editor-fold desc="itten4">*/
+.btn-itten4 {
+  color: #FFFFFF;
+  background-color: #00707E;
+  border-color: #00707E;
+}
+
+.btn-itten4:hover,
+.btn-itten4:focus,
+.btn-itten4:active,
+.btn-itten4.active,
+.open .dropdown-toggle.btn-itten4 {
+  color: #FFFFFF;
+  background-color: #01616E;
+  border-color: #00707E;
+}
+
+.btn-itten4:active,
+.btn-itten4.active,
+.open .dropdown-toggle.btn-itten4 {
+  background-image: none;
+}
+
+.btn-itten4.disabled,
+.btn-itten4[disabled],
+fieldset[disabled] .btn-itten4,
+.btn-itten4.disabled:hover,
+.btn-itten4[disabled]:hover,
+fieldset[disabled] .btn-itten4:hover,
+.btn-itten4.disabled:focus,
+.btn-itten4[disabled]:focus,
+fieldset[disabled] .btn-itten4:focus,
+.btn-itten4.disabled:active,
+.btn-itten4[disabled]:active,
+fieldset[disabled] .btn-itten4:active,
+.btn-itten4.disabled.active,
+.btn-itten4[disabled].active,
+fieldset[disabled] .btn-itten4.active {
+  background-color: #00707E;
+  border-color: #00707E;
+}
+
+.btn-itten4 .badge {
+  color: #00707E;
+  background-color: #FFFFFF;
+}
+/*</editor-fold>*/
+
+/*<editor-fold desc="itten5">*/
+.btn-itten5 {
+  color: #FFFFFF;
+  background-color: #21409A;
+  border-color: #21409A;
+}
+
+.btn-itten5:hover,
+.btn-itten5:focus,
+.btn-itten5:active,
+.btn-itten5.active,
+.open .dropdown-toggle.btn-itten5 {
+  color: #FFFFFF;
+  background-color: #133291;
+  border-color: #21409A;
+}
+
+.btn-itten5:active,
+.btn-itten5.active,
+.open .dropdown-toggle.btn-itten5 {
+  background-image: none;
+}
+
+.btn-itten5.disabled,
+.btn-itten5[disabled],
+fieldset[disabled] .btn-itten5,
+.btn-itten5.disabled:hover,
+.btn-itten5[disabled]:hover,
+fieldset[disabled] .btn-itten5:hover,
+.btn-itten5.disabled:focus,
+.btn-itten5[disabled]:focus,
+fieldset[disabled] .btn-itten5:focus,
+.btn-itten5.disabled:active,
+.btn-itten5[disabled]:active,
+fieldset[disabled] .btn-itten5:active,
+.btn-itten5.disabled.active,
+.btn-itten5[disabled].active,
+fieldset[disabled] .btn-itten5.active {
+  background-color: #21409A;
+  border-color: #21409A;
+}
+
+.btn-itten5 .badge {
+  color: #21409A;
+  background-color: #FFFFFF;
+}
+/*</editor-fold>*/
+
+/*<editor-fold desc="itten6">*/
+.btn-itten6 {
+  color: #FFFFFF;
+  background-color: #583F99;
+  border-color: #583F99;
+}
+
+.btn-itten6:hover,
+.btn-itten6:focus,
+.btn-itten6:active,
+.btn-itten6.active,
+.open .dropdown-toggle.btn-itten6 {
+  color: #FFFFFF;
+  background-color: #4C2E96;
+  border-color: #583F99;
+}
+
+.btn-itten6:active,
+.btn-itten6.active,
+.open .dropdown-toggle.btn-itten6 {
+  background-image: none;
+}
+
+.btn-itten6.disabled,
+.btn-itten6[disabled],
+fieldset[disabled] .btn-itten6,
+.btn-itten6.disabled:hover,
+.btn-itten6[disabled]:hover,
+fieldset[disabled] .btn-itten6:hover,
+.btn-itten6.disabled:focus,
+.btn-itten6[disabled]:focus,
+fieldset[disabled] .btn-itten6:focus,
+.btn-itten6.disabled:active,
+.btn-itten6[disabled]:active,
+fieldset[disabled] .btn-itten6:active,
+.btn-itten6.disabled.active,
+.btn-itten6[disabled].active,
+fieldset[disabled] .btn-itten6.active {
+  background-color: #583F99;
+  border-color: #583F99;
+}
+
+.btn-itten6 .badge {
+  color: #583F99;
+  background-color: #FFFFFF;
+}
+/*</editor-fold>*/
+
+/*<editor-fold desc="itten7"*/
+.btn-itten7 {
+  color: #FFFFFF;
+  background-color: #7F3F98;
+  border-color: #7F3F98;
+}
+
+.btn-itten7:hover,
+.btn-itten7:focus,
+.btn-itten7:active,
+.btn-itten7.active,
+.open .dropdown-toggle.btn-itten7 {
+  color: #FFFFFF;
+  background-color: #702F8A;
+  border-color: #7F3F98;
+}
+
+.btn-itten7:active,
+.btn-itten7.active,
+.open .dropdown-toggle.btn-itten7 {
+  background-image: none;
+}
+
+.btn-itten7.disabled,
+.btn-itten7[disabled],
+fieldset[disabled] .btn-itten7,
+.btn-itten7.disabled:hover,
+.btn-itten7[disabled]:hover,
+fieldset[disabled] .btn-itten7:hover,
+.btn-itten7.disabled:focus,
+.btn-itten7[disabled]:focus,
+fieldset[disabled] .btn-itten7:focus,
+.btn-itten7.disabled:active,
+.btn-itten7[disabled]:active,
+fieldset[disabled] .btn-itten7:active,
+.btn-itten7.disabled.active,
+.btn-itten7[disabled].active,
+fieldset[disabled] .btn-itten7.active {
+  background-color: #7F3F98;
+  border-color: #7F3F98;
+}
+
+.btn-itten7 .badge {
+  color: #7F3F98;
+  background-color: #FFFFFF;
+}
+/*</editor-fold>*/
+
+/*<editor-fold desc="itten8">*/
+.btn-itten8 {
+  color: #FFFFFF;
+  background-color: #B73461;
+  border-color: #B73461;
+}
+
+.btn-itten8:hover,
+.btn-itten8:focus,
+.btn-itten8:active,
+.btn-itten8.active,
+.open .dropdown-toggle.btn-itten8 {
+  color: #FFFFFF;
+  background-color: #B52457;
+  border-color: #B73461;
+}
+
+.btn-itten8:active,
+.btn-itten8.active,
+.open .dropdown-toggle.btn-itten8 {
+  background-image: none;
+}
+
+.btn-itten8.disabled,
+.btn-itten8[disabled],
+fieldset[disabled] .btn-itten8,
+.btn-itten8.disabled:hover,
+.btn-itten8[disabled]:hover,
+fieldset[disabled] .btn-itten8:hover,
+.btn-itten8.disabled:focus,
+.btn-itten8[disabled]:focus,
+fieldset[disabled] .btn-itten8:focus,
+.btn-itten8.disabled:active,
+.btn-itten8[disabled]:active,
+fieldset[disabled] .btn-itten8:active,
+.btn-itten8.disabled.active,
+.btn-itten8[disabled].active,
+fieldset[disabled] .btn-itten8.active {
+  background-color: #B73461;
+  border-color: #B73461;
+}
+
+.btn-itten8 .badge {
+  color: #B73461;
+  background-color: #FFFFFF;
+}
+/*</editor-fold>*/
+
+/*<editor-fold desc="itten9">*/
+.btn-itten9 {
+  color: #FFFFFF;
+  background-color: #ED1C24;
+  border-color: #ED1C24;
+}
+
+.btn-itten9:hover,
+.btn-itten9:focus,
+.btn-itten9:active,
+.btn-itten9.active,
+.open .dropdown-toggle.btn-itten9 {
+  color: #FFFFFF;
+  background-color: #DE0910;
+  border-color: #ED1C24;
+}
+
+.btn-itten9:active,
+.btn-itten9.active,
+.open .dropdown-toggle.btn-itten9 {
+  background-image: none;
+}
+
+.btn-itten9.disabled,
+.btn-itten9[disabled],
+fieldset[disabled] .btn-itten9,
+.btn-itten9.disabled:hover,
+.btn-itten9[disabled]:hover,
+fieldset[disabled] .btn-itten9:hover,
+.btn-itten9.disabled:focus,
+.btn-itten9[disabled]:focus,
+fieldset[disabled] .btn-itten9:focus,
+.btn-itten9.disabled:active,
+.btn-itten9[disabled]:active,
+fieldset[disabled] .btn-itten9:active,
+.btn-itten9.disabled.active,
+.btn-itten9[disabled].active,
+fieldset[disabled] .btn-itten9.active {
+  background-color: #ED1C24;
+  border-color: #ED1C24;
+}
+
+.btn-itten9 .badge {
+  color: #ED1C24;
+  background-color: #FFFFFF;
+}
+/*</editor-fold>*/
+
+/*<editor-fold desc="itten10">*/
+.btn-itten10 {
+  color: #FFFFFF;
+  background-color: #F04923;
+  border-color: #F04923;
+}
+
+.btn-itten10:hover,
+.btn-itten10:focus,
+.btn-itten10:active,
+.btn-itten10.active,
+.open .dropdown-toggle.btn-itten10 {
+  color: #FFFFFF;
+  background-color: #E83D17;
+  border-color: #F04923;
+}
+
+.btn-itten10:active,
+.btn-itten10.active,
+.open .dropdown-toggle.btn-itten10 {
+  background-image: none;
+}
+
+.btn-itten10.disabled,
+.btn-itten10[disabled],
+fieldset[disabled] .btn-itten10,
+.btn-itten10.disabled:hover,
+.btn-itten10[disabled]:hover,
+fieldset[disabled] .btn-itten10:hover,
+.btn-itten10.disabled:focus,
+.btn-itten10[disabled]:focus,
+fieldset[disabled] .btn-itten10:focus,
+.btn-itten10.disabled:active,
+.btn-itten10[disabled]:active,
+fieldset[disabled] .btn-itten10:active,
+.btn-itten10.disabled.active,
+.btn-itten10[disabled].active,
+fieldset[disabled] .btn-itten10.active {
+  background-color: #F04923;
+  border-color: #F04923;
+}
+
+.btn-itten10 .badge {
+  color: #F04923;
+  background-color: #FFFFFF;
+}
+/*</editor-fold>*/
+
+/*<editor-fold desc="itten11">*/
+.btn-itten11 {
+  color: #FFFFFF;
+  background-color: #F26522;
+  border-color: #FAA61F;
+}
+
+.btn-itten11:hover,
+.btn-itten11:focus,
+.btn-itten11:active,
+.btn-itten11.active,
+.open .dropdown-toggle.btn-itten11 {
+  color: #FFFFFF;
+  background-color: #F26522;
+  border-color: #F26522;
+}
+
+.btn-itten11:active,
+.btn-itten11.active,
+.open .dropdown-toggle.btn-itten11 {
+  background-image: none;
+}
+
+.btn-itten11.disabled,
+.btn-itten11[disabled],
+fieldset[disabled] .btn-itten11,
+.btn-itten11.disabled:hover,
+.btn-itten11[disabled]:hover,
+fieldset[disabled] .btn-itten11:hover,
+.btn-itten11.disabled:focus,
+.btn-itten11[disabled]:focus,
+fieldset[disabled] .btn-itten11:focus,
+.btn-itten11.disabled:active,
+.btn-itten11[disabled]:active,
+fieldset[disabled] .btn-itten11:active,
+.btn-itten11.disabled.active,
+.btn-itten11[disabled].active,
+fieldset[disabled] .btn-itten11.active {
+  background-color: #F26522;
+  border-color: #F26522;
+}
+
+.btn-itten11 .badge {
+  color: #F26522;
+  background-color: #FFFFFF;
+}
+/*</editor-fold>*/
+
+/*<editor-fold desc="itten12">*/
+.btn-itten12 {
+  color: #FFFFFF;
+  background-color: #FAA61F;
+  border-color: #FAA61F;
+}
+
+.btn-itten12:hover,
+.btn-itten12:focus,
+.btn-itten12:active,
+.btn-itten12.active,
+.open .dropdown-toggle.btn-itten12 {
+  color: #FFFFFF;
+  background-color: #FAA61F;
+  border-color: #FAA61F;
+}
+
+.btn-itten12:active,
+.btn-itten12.active,
+.open .dropdown-toggle.btn-itten12 {
+  background-image: none;
+}
+
+.btn-itten12.disabled,
+.btn-itten12[disabled],
+fieldset[disabled] .btn-itten12,
+.btn-itten12.disabled:hover,
+.btn-itten12[disabled]:hover,
+fieldset[disabled] .btn-itten12:hover,
+.btn-itten12.disabled:focus,
+.btn-itten12[disabled]:focus,
+fieldset[disabled] .btn-itten12:focus,
+.btn-itten12.disabled:active,
+.btn-itten12[disabled]:active,
+fieldset[disabled] .btn-itten12:active,
+.btn-itten12.disabled.active,
+.btn-itten12[disabled].active,
+fieldset[disabled] .btn-itten12.active {
+  background-color: #FAA61F;
+  border-color: #FAA61F;
+}
+
+.btn-itten12 .badge {
+  color: #FAA61F;
+  background-color: #FFFFFF;
+}
+/*</editor-fold>*/
+
+
+
+
+/*<editor-fold desc="bt-default: purple">*/
+.btn-default {
+      background-color: #9258a8;
+      border-color: #9258a8;
+      color: #fff;
+      text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+      background-color: #86519b;
+      background-image: -moz-linear-gradient(top,#9258a8,#754687);
+      background-image: -webkit-gradient(linear,0 0,0 100%,from(#9258a8),to(#754687));
+      background-image: -webkit-linear-gradient(top,#9258a8,#754687);
+      background-image: -o-linear-gradient(top,#9258a8,#754687);
+      background-image: linear-gradient(to bottom,#9258a8,#754687);
+      background-repeat: repeat-x;
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff9258a8', endColorstr='#ff754686', GradientType=0);
+      border-color: #754687 #754687 #492c54;
+      border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+    }
+    .btn-default:hover,
+    .btn-default:focus {
+      text-decoration: none;
+      background-position: 0 -15px;
+      -webkit-transition: background-position .1s linear;
+      -moz-transition: background-position .1s linear;
+      -o-transition: background-position .1s linear;
+      transition: background-position .1s linear;
+    }
+    .btn-default:hover,
+    .btn-default:focus {
+      background-color: #754687;
+    }
+    .btn-default:active,
+    .btn-default.active,
+    .btn-default.active:hover {
+      background-color: #844f98;
+      border-color: #754687;
+    }
+/*</editor-fold>*/
+
+
+/*<editor-fold desc="btn-info teal">*/
+.btn-info {
+  background-color: #46e8e8;
+  border-color: #46e8e8;
+  color: #fff;
+  text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+  background-color: #35e4e4;
+  background-image: -moz-linear-gradient(top,#46e8e8,#1cdfdf);
+  background-image: -webkit-gradient(linear,0 0,0 100%,from(#46e8e8),to(#1cdfdf));
+  background-image: -webkit-linear-gradient(top,#46e8e8,#1cdfdf);
+  background-image: -o-linear-gradient(top,#46e8e8,#1cdfdf);
+  background-image: linear-gradient(to bottom,#46e8e8,#1cdfdf);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff46e8e8', endColorstr='#ff1bdfdf', GradientType=0);
+  border-color: #1cdfdf #1cdfdf #139b9b;
+  border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+}
+.btn-info:hover,
+.btn-info:focus {
+  text-decoration: none;
+  background-position: 0 -15px;
+  -webkit-transition: background-position .1s linear;
+  -moz-transition: background-position .1s linear;
+  -o-transition: background-position .1s linear;
+  transition: background-position .1s linear;
+}
+.btn-info:hover,
+.btn-info:focus {
+  background-color: #1cdfdf;
+  border-bottom-color: #1cdfdf;
+}
+.btn-info:active,
+.btn-info.active,
+.btn-info.active:hover {
+  background-color: #2fe5e5;
+  border-color: #1cdfdf;
+}
+.btn-info.disabled:hover,
+.btn-info.disabled:focus,
+.btn-info.disabled:active,
+.btn-info.disabled.active,
+.btn-info[disabled] .btn-info:hover,
+.btn-info[disabled] .btn-info:focus,
+.btn-info[disabled] .btn-info:active,
+.btn-info[disabled] .btn-info.active {
+  background-color: #46e8e8;
+  border-color: #46e8e8;
+}
+/*</editor-fold>*/
+
+/* testing git*/

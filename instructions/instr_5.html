@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="de"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- compiled and minified CSS -->
+    <link rel="stylesheet" href="./resources/bootstrap.min.css">
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="./resources/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="./resources/theme.css">
+
+    <script src="./resources/jquery.min.js"></script>
+
+    <style>
+
+        .page-header {
+            border-bottom: none;
+        }
+    </style>
+
+
+
+
+    <style>
+
+        @font-face { font-family: 'OpenSans';
+            src: url('./resources/OpenSans-Regular.ttf') format('truetype'); }
+        @font-face { font-family: 'OpenSans';
+            src: url('./resources/OpenSans-Italic.ttf') format('truetype');
+            font-style: italic; }
+        @font-face { font-family: 'OpenSans';
+            src: url('./resources/OpenSans-Bold.ttf') format('truetype');
+            font-weight: bold; }
+        @font-face { font-family: 'OpenSans';
+            src: url('./resources/OpenSans-BoldItalic.ttf') format('truetype');
+            font-weight: bold;
+            font-style: italic; }
+
+        #content-container{
+            font-family: OpenSans!important;
+        }
+
+
+        div {
+            padding: 0px;
+        }
+
+        .otree-timer {
+            display: none;
+        }
+
+        .otree-body {
+            max-width:100vw;
+            margin:0 auto;
+        }
+
+
+        #content-container {
+            position: relative;
+            width: 60vw;
+            height: 95vh;
+            max-height: 60vw;
+            margin: 0 auto;
+            overflow: hidden;
+            background-color: white;
+            transform-origin:top left;
+            margin-top: 1vw;
+        }
+
+        .well{
+            background-color: white;
+            background-image: none;
+        }
+
+
+        .btn {
+            width:10vw;
+            height:7.5vw;
+            font-weight: bold;
+            font-size: 3vw;
+            padding: 0;
+        }
+
+        .btn:focus,.btn:active {
+            outline: none !important;
+            box-shadow: none;
+        }
+        .btn:active {
+            transform: scale(0.95);
+        }
+        .off{
+            pointer-events: none;
+        }
+
+        #option0{
+            position: absolute;
+            top: 6.25vw;
+            left: 17.5vw;
+        }
+
+        #option1{
+            position: absolute;
+            top: 6.25vw;
+            left: 32.5vw;
+        }
+
+        #history0{
+            position: absolute;
+            top: 22.5vw;
+            left: 25vw;
+        }
+
+        #history1{
+            position: absolute;
+            top: 33.75vw;
+            left: 25vw;
+        }
+
+        .text{
+            position: absolute;
+            left:5vw;
+            font-size: 1.5vw;
+        }
+
+        #choose{top:8.75vw;}
+        #last_choice{top:25vw;}
+        #second_last_choice{top:36.25vw;}
+        #round{top:1.25vw; right:3.75vw; text-align: right}
+        #round_text{top:3.4375vw; right:2.8125vw;font-size:1vw;text-align: right}
+
+        #points{top:20.25vw; right: 2.815vw;  font-size:1vw; text-align: right}
+        #score{top:17.8125vw; right: 3.75vw;   font-size:2vw; text-align: right}
+
+        #timer_text{left:auto; width: 9vw; top:11.25vw; right: 2.8125vw;  font-size:1vw;text-align: right}
+
+
+        .timer_frame {
+            position: absolute;
+            top: 9.375vw;
+            right: 3.75vw;
+            width: 8.875vw;
+            height: 1vw;
+            border: #000000 solid .125vw;
+        }
+
+.btn-default {
+      background-color: #9258a8;
+      border-color: #9258a8;
+      color: #fff;
+      text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
+      background-color: #86519b;
+      background-image: -moz-linear-gradient(top,#9258a8,#754687);
+      background-image: -webkit-gradient(linear,0 0,0 100%,from(#9258a8),to(#754687));
+      background-image: -webkit-linear-gradient(top,#9258a8,#754687);
+      background-image: -o-linear-gradient(top,#9258a8,#754687);
+      background-image: linear-gradient(to bottom,#9258a8,#754687);
+      background-repeat: repeat-x;
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff9258a8', endColorstr='#ff754686', GradientType=0);
+      border-color: #754687 #754687 #492c54;
+      border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
+    }
+    .btn-default:hover,
+    .btn-default:focus {
+      text-decoration: none;
+      background-position: 0 -15px;
+      -webkit-transition: background-position .1s linear;
+      -moz-transition: background-position .1s linear;
+      -o-transition: background-position .1s linear;
+      transition: background-position .1s linear;
+    }
+    .btn-default:hover,
+    .btn-default:focus {
+      background-color: #754687;
+    }
+    .btn-default:active,
+    .btn-default.active,
+    .btn-default.active:hover {
+      background-color: #844f98;
+      border-color: #754687;
+    }
+
+        li {
+            padding-bottom: 0.3vw ;
+            padding-top: 0.3vw;
+        }
+        ul {
+            padding-left: 1vw;
+        }
+
+        #content-container .i_button{
+            width: 9vw;
+            height: 2.5vw;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding:0;
+            font-size: 1.5vw;
+            font-weight: normal;
+        }
+
+        .i_text {
+            font-size: 1.1vw;
+            margin: 0 auto;
+            border: none;
+            padding: 1vw;
+            width: 50vw;
+            left: 5vw;
+            top: 5vw;
+        }
+
+        .instr{
+            position: absolute;
+            box-sizing: border-box;
+            border-radius: 1vw;
+        }
+
+        .HL {
+            border: black solid 0.125vw;
+        }
+
+
+        .separator{
+            padding-top: 3vw;
+        }
+
+        #content-container .next{
+            position: absolute;
+            bottom: 1.5vw;
+            right: 1.5vw;
+        }
+        #content-container .back {
+            position: absolute;
+            bottom: 1.5vw;
+            right: 11.5vw;
+        }
+        ul ul{
+            margin-left:2vw}
+
+
+    </style>
+
+
+
+    <style>
+        #all_buttons_6 .btn{
+            width: 6vw;
+            height: 4.5vw;
+            margin: 0 1vw;
+        }
+
+        #all_buttons_6{
+            position: static;
+            width: 53vw;
+            margin: 0 auto;
+            padding: 1.25vw
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+<div class="otree-body">
+    <div>
+
+
+            <input type="hidden" value="/p/21exfdal/instructions_2/instr_5/5/" name="origin_url">
+
+
+            <div class="_otree-content">
+
+                <div id="content-container" class="well">
+
+                    <br><br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <div id="all_buttons_6" class="instr i_text">
+                        <div style="margin: 0 auto; width: auto">
+                            <li>Dies sind die sechs Farben, die im Experiment vorkommen:</li>
+                            <br>
+
+                            <button type="button" class="btn choice btn-default off">  </button>
+
+                            <button type="button" class="btn choice btn-primary off">  </button>
+
+                            <button type="button" class="btn choice btn-info off">  </button>
+
+                            <button type="button" class="btn choice btn-success off">  </button>
+
+                            <button type="button" class="btn choice btn-warning off">  </button>
+
+                            <button type="button" class="btn choice btn-danger off">  </button>
+
+                        </div>
+                        <br>
+                        <ul>
+                            <li> Falls Sie Probleme haben, einige der Farben auseinanderzuhalten: <br> Bitte melden Sie sich <b>jetzt</b> - einer der Experimentatoren wird zu Ihnen kommen! </li>
+                        </ul>
+                        <br><br>
+                        <ul>
+                            <li>Welche zwei Buttons Sie in einer Runde zur Auswahl haben, hängt nicht von Ihren vorherigen Entscheidungen ab.</li>
+                            <br>
+                            <li>Es kann vorkommen, dass beide Buttons dieselbe Farbe haben – dies ist beabsichtigt.
+                                <br>In diesem Fall spielt es natürlich keine Rolle, welchen Sie anklicken.</li>
+
+                        </ul>
+                    </div>
+
+                <button onclick="goto(6)" class="btn i_button next" id="next" role="button">weiter</button>
+                <button onclick="goto(4)" class="btn i_button back" id="back" role="button">zurück</button>
+
+                </div>
+
+            </div>
+    </div>
+
+</div>
+
+<script>
+    let queryString = window.location.search || ''
+    function goto(page){
+        window.location.href =`./instr_${page}.html${queryString}`
+    }
+</script>
+
+
+<!-- compiled and minified JavaScript -->
+<script src="./resources/bootstrap.min.js"></script>
+
+<!-- ctra+alt+p, then ctrl+alt+i to reach color adjustment screen -->
+<!--<script>-->
+
+<!--    $(document).ready(function() {-->
+<!--        document.addEventListener("keydown", is_p, false)-->
+<!--    })-->
+
+<!--    function is_p(zEvent) {-->
+<!--        if (zEvent.ctrlKey && zEvent.altKey && zEvent.code === "KeyP") {-->
+<!--            document.addEventListener("keydown", is_O,false)-->
+<!--        }-->
+<!--    }-->
+
+<!--    function is_O(zEvent){-->
+<!--        if (zEvent.ctrlKey  &&  zEvent.altKey  &&  zEvent.code === "KeyI") {-->
+<!--            $(".next").attr("value",5)-->
+<!--            $(".next").html("FARBEN")-->
+
+<!--        }-->
+<!--        else {-->
+<!--            document.removeEventListener("keydown", is_O,false)-->
+<!--        }-->
+
+<!--    }-->
+<!--</script>-->
+
+
+</body></html>
