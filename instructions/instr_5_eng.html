@@ -265,9 +265,6 @@
     <div>
 
 
-            <input type="hidden" value="/p/21exfdal/instructions_2/instr_5/5/" name="origin_url">
-
-
             <div class="_otree-content">
 
                 <div id="content-container" class="well">
@@ -279,7 +276,7 @@
                     <br>
                     <div id="all_buttons_6" class="instr i_text">
                         <div style="margin: 0 auto; width: auto">
-                            <li>Dies sind die sechs Farben, die im Experiment vorkommen:</li>
+                            <li>These are the six colors that are used in the experiment:</li>
                             <br>
 
                             <button type="button" class="btn choice btn-default off">  </button>
@@ -297,20 +294,22 @@
                         </div>
                         <br>
                         <ul>
-                            <li> Falls Sie Probleme haben, einige der Farben auseinanderzuhalten: <br> Bitte melden Sie sich <b>jetzt</b> - einer der Experimentatoren wird zu Ihnen kommen! </li>
+                            <li> If you have trouble differentiating any two of these colors:
+                            <br> Please raise your hand <b>now</b> - an experimenter will come to your desk!<br>
+                            <span style="color: red">[Note not seen by participants: in that case, the problematic colors would have been swapped]</span></li>
                         </ul>
                         <br><br>
                         <ul>
-                            <li>Welche zwei Buttons Sie in einer Runde zur Auswahl haben, hängt nicht von Ihren vorherigen Entscheidungen ab.</li>
+                            <li>Which two buttons are available in any given round does not depend on your past choices.</li>
                             <br>
-                            <li>Es kann vorkommen, dass beide Buttons dieselbe Farbe haben – dies ist beabsichtigt.
-                                <br>In diesem Fall spielt es natürlich keine Rolle, welchen Sie anklicken.</li>
+                            <li>It can happen that both buttons have the same color &ndash; this is on purpose.
+                                <br>In this case it makes no difference which of the two you click.</li>
 
                         </ul>
                     </div>
 
-                <button onclick="goto(6)" class="btn i_button next" id="next" role="button">weiter</button>
-                <button onclick="goto(4)" class="btn i_button back" id="back" role="button">zurück</button>
+                <button onclick="goto(6)" class="btn i_button next" id="next" role="button">next</button>
+                <button onclick="goto(4)" class="btn i_button back" id="back" role="button">back</button>
 
                 </div>
 
@@ -322,7 +321,7 @@
 <script>
     let queryString = window.location.search || ''
     function goto(page){
-        window.location.href =`./instr_${page}.html${queryString}`
+        window.location.href =`./instr_${page}_eng.html${queryString}`
     }
 </script>
 

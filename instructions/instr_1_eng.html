@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="./resources/bootstrap-theme.min.css">
     <link rel="stylesheet" href="./resources/theme.css">
 
+    <link rel="stylesheet" type="text/css" href="./resources/css_buttons.css">
+
     <script src="./resources/jquery.min.js"></script>
 
     <style>
@@ -17,8 +19,6 @@
             border-bottom: none;
         }
     </style>
-
-
 
 
     <style>
@@ -143,41 +143,10 @@
             border: #000000 solid .125vw;
         }
 
-.btn-default {
-      background-color: #9258a8;
-      border-color: #9258a8;
-      color: #fff;
-      text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
-      background-color: #86519b;
-      background-image: -moz-linear-gradient(top,#9258a8,#754687);
-      background-image: -webkit-gradient(linear,0 0,0 100%,from(#9258a8),to(#754687));
-      background-image: -webkit-linear-gradient(top,#9258a8,#754687);
-      background-image: -o-linear-gradient(top,#9258a8,#754687);
-      background-image: linear-gradient(to bottom,#9258a8,#754687);
-      background-repeat: repeat-x;
-      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff9258a8', endColorstr='#ff754686', GradientType=0);
-      border-color: #754687 #754687 #492c54;
-      border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
-    }
-    .btn-default:hover,
-    .btn-default:focus {
-      text-decoration: none;
-      background-position: 0 -15px;
-      -webkit-transition: background-position .1s linear;
-      -moz-transition: background-position .1s linear;
-      -o-transition: background-position .1s linear;
-      transition: background-position .1s linear;
-    }
-    .btn-default:hover,
-    .btn-default:focus {
-      background-color: #754687;
-    }
-    .btn-default:active,
-    .btn-default.active,
-    .btn-default.active:hover {
-      background-color: #844f98;
-      border-color: #754687;
-    }
+
+    </style>
+
+    <style type="text/css">
 
         li {
             padding-bottom: 0.3vw ;
@@ -205,7 +174,7 @@
             padding: 1vw;
             width: 50vw;
             left: 5vw;
-            top: 5vw;
+            top: 2.5vw;
         }
 
         .instr{
@@ -236,125 +205,86 @@
         ul ul{
             margin-left:2vw}
 
-
     </style>
-
-
 
     <style>
-        #all_buttons_6 .btn{
-            width: 6vw;
-            height: 4.5vw;
-            margin: 0 1vw;
-        }
-
-        #all_buttons_6{
-            position: static;
-            width: 53vw;
-            margin: 0 auto;
-            padding: 1.25vw
-        }
-
+        #instr_text_2{border:none}
 
     </style>
 
+
 </head>
-<body>
+<body style="">
 
 <div class="instr-body">
     <div>
 
+        <div class="_otree-content">
 
-            <input type="hidden" value="/p/21exfdal/instructions_2/instr_5/5/" name="origin_url">
+            <div id="content-container" class="well">
 
+                <div id="instr_text_2" class="instr i_text">
 
-            <div class="_otree-content">
+                    <span class="instructions_text" style="margin: 0 auto">Welcome to today's experiment!</span>
 
-                <div id="content-container" class="well">
-
-                    <br><br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <div id="all_buttons_6" class="instr i_text">
-                        <div style="margin: 0 auto; width: auto">
-                            <li>Dies sind die sechs Farben, die im Experiment vorkommen:</li>
-                            <br>
-
-                            <button type="button" class="btn choice btn-default off">  </button>
-
-                            <button type="button" class="btn choice btn-primary off">  </button>
-
-                            <button type="button" class="btn choice btn-info off">  </button>
-
-                            <button type="button" class="btn choice btn-success off">  </button>
-
-                            <button type="button" class="btn choice btn-warning off">  </button>
-
-                            <button type="button" class="btn choice btn-danger off">  </button>
-
-                        </div>
+                    <ul>
                         <br>
-                        <ul>
-                            <li> Falls Sie Probleme haben, einige der Farben auseinanderzuhalten: <br> Bitte melden Sie sich <b>jetzt</b> - einer der Experimentatoren wird zu Ihnen kommen! </li>
-                        </ul>
-                        <br><br>
-                        <ul>
-                            <li>Welche zwei Buttons Sie in einer Runde zur Auswahl haben, hängt nicht von Ihren vorherigen Entscheidungen ab.</li>
-                            <br>
-                            <li>Es kann vorkommen, dass beide Buttons dieselbe Farbe haben – dies ist beabsichtigt.
-                                <br>In diesem Fall spielt es natürlich keine Rolle, welchen Sie anklicken.</li>
+                        <li class="instructions_text"> The experiment consists of the following:
+                            <ol>
+                                <li> A main task</li>
+                                <li> Some questions regarding this task, and your person</li>
+                                <li> A few shorter tasks</li>
+                                <li> Your payment &ndash; for which will call you to the front at the end</li>
+                            </ol>
+                        </li>
+                        <br>
+                        <li>You will receive more detailed instructions before each section.
+                        </li>
+                        <li>
+                            The experiment will take about 50 minutes in total.
+                        </li>
+                        <li class="separator">
+                            We begin by introducing the main task.
+                        </li>
+                        <li> Please read all instructions on the following pages carefully.
+                        </li>
 
+                        <ul>
+                            <li>
+                                You can proceed by clicking "next".
+                            </li>
+                            <li>
+                                Use "back" to return to previous pages.
+                            </li>
+                            <li>
+                                If anything remains unclear after reading, simply raise your hand
+                                <br> we will approach you at your cubicle.
+                            </li>
                         </ul>
-                    </div>
-
-                <button onclick="goto(6)" class="btn i_button next" id="next" role="button">weiter</button>
-                <button onclick="goto(4)" class="btn i_button back" id="back" role="button">zurück</button>
+                    </ul>
+                    <br>
 
                 </div>
-
+                <button onclick="goto(2)" class="btn i_button next" id="next" role="button">next</button>
             </div>
+
+        </div>
+
     </div>
+    <br>
 
 </div>
 
 <script>
     let queryString = window.location.search || ''
     function goto(page){
-        window.location.href =`./instr_${page}.html${queryString}`
+        window.location.href =`./instr_${page}_eng.html${queryString}`
     }
 </script>
-
 
 <!-- compiled and minified JavaScript -->
 <script src="./resources/bootstrap.min.js"></script>
 
-<!-- ctra+alt+p, then ctrl+alt+i to reach color adjustment screen -->
-<!--<script>-->
-
-<!--    $(document).ready(function() {-->
-<!--        document.addEventListener("keydown", is_p, false)-->
-<!--    })-->
-
-<!--    function is_p(zEvent) {-->
-<!--        if (zEvent.ctrlKey && zEvent.altKey && zEvent.code === "KeyP") {-->
-<!--            document.addEventListener("keydown", is_O,false)-->
-<!--        }-->
-<!--    }-->
-
-<!--    function is_O(zEvent){-->
-<!--        if (zEvent.ctrlKey  &&  zEvent.altKey  &&  zEvent.code === "KeyI") {-->
-<!--            $(".next").attr("value",5)-->
-<!--            $(".next").html("FARBEN")-->
-
-<!--        }-->
-<!--        else {-->
-<!--            document.removeEventListener("keydown", is_O,false)-->
-<!--        }-->
-
-<!--    }-->
-<!--</script>-->
-
+<script src="./resources/init_widgets.js"></script>
 
 </body></html>

@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="./resources/bootstrap-theme.min.css">
     <link rel="stylesheet" href="./resources/theme.css">
 
+    <link rel="stylesheet" type="text/css" href="./resources/css_buttons.css">
+
     <script src="./resources/jquery.min.js"></script>
 
     <style>
@@ -17,8 +19,6 @@
             border-bottom: none;
         }
     </style>
-
-
 
 
     <style>
@@ -143,41 +143,10 @@
             border: #000000 solid .125vw;
         }
 
-.btn-default {
-      background-color: #9258a8;
-      border-color: #9258a8;
-      color: #fff;
-      text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
-      background-color: #86519b;
-      background-image: -moz-linear-gradient(top,#9258a8,#754687);
-      background-image: -webkit-gradient(linear,0 0,0 100%,from(#9258a8),to(#754687));
-      background-image: -webkit-linear-gradient(top,#9258a8,#754687);
-      background-image: -o-linear-gradient(top,#9258a8,#754687);
-      background-image: linear-gradient(to bottom,#9258a8,#754687);
-      background-repeat: repeat-x;
-      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff9258a8', endColorstr='#ff754686', GradientType=0);
-      border-color: #754687 #754687 #492c54;
-      border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
-    }
-    .btn-default:hover,
-    .btn-default:focus {
-      text-decoration: none;
-      background-position: 0 -15px;
-      -webkit-transition: background-position .1s linear;
-      -moz-transition: background-position .1s linear;
-      -o-transition: background-position .1s linear;
-      transition: background-position .1s linear;
-    }
-    .btn-default:hover,
-    .btn-default:focus {
-      background-color: #754687;
-    }
-    .btn-default:active,
-    .btn-default.active,
-    .btn-default.active:hover {
-      background-color: #844f98;
-      border-color: #754687;
-    }
+
+    </style>
+
+    <style type="text/css">
 
         li {
             padding-bottom: 0.3vw ;
@@ -205,7 +174,7 @@
             padding: 1vw;
             width: 50vw;
             left: 5vw;
-            top: 5vw;
+            top: 2.5vw;
         }
 
         .instr{
@@ -236,125 +205,63 @@
         ul ul{
             margin-left:2vw}
 
-
     </style>
-
-
 
     <style>
-        #all_buttons_6 .btn{
-            width: 6vw;
-            height: 4.5vw;
-            margin: 0 1vw;
-        }
-
-        #all_buttons_6{
-            position: static;
-            width: 53vw;
-            margin: 0 auto;
-            padding: 1.25vw
-        }
-
+        #instr_text_2{border:none}
 
     </style>
 
+
 </head>
-<body>
+<body style="">
 
 <div class="instr-body">
     <div>
 
+        <div class="_otree-content">
 
-            <input type="hidden" value="/p/21exfdal/instructions_2/instr_5/5/" name="origin_url">
+            <div id="content-container" class="well">
 
+                <div id="instr_text_2" class="instr i_text">
 
-            <div class="_otree-content">
-
-                <div id="content-container" class="well">
-
-                    <br><br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <div id="all_buttons_6" class="instr i_text">
-                        <div style="margin: 0 auto; width: auto">
-                            <li>Dies sind die sechs Farben, die im Experiment vorkommen:</li>
-                            <br>
-
-                            <button type="button" class="btn choice btn-default off">  </button>
-
-                            <button type="button" class="btn choice btn-primary off">  </button>
-
-                            <button type="button" class="btn choice btn-info off">  </button>
-
-                            <button type="button" class="btn choice btn-success off">  </button>
-
-                            <button type="button" class="btn choice btn-warning off">  </button>
-
-                            <button type="button" class="btn choice btn-danger off">  </button>
-
-                        </div>
+                    <ul>
                         <br>
+                        <li class="instructions_text"> The following pages contain the interactive instructions for the main task of the  "learned impatience" experiment.
+                        </li>
+                        <br>
+                        <li>Keep in mind that the layout was done specifically for the desktop computers in our lab, where the experiment was run
+                             in fullscreen, using a specific resolution (I think 1920&times;1080) and browser.
+                        </li>
+                        <li>
+                            It is possible that the layout is slightly off in other resolutions, when not using full-screen,
+                            or using a different or newer browser. In particular, parts of the texts may be covered by other elements
+                            that would originally not have been covered.
+                        </li>
+                        <br>
+                        <li>
+                            Both the German original and an English translation are available.<br> Start by clicking either link:
+                        </li>
                         <ul>
-                            <li> Falls Sie Probleme haben, einige der Farben auseinanderzuhalten: <br> Bitte melden Sie sich <b>jetzt</b> - einer der Experimentatoren wird zu Ihnen kommen! </li>
+                            <li><a href="instr_1.html">German original</a> </li>
+                            <li><a href="instr_1.html">English translation</a> </li>
                         </ul>
-                        <br><br>
-                        <ul>
-                            <li>Welche zwei Buttons Sie in einer Runde zur Auswahl haben, hängt nicht von Ihren vorherigen Entscheidungen ab.</li>
-                            <br>
-                            <li>Es kann vorkommen, dass beide Buttons dieselbe Farbe haben – dies ist beabsichtigt.
-                                <br>In diesem Fall spielt es natürlich keine Rolle, welchen Sie anklicken.</li>
-
-                        </ul>
-                    </div>
-
-                <button onclick="goto(6)" class="btn i_button next" id="next" role="button">weiter</button>
-                <button onclick="goto(4)" class="btn i_button back" id="back" role="button">zurück</button>
+                    </ul>
+                    <br>
 
                 </div>
-
             </div>
+
+        </div>
+
     </div>
+    <br>
 
 </div>
-
-<script>
-    let queryString = window.location.search || ''
-    function goto(page){
-        window.location.href =`./instr_${page}.html${queryString}`
-    }
-</script>
-
 
 <!-- compiled and minified JavaScript -->
 <script src="./resources/bootstrap.min.js"></script>
 
-<!-- ctra+alt+p, then ctrl+alt+i to reach color adjustment screen -->
-<!--<script>-->
-
-<!--    $(document).ready(function() {-->
-<!--        document.addEventListener("keydown", is_p, false)-->
-<!--    })-->
-
-<!--    function is_p(zEvent) {-->
-<!--        if (zEvent.ctrlKey && zEvent.altKey && zEvent.code === "KeyP") {-->
-<!--            document.addEventListener("keydown", is_O,false)-->
-<!--        }-->
-<!--    }-->
-
-<!--    function is_O(zEvent){-->
-<!--        if (zEvent.ctrlKey  &&  zEvent.altKey  &&  zEvent.code === "KeyI") {-->
-<!--            $(".next").attr("value",5)-->
-<!--            $(".next").html("FARBEN")-->
-
-<!--        }-->
-<!--        else {-->
-<!--            document.removeEventListener("keydown", is_O,false)-->
-<!--        }-->
-
-<!--    }-->
-<!--</script>-->
-
+<script src="./resources/init_widgets.js"></script>
 
 </body></html>

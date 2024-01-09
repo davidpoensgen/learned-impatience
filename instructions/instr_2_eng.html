@@ -18,9 +18,6 @@
         }
     </style>
 
-
-
-
     <style>
 
         @font-face { font-family: 'OpenSans';
@@ -143,41 +140,12 @@
             border: #000000 solid .125vw;
         }
 
-.btn-default {
-      background-color: #9258a8;
-      border-color: #9258a8;
-      color: #fff;
-      text-shadow: 0 -1px 0 rgba(0,0,0,0.25);
-      background-color: #86519b;
-      background-image: -moz-linear-gradient(top,#9258a8,#754687);
-      background-image: -webkit-gradient(linear,0 0,0 100%,from(#9258a8),to(#754687));
-      background-image: -webkit-linear-gradient(top,#9258a8,#754687);
-      background-image: -o-linear-gradient(top,#9258a8,#754687);
-      background-image: linear-gradient(to bottom,#9258a8,#754687);
-      background-repeat: repeat-x;
-      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff9258a8', endColorstr='#ff754686', GradientType=0);
-      border-color: #754687 #754687 #492c54;
-      border-color: rgba(0,0,0,0.1) rgba(0,0,0,0.1) rgba(0,0,0,0.25);
-    }
-    .btn-default:hover,
-    .btn-default:focus {
-      text-decoration: none;
-      background-position: 0 -15px;
-      -webkit-transition: background-position .1s linear;
-      -moz-transition: background-position .1s linear;
-      -o-transition: background-position .1s linear;
-      transition: background-position .1s linear;
-    }
-    .btn-default:hover,
-    .btn-default:focus {
-      background-color: #754687;
-    }
-    .btn-default:active,
-    .btn-default.active,
-    .btn-default.active:hover {
-      background-color: #844f98;
-      border-color: #754687;
-    }
+
+    </style>
+
+
+
+    <style type="text/css">
 
         li {
             padding-bottom: 0.3vw ;
@@ -233,6 +201,7 @@
             bottom: 1.5vw;
             right: 11.5vw;
         }
+
         ul ul{
             margin-left:2vw}
 
@@ -240,89 +209,93 @@
     </style>
 
 
-
     <style>
-        #all_buttons_6 .btn{
+        .choice{
             width: 6vw;
             height: 4.5vw;
-            margin: 0 1vw;
+            margin: 0 0.4vw;
+            pointer-events: none;
         }
 
-        #all_buttons_6{
+        #all_buttons_6 {
             position: static;
             width: 53vw;
             margin: 0 auto;
             padding: 1.25vw
         }
+        #instr_text_3{
+            top: 2.5vw;
+        }
 
+
+        ul ul{
+            margin-left:2vw}
 
     </style>
 
+
+
 </head>
-<body>
+<body style="">
 
 <div class="instr-body">
     <div>
 
 
-            <input type="hidden" value="/p/21exfdal/instructions_2/instr_5/5/" name="origin_url">
+        <div class="_otree-content">
+
+            <div id="content-container" class="well">
 
 
-            <div class="_otree-content">
+                <div id="instr_text_3" class="instr i_text">
+                    <b>First a short overview &ndash; details will follow:</b>
+                    <ul>
 
-                <div id="content-container" class="well">
-
-                    <br><br>
-                    <br>
-                    <br>
-                    <br>
-                    <br>
-                    <div id="all_buttons_6" class="instr i_text">
-                        <div style="margin: 0 auto; width: auto">
-                            <li>Dies sind die sechs Farben, die im Experiment vorkommen:</li>
-                            <br>
-
-                            <button type="button" class="btn choice btn-default off">  </button>
-
-                            <button type="button" class="btn choice btn-primary off">  </button>
-
-                            <button type="button" class="btn choice btn-info off">  </button>
-
-                            <button type="button" class="btn choice btn-success off">  </button>
-
-                            <button type="button" class="btn choice btn-warning off">  </button>
-
-                            <button type="button" class="btn choice btn-danger off">  </button>
-
-                        </div>
+                        <li> The main task consists of 105 rounds.
+                            <br> In each round you can choose one of two colors.</li>
+                        <li> Each of these decisions generates points for you twice: <br>
+                            Once immediately after the choice, once with one round delay.</li>
                         <br>
-                        <ul>
-                            <li> Falls Sie Probleme haben, einige der Farben auseinanderzuhalten: <br> Bitte melden Sie sich <b>jetzt</b> - einer der Experimentatoren wird zu Ihnen kommen! </li>
-                        </ul>
-                        <br><br>
-                        <ul>
-                            <li>Welche zwei Buttons Sie in einer Runde zur Auswahl haben, hängt nicht von Ihren vorherigen Entscheidungen ab.</li>
-                            <br>
-                            <li>Es kann vorkommen, dass beide Buttons dieselbe Farbe haben – dies ist beabsichtigt.
-                                <br>In diesem Fall spielt es natürlich keine Rolle, welchen Sie anklicken.</li>
+                        <li>Your goal is to collect as many points as possible.</li>
+                        <br>
+                        <li> How many points each choice yields depends on the chosen color:
+                            <br> some colors are worth more points than others. </li>
+                        <li> You do not know in advance which of the colors  yield many or few points &ndash;
+                            <br> you can learn this while doing the task.</li>
+                        <br>
+                        <li> The following page allows you to familiarize yourself with the task.</li>
+                        <li> It explains both the interface and how points are generated.</li>
+                        <br>
+                        <li> <b> Important</b>:
+                            <ul>
+                                <li>The following page is for demonstration only!</li>
+                                <li>
+                                    The different options are represented by black, white, and shades of grey rather than colors.
+                                </li>
+                                <li>All numbers are just examples.</li>
+                                <li>The points you earn during the demonstration do not influence your payoff.</li>
+                            </ul>
 
-                        </ul>
-                    </div>
 
-                <button onclick="goto(6)" class="btn i_button next" id="next" role="button">weiter</button>
-                <button onclick="goto(4)" class="btn i_button back" id="back" role="button">zurück</button>
+                        </li></ul>
+
 
                 </div>
 
-            </div>
-    </div>
+                <button onclick="goto(3)" class="btn i_button next" id="next" role="button">next</button>
+                <button onclick="goto(1)" class="btn i_button back" id="back" role="button">back</button>
 
+            </div>
+
+        </div>
+
+    </div>
 </div>
 
 <script>
     let queryString = window.location.search || ''
     function goto(page){
-        window.location.href =`./instr_${page}.html${queryString}`
+        window.location.href =`./instr_${page}_eng.html${queryString}`
     }
 </script>
 
@@ -330,31 +303,6 @@
 <!-- compiled and minified JavaScript -->
 <script src="./resources/bootstrap.min.js"></script>
 
-<!-- ctra+alt+p, then ctrl+alt+i to reach color adjustment screen -->
-<!--<script>-->
-
-<!--    $(document).ready(function() {-->
-<!--        document.addEventListener("keydown", is_p, false)-->
-<!--    })-->
-
-<!--    function is_p(zEvent) {-->
-<!--        if (zEvent.ctrlKey && zEvent.altKey && zEvent.code === "KeyP") {-->
-<!--            document.addEventListener("keydown", is_O,false)-->
-<!--        }-->
-<!--    }-->
-
-<!--    function is_O(zEvent){-->
-<!--        if (zEvent.ctrlKey  &&  zEvent.altKey  &&  zEvent.code === "KeyI") {-->
-<!--            $(".next").attr("value",5)-->
-<!--            $(".next").html("FARBEN")-->
-
-<!--        }-->
-<!--        else {-->
-<!--            document.removeEventListener("keydown", is_O,false)-->
-<!--        }-->
-
-<!--    }-->
-<!--</script>-->
-
+<script src="./resources/init_widgets.js"></script>
 
 </body></html>

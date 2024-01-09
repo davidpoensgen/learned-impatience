@@ -118,7 +118,7 @@
 
         .text{
             position: absolute;
-            left:5vw;
+            left:4.7vw;
             font-size: 1.5vw;
         }
 
@@ -192,11 +192,6 @@
             margin-left:2vw
         }
 
-
-    </style>
-
-
-    <style type="text/css">
 
         @keyframes movemid0 {
             0% { transform: translate(0,0) }
@@ -624,11 +619,11 @@
             transition: opacity 1s ease;
         }
         #zufall.is_on:after{
-            content: ": AN";
+            content: ": ON";
         }
 
         #zufall.is_off:after{
-            content: ": AUS";
+            content: ": OFF";
         }
         #zufall:after{
             font-weight: bold;
@@ -653,63 +648,70 @@
 
         <div class="_otree-content">
 
-
             <input type="hidden" name="single_log" id="input_log">
 
             <div id="content-container" class="well">
 
-                <div id="not_yet" class=" i_button next" style="opacity:0" data-toggle="popover" data-placement="top" data-content="Bitte lesen und befolgen Sie sämtliche Hinweise, bevor Sie fortfahren." data-trigger="hover" data-original-title="" title=""></div>
-                <button onclick="goto(4)" class="btn i_button next" id="next" role="button">weiter</button>
-                <button onclick="goto(2)" class="btn i_button back" id="back" role="button">zurück</button>
+                <div id="not_yet" class=" i_button next" style="opacity:0" data-toggle="popover" data-placement="top" data-content="Please read and follow all of the instructions before proceeding." data-trigger="hover" data-original-title="" title=""></div>
+                <button onclick="goto(4)" class="btn i_button next" id="next" role="button">next</button>
+                <button onclick="goto(2)" class="btn i_button back" id="back" role="button">back</button>
 
 
 
                 <div id="set99">
-                    <div id="div_options99" data-toggle="popover" data-placement="left" class="popover_div" title="" data-html="true" data-content="Willkommen!&lt;br&gt;
-            Was Sie auf dieser Seite sehen, gleicht der Anzeige der späteren Aufgabe.
+                    <div id="div_options99" data-toggle="popover" data-placement="left" class="popover_div" title="" data-html="true" data-content="Welcome!&lt;br&gt;
+            What you see on this page corresponds to what you will see in the upcoming task itself.
             &lt;br&gt;&lt;br&gt;
-            Jede Runde erscheinen hier zwei Buttons, zwischen denen Sie wählen können.
-            Später werden sie farbig sein; in diesem Beispiel sind es verschiedene Grautöne. &lt;br&gt;&lt;br&gt; &lt;b&gt;Wählen Sie bitte fünf Mal einen der beiden Buttons und beobachten Sie, was passiert. &lt;br&gt;Es folgen dann weitere Erklärungen.&lt;/b&gt;" data-trigger="manual" data-original-title="Ihre Auswahlmöglichkeiten"></div><div class="popover fade left in" style="top: 53.4922px; left: -86.2031px; display: block;"><div class="arrow"></div><h3 class="popover-title">Ihre Auswahlmöglichkeiten</h3><div class="popover-content">Willkommen!<br>
-                    Was Sie auf dieser Seite sehen, gleicht der Anzeige der späteren Aufgabe.
-                    <br><br>
-                    Jede Runde erscheinen hier zwei Buttons, zwischen denen Sie wählen können.
-                    Später werden sie farbig sein; in diesem Beispiel sind es verschiedene Grautöne. <br><br> <b>Wählen Sie bitte fünf Mal einen der beiden Buttons und beobachten Sie, was passiert. <br>Es folgen dann weitere Erklärungen.</b></div></div>
+            Every round, two buttons appear here, from which you can choose one.
+                    In the task they will be colored; for this example, they are in different shades of grey. &lt;br&gt;&lt;br&gt; &lt;b&gt;
+                    Please select one of the two buttons by clicking and observe what happens; repeat this five times. &lt;br&gt;Further explanations will then follow.&lt;/b&gt;" data-trigger="manual" data-original-title="Your current options"></div>
 
+                    <div class="popover fade left in" style="top: 53.4922px; left: -86.2031px; display: block;"><div class="arrow"></div><h3 class="popover-title">Your current options</h3><div class="popover-content">
+                    Welcome!<br>
+                    What you see on this page corresponds to what will be displayed the upcoming task itself.
+                    <br><br>
+                    Every round, two buttons appear here, from which you can choose one.
+                    In the task they will be colored; for this example, they are in different shades of grey. <br><br>
+                    <b>Please select one of the two buttons by clicking and observe what happens; repeat this five times.
+                        <br>Further explanations will then follow.</b></div></div>
                 </div>
 
                 <div id="set1">
 
-                    <div id="div_options" data-toggle="popover" data-placement="left" class="popover_div popover_div_hidden" title="" data-html="true" data-content="Hier erscheinen jede Runde zwei Buttons, von denen Sie einen durch Anklicken wählen können. &lt;br&gt;&lt;br&gt; Sie können dies ausprobieren, sooft Sie möchten, auch während diese Hinweise eingeblendet sind." data-trigger="manual" data-original-title="&lt;b&gt;1&lt;/b&gt; – Ihre momentanen Optionen"></div>
-                    <div id="div_hist1" data-toggle="popover" data-placement="left" class="popover_div popover_div_hidden" title="" data-html="true" data-content="Hierher bewegt sich jeder Button, direkt nachdem Sie ihn gewählt haben. &lt;br&gt; Es erscheint eine &lt;b&gt; erste &lt;/b&gt; Punktzahl, die Sie durch die Wahl verdient haben." data-trigger="manual" data-original-title="&lt;b&gt;2&lt;/b&gt; – Zuletzt gewählt"></div>
-                    <div id="div_hist2" data-toggle="popover" data-placement="left" class="popover_div popover_div_hidden" title="" data-html="true" data-content="Hier sehen Sie, was Sie eine Runde zuvor gewählt haben.  &lt;br&gt; Diese Wahl bringt jetzt ein &lt;b&gt;zweites&lt;/b&gt; Mal Punkte, die hier angezeigt werden. &lt;br&gt;&lt;br&gt; &lt;b&gt;Wichtig:&lt;/b&gt; Die beiden Zahlen, die Sie durch eine Farbe erhalten, müssen nicht gleich sein." data-trigger="manual" data-original-title="&lt;b&gt;3&lt;/b&gt; – Davor gewählt"></div>
+                    <div id="div_options" data-toggle="popover" data-placement="left" class="popover_div popover_div_hidden" title="" data-html="true"
+                         data-content="Every round, two buttons appear here, from which you can choose one.
+                                      &lt;br&gt;&lt;br&gt; You can try this as often as you want, even while these hints are shown."
+                            data-trigger="manual" data-original-title="&lt;b&gt;1&lt;/b&gt; – Your current options"></div>
+                    <div id="div_hist1" data-toggle="popover" data-placement="left" class="popover_div popover_div_hidden" title="" data-html="true" data-content="Whenever you choose a button, it moves here directly afterwards. &lt;br&gt; A &lt;b&gt; first &lt;/b&gt; amount of points is shown, which you have earned by making this choice" data-trigger="manual" data-original-title="&lt;b&gt;2&lt;/b&gt; – Just chosen"></div>
+                    <div id="div_hist2" data-toggle="popover" data-placement="left" class="popover_div popover_div_hidden" title="" data-html="true" data-content="Here you see what you chose the round before.  &lt;br&gt; This choice now generates now points a &lt;b&gt;second time&lt;/b&gt;, which are shown here. &lt;br&gt;&lt;br&gt; &lt;b&gt;Important:&lt;/b&gt; The two amounts generated by a given color can be different." data-trigger="manual" data-original-title="&lt;b&gt;3&lt;/b&gt; – Chosen before"></div>
 
-                    <div id="div_round" data-toggle="popover" data-placement="left" class="popover_div popover_div_hidden" title="" data-html="true" data-content="Die aktuelle Runde; insgesamt sind es 105." data-trigger="manual" data-original-title="&lt;b&gt;6&lt;/b&gt; – Rundenzähler"></div>
-                    <div id="div_timer" data-toggle="popover" data-placement="right" class="popover_div popover_div_hidden" title="" data-html="true" data-content="Für jede Entscheidung haben Sie &lt;b&gt;10 Sekunden&lt;/b&gt;; der schwarze Balken zeigt die verbleibende Zeit. &lt;br&gt;&lt;br&gt; In diesem Beispiel hat das Ablaufen der Zeit keine Auswirkung, damit Sie sich in Ruhe umschauen können. &lt;br&gt;
-        &lt;br&gt;&lt;b&gt;Wichtig: Im späteren Experiment gilt:&lt;/b&gt;&lt;br&gt; Wenn in einer Runde die Zeit abläuft, wird eine zufällige Auswahl getroffen, und Ihnen werden &lt;b&gt;5 Punkte abgezogen.&lt;/b&gt;" data-trigger="manual" data-original-title="&lt;b&gt;5&lt;/b&gt; – Zeitlimit für Ihre Entscheidung"></div>
-                    <div id="div_points" data-toggle="popover" data-placement="bottom" class="popover_div popover_div_hidden" title="" data-html="true" data-content="Immer, wenn links Punkte erscheinen, erhöhen sich Ihre Gesamtpunkte entsprechend.
+                    <div id="div_round" data-toggle="popover" data-placement="left" class="popover_div popover_div_hidden" title="" data-html="true" data-content="The current round; there are 105 in total." data-trigger="manual" data-original-title="&lt;b&gt;6&lt;/b&gt; – Round counter"></div>
+                    <div id="div_timer" data-toggle="popover" data-placement="right" class="popover_div popover_div_hidden" title="" data-html="true" data-content="You have &lt;b&gt;10 seconds&lt;/b&gt; for each decision. The black bar indicates the remaining time.  &lt;br&gt;&lt;br&gt; For this demonstration, time running up has no consequence, so that you can study everything without hurry. &lt;br&gt;
+        &lt;br&gt;&lt;b&gt;Important: Rule for the actual experiment:&lt;/b&gt;&lt;br&gt; If time runs up in any given round, a button is chosen at random, and a penalty of &lt;b&gt;5 points will be deducted.&lt;/b&gt;" data-trigger="manual" data-original-title="&lt;b&gt;5&lt;/b&gt; – Time limit for your decisions"></div>
+                    <div id="div_points" data-toggle="popover" data-placement="bottom" class="popover_div popover_div_hidden" title="" data-html="true" data-content="Whenever points are displayed on the left for your previous choices, your total points increase accordingly.
     &lt;br&gt;&lt;br&gt;
-    Je mehr Gesamtpunkte Sie später erzielen, um so höher wird Ihre Auszahlung ausfallen." data-trigger="manual" data-original-title="&lt;b&gt;4&lt;/b&gt; – Bislang erzielte Punkte"></div>
+    The more points you earn in the actual task, the higher your payoff will be." data-trigger="manual" data-original-title="&lt;b&gt;4&lt;/b&gt; – Total points earned so far"></div>
                 </div>
 
                 <div id="set2">
                     <div id="div_feedback" data-container="#set2" data-toggle="popover" data-placement="left" class="popover_div popover_div_hidden" title="" data-html="true" data-content="
-    Jede Wahl einer Farbe gibt zweimal Punkte:&lt;br&gt; Einmal direkt nach der Wahl (oben), einmal eine Runde später (unten). &lt;br&gt;
+    Every choice generates points twice:&lt;br&gt; Once immediately after the choice (top), once with a round delay (bottom). &lt;br&gt;
     &lt;br&gt;
-    Die Punktzahlen hängen von der jeweiligen Farbe ab: &lt;br&gt; Zu jeder Farbe gehört fest eine erste und eine zweite Punktzahl.
+    The amounts earned depend on the chosen color: &lt;br&gt; Each color has a fixed first and a fixed second number.
     &lt;br&gt;
     &lt;br&gt;
-    Für diese Demonstration sind die Zuordnungen wie folgt:
+    For this demonstration, these  numbers are as follows:
     &lt;br&gt;
     &lt;table&gt;
         &lt;tr&gt;
-            &lt;td&gt;&lt;/div&gt; Farbe &lt;/td&gt;
+            &lt;td&gt;&lt;/div&gt; Color &lt;/td&gt;
             &lt;td&gt;&lt;button class = &#39;btn bsp0 tab_btn off&#39;&gt; &lt;/td&gt;
             &lt;td&gt;&lt;button class = &#39;btn bsp1 tab_btn off&#39;&gt; &lt;/td&gt;
             &lt;td&gt;&lt;button class = &#39;btn bsp2 tab_btn off&#39;&gt; &lt;/td&gt;
             &lt;td&gt;&lt;button class = &#39;btn bsp3 tab_btn off&#39;&gt; &lt;/td&gt;
          &lt;/tr&gt;
          &lt;tr&gt;
-             &lt;td&gt;&lt;/div&gt;Erste  Zahl&lt;/td&gt;
+             &lt;td&gt;&lt;/div&gt;First number&lt;/td&gt;
 
             &lt;td&gt;&lt;button class = &#39;btn bsp0 tab_btn off&#39;&gt; 1&lt;/td&gt;
             &lt;td&gt;&lt;button class = &#39;btn bsp1 tab_btn off&#39;&gt; 4&lt;/td&gt;
@@ -717,7 +719,7 @@
             &lt;td&gt;&lt;button class = &#39;btn bsp3 tab_btn off&#39;&gt; 3&lt;/td&gt;
          &lt;/tr&gt;
          &lt;tr&gt;
-            &lt;td&gt;&lt;/div&gt; Zweite Zahl&lt;/td&gt;
+            &lt;td&gt;&lt;/div&gt; Second number&lt;/td&gt;
             &lt;td&gt;&lt;button class = &#39;btn bsp0 tab_btn off&#39;&gt; 2 &lt;/td&gt;
             &lt;td&gt;&lt;button class = &#39;btn bsp1 tab_btn off&#39;&gt; 4 &lt;/td&gt;
             &lt;td&gt;&lt;button class = &#39;btn bsp2 tab_btn off&#39;&gt; 1 &lt;/td&gt;
@@ -725,44 +727,41 @@
          &lt;/tr&gt;
     &lt;/table&gt;
     &lt;br&gt;
-    Wie Sie sehen, bringt Weiß etwa direkt nach der Wahl 1 Punkt, und eine Runde später weitere 2 Punkte – und damit insgesamt 3 Punkte. &lt;br&gt;
-    Für Schwarz sind es zum Beispiel 3 direkt und dann 6 – insgesamt also 9 Punkte.
+    As you can see, white as an example pays 1 point directly after the choice and then 2 points one round later – and therefore a total of 3 points. &lt;br&gt;
+    As another example, black pays 3 directly and then 6 – for a total of 9 points.
     &lt;br&gt;
     &lt;br&gt;
-    &lt;b&gt;Beachten Sie:&lt;/b&gt;&lt;br&gt;
-    Im Beispiel sind die Zahlen hier offengelegt, damit Sie das Prinzip nachvollziehen können.
+    &lt;b&gt;Please note:&lt;/b&gt;&lt;br&gt;
+    For this example, we show you the numbers here, so that you can understand the rules.
     &lt;br&gt;
-    Im eigentlichen Experiment sind es selbstverständlich andere Farben und neue Zahlen. Es werden Ihnen die Zahlen dann auch nicht mitgeteilt,
-    sondern Sie können im Verlauf selbst lernen, welche Farben viele Punkte geben.
-    " data-trigger="manual" data-original-title="&lt;b&gt;1&lt;/b&gt; – Punktevergabe"></div>
+    In the actual experiment, there will of course be different colors and different numbers.
+    The numbers will then also not be revealed to you directly. Rather, you can learn by making choices how many points the different colors generate.
+    " data-trigger="manual" data-original-title="&lt;b&gt;1&lt;/b&gt; – How points are generated"></div>
 
                     <div id="points_random" data-toggle="popover" data-placement="right" class="popover_div popover_div_hidden" title="" data-html="true" data-content="
-         &lt;b&gt;Wichtig:&lt;/b&gt; &lt;br&gt;
-         Bislang haben die Buttons immer &lt;b&gt;genau&lt;/b&gt; die zugeordneten Punkte gegeben.
+         &lt;b&gt;Important:&lt;/b&gt; &lt;br&gt;
+         So far, the buttons have generated &lt;b&gt;exactly&lt;/b&gt; the associated numbers of points.
          &lt;br&gt;
-         Im Experiment gleich gilt dagegen folgende Änderung:&lt;br&gt;
+         In the upcoming experiment, this weill be different as follows:&lt;br&gt;
          &lt;br&gt;
-         Zu beiden erhaltenen Punktzahlen ‐ sowohl der gerade als auch der zuvor gewählten Farbe ‐ wird jeweils zufällig 1, 2, 3 oder 4 hinzugezählt.
-         Das Ergebnis dieser Addition wird dann angezeigt und die Gesamtpunkte entsprechend erhöht.
+         To both numbers ‐ both the immediate and the delayed payment ‐ there will be a random addition of 1, 2, 3, or 4.
+         The result of this addition will be displayed and added to your points total.
          &lt;br&gt;
          &lt;br&gt;
-         Im gegenwärtigen Beispiel hieße dies etwa, dass Schwarz folgende Punktzahlen ergeben könnte:
+         In the current demonstration, this means that for example black could generate the following amounts:
          &lt;br&gt;
-         Erste Punktzahl:   4, 5, 6 oder 7      ‐    das entspricht    3+1, 3+2, 3+3, 3+4.
+         First, immediate amount:   4, 5, 6, or 7      ‐    corresponding to    3+1, 3+2, 3+3, 3+4.
          &lt;br&gt;
-         Zweite Punktzahl: 7, 8, 9 oder 10    ‐    das entspricht    6+1, 6+2, 6+3, 6+4.
+         Second, delayed amount: 7, 8, 9, 10    ‐    corresponding to    6+1, 6+2, 6+3, 6+4.
          &lt;br&gt; &lt;br&gt;
-         Da alle Farben gleichermaßen betroffen sind, ändert sich hierduch natürlich nicht, welche Farbe mehr Punkte gibt als eine andere.
-         Durch die zufälligen Schwankungen wird es allerdings etwas schwieriger, festzustellen, welche Farben viele und welche nicht so viele Punkte bringen.
+         Because all colors are affected equally, this of course does not change which colors pay more than others.
+         The random variation however does make it a bit harder to learn which colors pay many and which pay few points.
          &lt;br&gt; &lt;br&gt;
-         Sie können das Beispiel nun mit der zufälligen Komponente ausprobieren. Aktivieren Sie hierzu den Schalter &quot;C: Zufall&quot; oben links.
-         &lt;b&gt;Solange dieser angeschaltet ist, werden alle Punktzahlen in diesem Beispiel zufällig erhöht, so wie gleich im Experiment.&lt;b&gt;
+         You can now try out the demonstration with the random additions. To do so, please activate the switch &quot;C: Randomness&quot; in the upper left.
+         &lt;b&gt;As long as this switch is activated, all amounts in this demonstration will be increased randomly, exactly as in the upcoming experiment itself.&lt;b&gt;
          &lt;br&gt;
          &lt;br&gt;
-
-
-
-        " data-trigger="manual" data-original-title="&lt;b&gt;2&lt;/b&gt; – Mehr zu den Auszahlungen"></div>
+        " data-trigger="manual" data-original-title="&lt;b&gt;2&lt;/b&gt; – More on the generation of points"></div>
                 </div>
 
                 <div id="div_random_toggle" style="opacity:0; visibility: hidden">
@@ -770,10 +769,8 @@
                         <input id="random_toggle" type="checkbox">
                         <span class="slider round"></span>
                     </label>
-                    <div style="float: left; padding-left: 1vw"> Zufallskomponente einschalten </div>
+                    <div style="float: left; padding-left: 1vw"> Enable random component </div>
                 </div>
-
-
 
 
                 <div id="round_0" class="round_div">
@@ -964,16 +961,12 @@
                             <span id="span_9_0_1" class="payoff_span"> 6 </span>
                         </button>
                     </div>
-
-
                     <div id="div_9_1" class="option_div option_1">
                         <button id="button_9_1" type="button" class="btn option_button  bsp2" onclick="button(9,1)">
                             <span id="span_9_1_0" class="payoff_span"> 2 </span>
                             <span id="span_9_1_1" class="payoff_span"> 1 </span>
                         </button>
                     </div>
-
-
                 </div>
 
                 <div id="round_10" class="round_div div_hidden">
@@ -2877,34 +2870,36 @@
                 </div>
 
 
-                <div class="text" id="choose">Auswahl:</div>
-                <div class="text" id="last_choice"> Gerade gewählt:</div>
-                <div class="text" id="second_last_choice">Davor gewählt:</div>
+                <div class="text" id="choose">Current options:</div>
+                <div class="text" id="last_choice"> Just chosen:</div>
+                <div class="text" id="second_last_choice">Chosen Before:</div>
 
                 <div class="timer_frame"> <div id="timer_bar"> </div> </div>
-                <div class="text" id="timer_text"> Verbleibende Zeit</div>
+                <div class="text" id="timer_text"> Time remaining</div>
 
                 <div class="text" id="round"> <span id="round_counter">1</span> / 105 </div>
-                <div class="text" id="round_text"> Runde </div>
+                <div class="text" id="round_text"> Round </div>
 
-                <div class="text" id="points">Gesamtpunkte </div>
+                <div class="text" id="points">Total points </div>
                 <div class="text" id="score">0</div>
 
 
 
                 <div id="control-container" class="panel panel-info">
 
-                    <div class="panel-heading">Hinweise und Erklärungen</div>
+                    <div class="panel-heading">Instructions and explanations</div>
                     <div class="panel-body">
 
-                        <button id="help1" type="button" class="btn help-button" onclick="popovers(1)">A: Bildschirm</button>
-                        <button id="help2" type="button" class="btn help-button" onclick="popovers(2)">B: Punkte</button>
-                        <button id="help3" type="button" class="btn help-button" onclick="toggle_random()" data-toggle="popover" title="" data-html="true" data-content="Solange dieser Button auf &quot;an&quot; steht, werden alle erhaltenen Punkte zufällig erhöht, wie unter &lt;b&gt;B: Punkte&lt;/b&gt; beschrieben. Probieren Sie dies ein wenig aus.
-            &lt;br&gt;&lt;br&gt; Wenn Sie alles verstanden haben, können Sie unten rechts auf &quot;weiter&quot; drücken, um mit der nächsten Seite fortzufahren." data-placement="bottom" data-trigger="manual" data-original-title="Punktzahlen zufällig erhöht"><span id="zufall">C: Zufall </span></button>
+                        <button id="help1" type="button" class="btn help-button" onclick="popovers(1)">A: Display</button>
+                        <button id="help2" type="button" class="btn help-button" onclick="popovers(2)">B: Points</button>
+                        <button id="help3" type="button" class="btn help-button" onclick="toggle_random()" data-toggle="popover" title="" data-html="true"
+                                data-content="As long as this switch is &quot;ON&quot;, all generated points are increased by a random amount, as explained under &lt;b&gt;B: Points&lt;/b&gt;. Please try it out a few times.
+            &lt;br&gt;&lt;br&gt; Once you have understood everything, you can proceed to the next page by clicking &quot;next&quot; in the bottom right." data-placement="bottom" data-trigger="manual" data-original-title="Punktzahlen zufällig erhöht"><span id="zufall">C: Randomness </span></button>
                         <br><br>
-                        <div>Hier können Sie weitere Hinweise ein- und ausblenden. Die Hinweise sind nur in dieser Einweisung verfügbar! <br><br>
-                            Aktivieren Sie die Hinweise A, B und C oben bitte nacheinander durch Anklicken, und lesen Sie alles sorgfältig.<br><br> Sie können bei eingeblendeten Erklärungen weiter Buttons wählen, um alles gut nachvollziehen zu können.
-                            <br><br> Sobald Sie alle Hinweise betrachtet haben, können Sie mit "weiter" unten rechts auf die nächste Seite fortfahren.  </div>
+                        <div>Here you can show and hide further instructions. These instructions are available only during the demonstration! <br><br>
+                            Please activate instructions A, B, and C above sequentially by clicking, and read everything carefully.<br><br>
+                            Even while instructions are shown, you can continue to choose colors, allowing you to understand all the rules.
+                            <br><br> Once you have activated and read all instructions, you can proceed to the next page by clicking "next" on the bottom right.  </div>
 
 
                     </div>
